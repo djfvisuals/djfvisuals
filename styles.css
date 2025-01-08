@@ -84,23 +84,23 @@ h1 {
     height: auto;
 }
 
-/* Styling for project images page */
+/* Styling for project images page (Project 1 Page) */
 .project-images {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
     grid-gap: 20px;
     padding: 20px;
     margin-top: 20px;
-    justify-items: center; /* Centers content horizontally */
 }
 
 .project-image img {
     width: 100%;
     height: auto;
-    max-width: 1000px; /* Ensure large size */
-    max-height: 1000px; /* Ensure large size */
+    max-width: 2000px; /* Ensure large size */
+    max-height: 2000px; /* Ensure large size */
 }
 
+/* Styling the contact form */
 form {
     max-width: 600px;
     margin: 20px auto;
