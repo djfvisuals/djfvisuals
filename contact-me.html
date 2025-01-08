@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me - DJF Graphix</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <header>
@@ -22,25 +21,48 @@
     </header>
 
     <main>
-        <section id="contact-section">
-            <h1 id="contact-header">Contact Me</h1>
-            <p id="contact-description">Feel free to get in touch with me for any inquiries or collaborations!</p>
-            <form id="contact-form" action="https://formspree.io/f/xannlzao" method="POST" onsubmit="handleSubmit(event)">
+        <section>
+            <h1>Contact Me</h1>
+            <p>Feel free to get in touch with me for any inquiries or collaborations!</p>
+            <form id="contact-form" action="https://formspree.io/f/xannlzao" method="POST">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required><br><br>
+
                 <label for="email">Your Email:</label>
                 <input type="email" id="email" name="email" required><br><br>
+
                 <label for="message">Your Message:</label><br>
                 <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
                 <button type="submit">Send Message</button>
             </form>
-            <div id="thank-you-message" style="display: none;">
-                <h2>Message Sent!</h2>
-                <p>Thank you for reaching out. I'll get back to you soon.</p>
-            </div>
+            <div id="response-message"></div>
         </section>
     </main>
 
     <script>
-        function handleSubmit(event) {
-            event.preventDefault(); // Prevent t
+        const form = document.getElementById('contact-form');
+        const responseMessage = document.getElementById('response-message');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form)
+            })
+            .then(response => {
+                if (response.ok) {
+                    form.style.display = 'none';
+                    responseMessage.textContent = 'Message Sent!';
+                } else {
+                    responseMessage.textContent = 'There was an error, please try again.';
+                }
+            })
+            .catch(error => {
+                responseMessage.textContent = 'There was an error, please try again.';
+            });
+        });
+    </script>
+</body>
+</html>
