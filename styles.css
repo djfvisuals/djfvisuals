@@ -10,15 +10,22 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center;     /* Centers the content vertically */
+    min-height: 100vh;       /* Ensures the content fills the full screen */
+    flex-direction: column;
 }
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centers the header content */
     align-items: center;
     background-color: #333;
     color: white;
     padding: 20px;
+    width: 100%; /* Ensures header takes full width */
+    text-align: center; /* Centers text inside the header */
 }
 
 header .logo img {
@@ -28,6 +35,8 @@ header .logo img {
 nav ul {
     list-style: none;
     display: flex;
+    justify-content: center; /* Centers the navigation items */
+    margin-left: 20px;
 }
 
 nav ul li {
@@ -46,6 +55,9 @@ nav ul li a:hover {
 
 main {
     padding: 20px;
+    width: 100%;
+    max-width: 1200px; /* Optional: limits max width of main content */
+    text-align: center; /* Centers all text inside the main content */
 }
 
 h1 {
@@ -53,64 +65,57 @@ h1 {
     margin-bottom: 20px;
 }
 
-.portfolio {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .portfolio-items {
     display: flex;
+    justify-content: center; /* Centers portfolio items horizontally */
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+    gap: 20px; /* Adds space between items */
 }
 
 .portfolio-item {
-    display: flex;
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-.portfolio-item .portfolio-info {
-    width: 50%;
+    width: 30%;
+    margin: 10px;
+    background-color: white;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centers text inside portfolio items */
 }
 
-.portfolio-item .portfolio-info h2 {
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.portfolio-item .portfolio-info .description {
-    font-size: 11px;
-    margin-bottom: 20px;
-}
-
-.portfolio-item .portfolio-info .view-project {
-    font-size: 18px;
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.portfolio-item .portfolio-info .view-project:hover {
-    color: #555;
-}
-
-.portfolio-thumbnail {
-    width: 50%;
-}
-
-.portfolio-thumbnail img {
+.portfolio-item img {
     width: 100%;
     height: auto;
-    object-fit: cover;
 }
 
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Centers form elements */
+}
+
+form input, form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Ensures form inputs take up full width */
+}
+
+form button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Makes button fill the width of the form */
+}
+
+form button:hover {
+    background-color: #555;
+}
 
 /* New style for the About Me photo */
 .about-photo {
@@ -125,4 +130,3 @@ h1 {
     border-radius: 8px;  /* Optional: Adds rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Optional: Adds a shadow around the image */
 }
-
