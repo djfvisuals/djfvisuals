@@ -14,11 +14,15 @@ body {
 }
 
 header {
-    background-color: white; /* Set header background to white */
+    background-color: white; /* Header background is white */
     color: black;
     padding: 20px;
     text-align: center;
     border-bottom: 1px solid #ccc; /* Optional: Adds a thin line under the header */
+}
+
+header .logo {
+    text-align: center;
 }
 
 header .logo img {
