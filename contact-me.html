@@ -24,7 +24,7 @@
         <section>
             <h1>Contact Me</h1>
             <p>Feel free to get in touch with me for any inquiries or collaborations!</p>
-            <form action="mailto:djfgraphix.com" method="post" enctype="text/plain">
+            <form action="https://formspree.io/f/xannlzao" method="POST">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required><br><br>
                 <label for="email">Your Email:</label>
@@ -33,7 +33,20 @@
                 <textarea id="message" name="message" rows="4" required></textarea><br><br>
                 <button type="submit">Send Message</button>
             </form>
+            <p class="confirmation-message" style="display: none;">Message Sent!</p>
         </section>
     </main>
+
+    <script>
+        // Show confirmation message after form submission
+        const form = document.querySelector('form');
+        const confirmationMessage = document.querySelector('.confirmation-message');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the form from reloading the page
+            confirmationMessage.style.display = 'block';  // Display the "Message Sent!" message
+            form.reset();  // Optionally reset the form fields
+        });
+    </script>
 </body>
 </html>
