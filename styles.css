@@ -14,10 +14,11 @@ body {
 }
 
 header {
-    background-color: white;
+    background-color: white; /* Set header background to white */
     color: black;
     padding: 20px;
     text-align: center;
+    border-bottom: 1px solid #ccc; /* Optional: Adds a thin line under the header */
 }
 
 header .logo img {
@@ -27,6 +28,7 @@ header .logo img {
 nav ul {
     list-style: none;
     padding: 0;
+    text-align: left;
 }
 
 nav ul li {
@@ -104,4 +106,12 @@ form button:hover {
     margin-top: 20px;
     font-size: 1.2em;
     color: green;
+}
+
+.about-photo {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
