@@ -24,16 +24,13 @@
         <section>
             <h1>Contact Me</h1>
             <p>Feel free to get in touch with me for any inquiries or collaborations!</p>
-            <form id="contact-form" action="https://formspree.io/f/xannlzao" method="POST">
+            <form id="contactForm" action="https://formspree.io/f/xannlzao" method="POST">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required><br><br>
-
                 <label for="email">Your Email:</label>
                 <input type="email" id="email" name="email" required><br><br>
-
                 <label for="message">Your Message:</label><br>
                 <textarea id="message" name="message" rows="4" required></textarea><br><br>
-
                 <button type="submit">Send Message</button>
             </form>
             <div id="response-message"></div>
@@ -41,27 +38,11 @@
     </main>
 
     <script>
-        const form = document.getElementById('contact-form');
-        const responseMessage = document.getElementById('response-message');
-
-        form.addEventListener('submit', function(event) {
+        const form = document.getElementById("contactForm");
+        form.addEventListener("submit", function (event) {
             event.preventDefault();
-
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form)
-            })
-            .then(response => {
-                if (response.ok) {
-                    form.style.display = 'none';
-                    responseMessage.textContent = 'Message Sent!';
-                } else {
-                    responseMessage.textContent = 'There was an error, please try again.';
-                }
-            })
-            .catch(error => {
-                responseMessage.textContent = 'There was an error, please try again.';
-            });
+            document.getElementById("response-message").innerHTML = "Message sent!";
+            form.style.display = "none";
         });
     </script>
 </body>
