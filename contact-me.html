@@ -43,24 +43,4 @@
 
     <script>
         function handleSubmit(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Submit the form data to Formspree
-            const form = document.getElementById('contact-form');
-            const formData = new FormData(form);
-
-            axios.post(form.action, formData)
-                .then(response => {
-                    // Hide the form, the header, and the description, then show the "Message Sent" message
-                    document.getElementById('contact-form').style.display = 'none';
-                    document.getElementById('contact-header').style.display = 'none';
-                    document.getElementById('contact-description').style.display = 'none';
-                    document.getElementById('thank-you-message').style.display = 'block';
-                })
-                .catch(error => {
-                    console.error('Error submitting form:', error);
-                });
-        }
-    </script>
-</body>
-</html>
+            event.preventDefault(); // Prevent t
