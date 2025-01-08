@@ -23,8 +23,8 @@
 
     <main>
         <section id="contact-section">
-            <h1>Contact Me</h1>
-            <p>Feel free to get in touch with me for any inquiries or collaborations!</p>
+            <h1 id="contact-header">Contact Me</h1>
+            <p id="contact-description">Feel free to get in touch with me for any inquiries or collaborations!</p>
             <form id="contact-form" action="https://formspree.io/f/xannlzao" method="POST" onsubmit="handleSubmit(event)">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required><br><br>
@@ -51,8 +51,10 @@
 
             axios.post(form.action, formData)
                 .then(response => {
-                    // Hide the form and show the "Message Sent" message
+                    // Hide the form, the header, and the description, then show the "Message Sent" message
                     document.getElementById('contact-form').style.display = 'none';
+                    document.getElementById('contact-header').style.display = 'none';
+                    document.getElementById('contact-description').style.display = 'none';
                     document.getElementById('thank-you-message').style.display = 'block';
                 })
                 .catch(error => {
