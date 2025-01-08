@@ -64,105 +64,46 @@ h1 {
     margin-bottom: 20px;
 }
 
-.portfolio-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.portfolio-item {
-    width: 30%;
-    margin: 10px;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: auto;
-}
-
-form {
-    max-width: 600px;
-    margin: 20px auto;
+/* Image grid container */
+.image-grid {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
-form input, form textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* Each row of images */
+.image-row {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    justify-items: center;
 }
 
-form button {
-    padding: 10px 15px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #555;
-}
-
-#response-message {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: green;
-}
-
-.about-photo {
-    margin-top: 20px;
+.image-row img {
     width: 100%;
-    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Project image styling */
+.project-image img {
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Copyright styling */
+/* Footer fix */
 footer {
-    padding: 10px;
-    background-color: #333;
-    color: white;
+    background-color: transparent;
+    padding: 20px;
     text-align: center;
+    margin-top: 30px;
 }
 
 footer p {
-    margin: 0;
     font-size: 14px;
-}
-
-/* New hover and animation styles */
-.hover-mouse {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate3d(-50%, -50%, 0);
-    opacity: 0;
-    display: none;
-    transition: all 0.5s ease-out;
-    transform-style: preserve-3d;
-}
-
-body:hover .hover-mouse {
-    display: block;
-    opacity: 1;
-    transform: translate3d(-349.937px, -269.951px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-}
-
-.projects-collection-item {
-    opacity: 0;
-    transform: translate3d(0px, 50px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-    transition: transform
+    color: gray;
 }
