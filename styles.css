@@ -69,22 +69,32 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-top: 30px;
+    overflow: auto;
 }
 
 /* Each row of images */
 .image-row {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 1fr); /* 10 columns */
     gap: 10px;
     justify-items: center;
+    margin-bottom: 20px;
 }
 
+/* Style for each image in the row */
 .image-row img {
     width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect on images */
+.image-row img:hover {
+    transform: scale(1.05);
 }
 
 /* Project image styling */
@@ -95,7 +105,7 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer fix */
+/* Footer fix (no black rectangle) */
 footer {
     background-color: transparent;
     padding: 20px;
