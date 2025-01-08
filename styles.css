@@ -11,10 +11,9 @@ body {
     background-color: white;
     color: black;
     text-align: center;
-    position: relative; /* Allow the hover-mouse div to position correctly */
 }
 
-/* Custom Cursor Hover Effect */
+/* Hover effect with animation */
 .hover-mouse {
     position: absolute;
     top: 50%;
@@ -29,34 +28,13 @@ body {
     display: none;
     opacity: 0;
     transition: all 0.3s ease;
+    transform-style: preserve-3d;
 }
 
-/* Hover effect */
 body:hover .hover-mouse {
     display: block;
     opacity: 1;
-    transform: translate3d(-349.937px, -269.951px, 0) scale3d(1.2, 1.2, 1) rotateX(15deg) rotateY(15deg) rotateZ(10deg) skew(5deg, 5deg);
-}
-
-/* Animation for hover-mouse */
-@keyframes hoverEffect {
-    0% {
-        transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-        opacity: 0;
-    }
-    50% {
-        transform: translate3d(-349.937px, -269.951px, 0) scale3d(1.2, 1.2, 1) rotateX(15deg) rotateY(15deg) rotateZ(10deg) skew(5deg, 5deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-        opacity: 0;
-    }
-}
-
-/* Apply animation to hover-mouse when hovered */
-body:hover .hover-mouse {
-    animation: hoverEffect 2s infinite;
+    transform: translate3d(-349.937px, -269.951px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
 }
 
 /* Header and Navigation */
@@ -101,7 +79,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Main Content */
 main {
     padding: 20px;
     text-align: center;
@@ -131,7 +108,6 @@ h1 {
     height: auto;
 }
 
-/* Contact Form */
 form {
     max-width: 600px;
     margin: 20px auto;
@@ -166,7 +142,6 @@ form button:hover {
     color: green;
 }
 
-/* About Photo */
 .about-photo {
     margin-top: 20px;
     width: 100%;
