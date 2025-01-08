@@ -64,7 +64,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Portfolio items styling (unchanged) */
+/* Portfolio items styling */
 .portfolio-items {
     display: flex;
     flex-wrap: wrap;
