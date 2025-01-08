@@ -1,4 +1,4 @@
-5/* Basic CSS reset */
+/* Basic CSS reset */
 * {
     margin: 0;
     padding: 0;
@@ -86,7 +86,6 @@ h1 {
 
 /* Styling for project images page */
 .project-images {
-  .project-images {
     display: grid;
     grid-template-columns: repeat(10, 1fr); /* 10 equal columns */
     grid-template-rows: repeat(2, auto); /* 2 rows */
@@ -97,10 +96,16 @@ h1 {
     align-items: center; /* Centers content vertically */
 }
 
-
-.project-image img {
-    width: 100%;
+/* Styling for individual project image containers */
+.project-image {
+    width: 100%; /* Ensures image container fills its grid cell */
     height: auto;
+}
+
+/* Styling for images inside the project image containers */
+.project-image img {
+    width: 100%; /* Makes the image fill the width of its container */
+    height: auto; /* Maintains aspect ratio */
     max-width: 2000px; /* Ensure large size */
     max-height: 2000px; /* Ensure large size */
 }
