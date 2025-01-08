@@ -10,22 +10,15 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
-    display: flex;
-    justify-content: center; /* Centers the content horizontally */
-    align-items: center;     /* Centers the content vertically */
-    min-height: 100vh;       /* Ensures the content fills the full screen */
-    flex-direction: column;
+    text-align: left; /* Left-justify all text on the page */
 }
 
 header {
-    display: flex;
-    justify-content: center; /* Centers the header content */
-    align-items: center;
-    background-color: #333;
-    color: white;
+    text-align: center; /* Centers the header content */
     padding: 20px;
     width: 100%; /* Ensures header takes full width */
-    text-align: center; /* Centers text inside the header */
+    background-color: #333;
+    color: white;
 }
 
 header .logo img {
@@ -36,7 +29,7 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center; /* Centers the navigation items */
-    margin-left: 20px;
+    margin-top: 20px;
 }
 
 nav ul li {
@@ -57,7 +50,6 @@ main {
     padding: 20px;
     width: 100%;
     max-width: 1200px; /* Optional: limits max width of main content */
-    text-align: center; /* Centers all text inside the main content */
 }
 
 h1 {
@@ -78,7 +70,7 @@ h1 {
     background-color: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centers text inside portfolio items */
+    text-align: left; /* Left-justifies the text inside portfolio items */
 }
 
 .portfolio-item img {
@@ -91,7 +83,7 @@ form {
     margin: 20px auto;
     display: flex;
     flex-direction: column;
-    text-align: center; /* Centers form elements */
+    text-align: left; /* Left-aligns form text */
 }
 
 form input, form textarea {
