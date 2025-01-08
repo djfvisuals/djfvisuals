@@ -88,7 +88,7 @@ h1 {
 .project-images {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-gap: 20px;
+    grid-gap: 15px;
     padding: 20px;
     margin-top: 20px;
 }
