@@ -10,15 +10,18 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
-    text-align: left; /* Left-justify all text on the page */
+    text-align: center; /* Center the main content */
 }
 
 header {
-    text-align: center; /* Centers the header content */
-    padding: 20px;
-    width: 100%; /* Ensures header takes full width */
+    width: 100%;
     background-color: #333;
     color: white;
+    padding: 20px;
+}
+
+header .logo {
+    text-align: center; /* Center the logo */
 }
 
 header .logo img {
@@ -28,8 +31,9 @@ header .logo img {
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Centers the navigation items */
+    justify-content: flex-start; /* Left-align the navigation */
     margin-top: 20px;
+    padding-left: 0; /* Remove any padding */
 }
 
 nav ul li {
@@ -50,6 +54,7 @@ main {
     padding: 20px;
     width: 100%;
     max-width: 1200px; /* Optional: limits max width of main content */
+    margin: 0 auto; /* Centers the main content */
 }
 
 h1 {
