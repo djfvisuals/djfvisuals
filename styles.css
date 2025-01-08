@@ -64,6 +64,7 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Portfolio items styling (unchanged) */
 .portfolio-items {
     display: flex;
     flex-wrap: wrap;
@@ -81,6 +82,22 @@ h1 {
 .portfolio-item img {
     width: 100%;
     height: auto;
+}
+
+/* Styling for project images page */
+.project-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    max-width: 2000px; /* Ensure large size */
+    max-height: 2000px; /* Ensure large size */
 }
 
 form {
