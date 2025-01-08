@@ -5,37 +5,86 @@
     box-sizing: border-box;
 }
 
-/* Body and general styling */
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    text-align: center;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    cursor: url('your-custom-cursor.png'), auto; /* Custom Cursor */
+    background-color: white;
+    color: black;
+    text-align: center;
+    position: relative; /* Allow the hover-mouse div to position correctly */
 }
 
-/* Header and navigation styles */
+/* Custom Cursor Hover Effect */
+.hover-mouse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate3d(-50%, -50%, 0);
+    will-change: transform;
+    display: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+body:hover .hover-mouse {
+    display: block;
+    opacity: 1;
+    transform: translate3d(-349.937px, -269.951px, 0) scale3d(1.2, 1.2, 1) rotateX(15deg) rotateY(15deg) rotateZ(10deg) skew(5deg, 5deg);
+}
+
+/* Animation for hover-mouse */
+@keyframes hoverEffect {
+    0% {
+        transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+        opacity: 0;
+    }
+    50% {
+        transform: translate3d(-349.937px, -269.951px, 0) scale3d(1.2, 1.2, 1) rotateX(15deg) rotateY(15deg) rotateZ(10deg) skew(5deg, 5deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+        opacity: 0;
+    }
+}
+
+/* Apply animation to hover-mouse when hovered */
+body:hover .hover-mouse {
+    animation: hoverEffect 2s infinite;
+}
+
+/* Header and Navigation */
 header {
-    background-color: #ffffff;
-    padding: 20px;
+    background-color: white;
+    padding: 10px 20px;
 }
 
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
+}
+
+.nav-container .logo {
+    margin-right: 20px;
 }
 
 .nav-container .logo img {
-    width: 120px;
+    width: 100px;
     height: auto;
+    cursor: pointer;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 20px;
 }
 
 nav ul li {
@@ -43,82 +92,85 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #333;
+    color: black;
     text-decoration: none;
-    font-weight: 600;
     font-size: 18px;
 }
 
 nav ul li a:hover {
-    color: #007BFF;
     text-decoration: underline;
 }
 
-/* Portfolio styling */
+/* Main Content */
 main {
-    padding: 50px 20px;
+    padding: 20px;
+    text-align: center;
 }
 
 h1 {
-    font-size: 2.5em;
-    font-weight: 700;
-    color: #333;
+    font-size: 2em;
     margin-bottom: 20px;
-}
-
-p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
 }
 
 .portfolio-items {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
 }
 
 .portfolio-item {
-    background-color: #fff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     width: 30%;
+    margin: 10px;
+    background-color: white;
     padding: 20px;
-    border-radius: 8px;
-    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-item img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
 }
 
-.portfolio-item h3 {
-    font-size: 1.5em;
-    color: #333;
+/* Contact Form */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea {
     margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.portfolio-item p {
-    color: #666;
-    font-size: 1em;
-}
-
-/* Footer styling */
-footer {
+form button {
+    padding: 10px 15px;
     background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-footer p {
-    font-size: 1em;
+form button:hover {
+    background-color: #555;
 }
 
-/* Custom hover effect on portfolio items */
-.portfolio-item:hover {
-    transform: translateY(-10px);
-    transition: transform 0.3s ease;
+#response-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: green;
+}
+
+/* About Photo */
+.about-photo {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
