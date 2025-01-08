@@ -86,12 +86,17 @@ h1 {
 
 /* Styling for project images page */
 .project-images {
+  .project-images {
     display: grid;
-    grid-template-columns: repeat(10, 2fr); /* 2 columns */
+    grid-template-columns: repeat(10, 1fr); /* 10 equal columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
     grid-gap: 20px;
     padding: 20px;
     margin-top: 20px;
+    justify-items: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
 }
+
 
 .project-image img {
     width: 100%;
