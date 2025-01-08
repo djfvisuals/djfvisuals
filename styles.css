@@ -14,31 +14,35 @@ body {
 }
 
 header {
-    background-color: white; /* Header background is white */
-    color: black;
-    padding: 40px 20px; /* Increased padding for more space around the logo */
-    text-align: center;
+    background-color: white;
+    padding: 20px 0;
 }
 
-header .logo {
-    text-align: center;
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0 20px;
 }
 
-header .logo img {
-    width: 150px;
-    margin-bottom: 20px; /* Adds more space between the logo and navigation */
+.nav-container .logo {
+    margin-right: 20px;
+}
+
+.nav-container .logo img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
-    text-align: left;
-    margin-top: 10px; /* Adds space between the logo and navigation links */
+    display: flex;
+    gap: 20px;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    display: inline-block;
 }
 
 nav ul li a {
@@ -53,6 +57,7 @@ nav ul li a:hover {
 
 main {
     padding: 20px;
+    text-align: center;
 }
 
 h1 {
