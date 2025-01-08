@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me - DJF Graphix</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <header>
@@ -21,41 +22,45 @@
     </header>
 
     <main>
-        <section>
+        <section id="contact-section">
             <h1>Contact Me</h1>
             <p>Feel free to get in touch with me for any inquiries or collaborations!</p>
-            <form action="https://formspree.io/f/xannlzao" method="POST">
+            <form id="contact-form" action="https://formspree.io/f/xannlzao" method="POST" onsubmit="handleSubmit(event)">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required><br><br>
-
                 <label for="email">Your Email:</label>
                 <input type="email" id="email" name="email" required><br><br>
-
                 <label for="message">Your Message:</label><br>
                 <textarea id="message" name="message" rows="4" required></textarea><br><br>
-
                 <button type="submit">Send Message</button>
             </form>
-
-            <!-- Success Message Displayed After Form Submission -->
-            <div id="success-message" style="display: none;">
-                <p>Message sent successfully! I'll get back to you as soon as possible.</p>
+            <div id="thank-you-message" style="display: none;">
+                <h2>Message Sent!</h2>
+                <p>Thank you for reaching out. I'll get back to you soon.</p>
             </div>
         </section>
     </main>
 
     <script>
-        // Wait for the form submission
-        const form = document.querySelector("form");
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
 
-            // Display the success message
-            document.getElementById("success-message").style.display = "block";
+            // Show "Message Sent" message and hide the form
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('thank-you-message').style.display = 'block';
 
-            // Reset the form fields after submission
-            form.reset();
-        });
+            // Submit the form data to Formspree
+            const form = document.getElementById('contact-form');
+            const formData = new FormData(form);
+
+            axios.post(form.action, formData)
+                .then(response => {
+                    console.log('Form successfully submitted');
+                })
+                .catch(error => {
+                    console.error('Error submitting form:', error);
+                });
+        }
     </script>
 </body>
 </html>
