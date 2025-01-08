@@ -110,3 +110,19 @@ h1 {
     height: auto;
     object-fit: cover;
 }
+
+
+/* New style for the About Me photo */
+.about-photo {
+    margin-top: 20px;
+    text-align: center; /* Centers the image */
+}
+
+.about-photo img {
+    width: 100%;
+    max-width: 800px;  /* Limits the size of the image to a maximum of 800px */
+    height: auto;      /* Maintains aspect ratio */
+    border-radius: 8px;  /* Optional: Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Optional: Adds a shadow around the image */
+}
+
