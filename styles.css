@@ -1,4 +1,4 @@
-/* Basic CSS reset */
+5/* Basic CSS reset */
 * {
     margin: 0;
     padding: 0;
@@ -87,8 +87,8 @@ h1 {
 /* Styling for project images page */
 .project-images {
     display: grid;
-    grid-template-columns: repeat(10, 1fr); /* 2 columns */
-    grid-gap: 20px;
+    grid-template-columns: repeat(12, 1fr); /* 2 columns */
+    grid-gap: 15px;
     padding: 20px;
     margin-top: 20px;
 }
