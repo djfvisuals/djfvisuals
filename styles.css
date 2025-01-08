@@ -87,27 +87,18 @@ h1 {
 /* Styling for project images page */
 .project-images {
     display: grid;
-    grid-template-columns: repeat(10, 1fr); /* 10 equal columns */
-    grid-template-rows: repeat(2, auto); /* 2 rows */
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
     grid-gap: 20px;
     padding: 20px;
     margin-top: 20px;
     justify-items: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
 }
 
-/* Styling for individual project image containers */
-.project-image {
-    width: 100%; /* Ensures image container fills its grid cell */
-    height: auto;
-}
-
-/* Styling for images inside the project image containers */
 .project-image img {
-    width: 100%; /* Makes the image fill the width of its container */
-    height: auto; /* Maintains aspect ratio */
-    max-width: 2000px; /* Ensure large size */
-    max-height: 2000px; /* Ensure large size */
+    width: 100%;
+    height: auto;
+    max-width: 1000px; /* Ensure large size */
+    max-height: 1000px; /* Ensure large size */
 }
 
 form {
