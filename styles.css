@@ -16,9 +16,8 @@ body {
 header {
     background-color: white; /* Header background is white */
     color: black;
-    padding: 20px;
+    padding: 40px 20px; /* Increased padding for more space around the logo */
     text-align: center;
-    border-bottom: 1px solid #ccc; /* Optional: Adds a thin line under the header */
 }
 
 header .logo {
@@ -27,12 +26,14 @@ header .logo {
 
 header .logo img {
     width: 150px;
+    margin-bottom: 20px; /* Adds more space between the logo and navigation */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     text-align: left;
+    margin-top: 10px; /* Adds space between the logo and navigation links */
 }
 
 nav ul li {
