@@ -10,7 +10,7 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
-    text-align: center; /* Center the main content */
+    text-align: center; /* Center all the content in the body */
 }
 
 header {
@@ -18,22 +18,19 @@ header {
     background-color: #333;
     color: white;
     padding: 20px;
-}
-
-header .logo {
-    text-align: center; /* Center the logo */
+    text-align: center; /* Center the logo at the top */
 }
 
 header .logo img {
-    width: 150px;
+    width: 150px; /* You can adjust the size of the logo here */
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: flex-start; /* Left-align the navigation */
-    margin-top: 20px;
-    padding-left: 0; /* Remove any padding */
+    justify-content: flex-start; /* Align the nav links to the left */
+    margin-top: 10px;
+    padding-left: 0;
 }
 
 nav ul li {
@@ -53,8 +50,8 @@ nav ul li a:hover {
 main {
     padding: 20px;
     width: 100%;
-    max-width: 1200px; /* Optional: limits max width of main content */
-    margin: 0 auto; /* Centers the main content */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the main content */
 }
 
 h1 {
@@ -64,9 +61,9 @@ h1 {
 
 .portfolio-items {
     display: flex;
-    justify-content: center; /* Centers portfolio items horizontally */
+    justify-content: center; /* Center the portfolio items */
     flex-wrap: wrap;
-    gap: 20px; /* Adds space between items */
+    gap: 20px;
 }
 
 .portfolio-item {
@@ -75,7 +72,7 @@ h1 {
     background-color: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: left; /* Left-justifies the text inside portfolio items */
+    text-align: left; /* Left-align the text inside the portfolio item */
 }
 
 .portfolio-item img {
@@ -88,7 +85,7 @@ form {
     margin: 20px auto;
     display: flex;
     flex-direction: column;
-    text-align: left; /* Left-aligns form text */
+    text-align: left; /* Left-align form text */
 }
 
 form input, form textarea {
@@ -97,7 +94,7 @@ form input, form textarea {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 100%; /* Ensures form inputs take up full width */
+    width: 100%;
 }
 
 form button {
@@ -107,23 +104,23 @@ form button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%; /* Makes button fill the width of the form */
+    width: 100%;
 }
 
 form button:hover {
     background-color: #555;
 }
 
-/* New style for the About Me photo */
+/* Styling for About Me photo */
 .about-photo {
     margin-top: 20px;
-    text-align: center; /* Centers the image */
+    text-align: center; /* Center the image */
 }
 
 .about-photo img {
     width: 100%;
-    max-width: 800px;  /* Limits the size of the image to a maximum of 800px */
-    height: auto;      /* Maintains aspect ratio */
-    border-radius: 8px;  /* Optional: Adds rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Optional: Adds a shadow around the image */
+    max-width: 800px; /* Limits the size of the image */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
