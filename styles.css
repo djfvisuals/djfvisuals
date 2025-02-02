@@ -5,16 +5,17 @@
     box-sizing: border-box;
 }
 
+/* Global Body Styling */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: white;
     color: black;
     text-align: center;
-    margin-top: 80px; /* Pushes the body content down, ensuring it's not covered by the header */
+    margin-top: 80px; /* Adjust this value to prevent content from being hidden behind fixed header */
 }
 
-/* Fixed header styling */
+/* Fixed Header Styling */
 header {
     background-color: white;
     padding: 10px 20px;
@@ -62,11 +63,11 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Main section padding to prevent content from being hidden */
+/* Main content section padding */
 main {
     padding: 20px;
     text-align: center;
-    margin-top: 120px; /* Increased space for the header, ensuring titles are visible */
+    margin-top: 100px; /* Add top margin to prevent overlap with fixed header */
 }
 
 /* Portfolio items styling */
@@ -110,7 +111,8 @@ form {
     flex-direction: column;
 }
 
-form input, form textarea {
+form input,
+form textarea {
     margin-bottom: 10px;
     padding: 10px;
     font-size: 16px;
@@ -137,6 +139,7 @@ form button:hover {
     color: green;
 }
 
+/* About Me photo styling */
 .about-photo {
     margin-top: 20px;
     width: 100%;
