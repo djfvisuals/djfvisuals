@@ -5,12 +5,19 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%; /* Prevent any scrolling issue */
+    padding: 0;
+    margin: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: white;
     color: black;
     text-align: center;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 header {
