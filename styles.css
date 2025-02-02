@@ -1,102 +1,49 @@
-/* Basic CSS reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+style css with valuetianment logo
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: white;
-    color: black;
-    text-align: center;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - DJF Graphix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/DJF_GRAPHIX_LOGO2.png" alt="DJF Graphix Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Portfolio</a></li>
+                    <li><a href="aboutme.html">About Me</a></li>
+                    <li><a href="contact-me.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-header {
-    background-color: white;
-    padding: 10px 20px;
-}
+    <main>
+        <section>
+            <h1>Portfolio</h1>
+            <p>Explore some of my best graphic design works.</p>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <a href="project1.html">
+                        <img src="images/Valuetainment_logo.png" alt="Valuetainment">
+                    </a>
+                </div>
+                <div class="portfolio-item">
+                    <a href="project2.html">
+                        <img src="your-portfolio-image2.jpg" alt="Portfolio Item 2">
+                    </a>
+                    <p>Description of project 2</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
 
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-}
 
-.nav-container .logo {
-    margin-right: 20px;
-}
-
-.nav-container .logo img {
-    width: 100px;
-    height: auto;
-    cursor: pointer;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li {
-    display: inline-block;
-}
-
-nav ul li a {
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 20px;
-    text-align: center;
-}
-
-h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-/* Portfolio items styling */
-.portfolio-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.portfolio-item {
-    width: 30%;
-    margin: 10px;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.portfolio-item img {
-    width: 100%;
-    max-width: 400px; /* Limit the max width */
-    height: auto;
-    display: block; /* Ensures the image isn't affected by surrounding padding or margins */
-    margin: 0 auto; /* Center the image */
-}
-
-/* Responsive layout for portfolio items */
-@media (max-width: 768px) {
-    .portfolio-item {
-        width: 45%; /* Adjust the size for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .portfolio-item {
-        width: 100%; /* Stack the portfolio items vertically on very small screens */
-    }
-}
