@@ -12,9 +12,9 @@ body {
     color: black;
     text-align: center;
     padding-top: 80px; /* Adjust this padding for the fixed header */
-    /* Prevent any overflow */
     margin: 0;
     overflow-x: hidden;
+    /* Prevent layout shifting */
 }
 
 /* Fixed header styling */
@@ -76,6 +76,8 @@ main {
     text-align: center;
     margin-top: 80px; /* Enough space for fixed header */
     min-height: calc(100vh - 80px); /* Ensures the content takes up the remaining space below the header */
+    /* Prevent layout shifts */
+    transition: margin-top 0.3s ease-in-out;
 }
 
 /* Portfolio items styling */
