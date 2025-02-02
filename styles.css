@@ -35,14 +35,22 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: top 0.3s ease; /* Smooth transition for top when fixed */
 }
 
+/* Added space for header to prevent layout shift */
+body {
+    padding-top: 70px; /* Adjust based on your header height */
+}
+
+/* Navbar container to align content properly */
 .nav-container {
     display: flex;
     align-items: center;
     justify-content: start;
 }
 
+/* Logo styling */
 .nav-container .logo {
     margin-right: 20px;
 }
@@ -53,6 +61,7 @@ header {
     cursor: pointer;
 }
 
+/* Navbar text styling */
 nav ul {
     list-style: none;
     display: flex;
@@ -73,9 +82,9 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Add padding to the body to prevent overlap */
+/* Main content below header */
 main {
-    padding-top: 70px; /* Adjust this value to match the header's height */
+    padding-top: 70px; /* Ensures no overlap with the fixed header */
 }
 
 /* Main content styling */
