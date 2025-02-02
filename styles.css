@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: white;
-    color: black;
+    color: black;  /* All text color is now black */
     text-align: center;
 }
 
@@ -18,11 +18,11 @@ header {
     padding: 10px 20px;
 }
 
-/* Adjust navigation container to place links next to logo */
+/* Navigation container to align items to the left */
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: flex-start;  /* Align to the left */
+    justify-content: flex-start;  /* Align the navigation to the left next to the logo */
 }
 
 .nav-container .logo {
@@ -49,7 +49,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: black;  /* Change font color to black */
+    color: black;  /* All text links will be black */
     text-decoration: none;
     font-size: 18px;
     font-weight: normal;
@@ -57,11 +57,6 @@ nav ul li a {
 
 nav ul li a:hover {
     text-decoration: underline;
-}
-
-nav ul li a.active {
-    color: #ff5733;  /* Active link color */
-    font-weight: bold;
 }
 
 main {
@@ -72,7 +67,7 @@ main {
 h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #333;
+    color: #333; /* Ensure headers are still black */
 }
 
 /* Portfolio items styling */
