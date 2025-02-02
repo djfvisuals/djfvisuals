@@ -74,29 +74,29 @@ h1 {
 .portfolio-item {
     width: 30%;
     margin: 10px;
-    background-color: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: transparent; /* Make background transparent */
+    text-align: center;
 }
 
 .portfolio-item img {
     width: 100%;
-    max-width: 500px;  /* Increased max-width */
+    max-width: 400px;  /* Limit the max width */
     height: auto;
     display: block;
     margin: 0 auto;
-    border: 2px solid red;  /* Temporary border to check if image is rendering */
 }
 
 /* Responsive layout for portfolio items */
 @media (max-width: 768px) {
     .portfolio-item {
-        width: 45%;
+        width: 45%;  /* Adjust the size for smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .portfolio-item {
-        width: 100%;
+        width: 100%; /* Stack the portfolio items vertically on very small screens */
     }
 }
