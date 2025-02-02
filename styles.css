@@ -74,17 +74,17 @@ h1 {
 .portfolio-item {
     width: 30%;
     margin: 10px;
-    background-color: white;
+    background-color: lightgray; /* Temporary background to make sure the item shows */
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-item img {
     width: 100%;
-    max-width: 400px; /* Limit the max width */
+    max-width: 500px;  /* Increase the max-width to make it larger */
     height: auto;
-    display: block; /* Ensures the image isn't affected by surrounding padding or margins */
-    margin: 0 auto; /* Center the image */
+    display: block;
+    margin: 0 auto;  /* Center the image */
 }
 
 /* Responsive layout for portfolio items */
@@ -114,47 +114,4 @@ h1 {
     height: auto;
     max-width: 2000px; /* Ensure large size */
     max-height: 2000px; /* Ensure large size */
-}
-
-/* Styling the contact form */
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-}
-
-form input, form textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form button {
-    padding: 10px 15px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #555;
-}
-
-#response-message {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: green;
-}
-
-.about-photo {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
