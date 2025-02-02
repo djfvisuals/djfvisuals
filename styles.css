@@ -38,7 +38,7 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
-    margin-left: 20px; /* This ensures the nav items are next to the logo */
+    margin-left: 20px; /* Ensures nav items are next to the logo */
 }
 
 nav ul li {
@@ -70,6 +70,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px; /* Adds space between the portfolio items */
 }
 
 .portfolio-item {
@@ -78,11 +79,24 @@ h1 {
     background-color: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text under images */
 }
 
 .portfolio-item img {
     width: 100%;
     height: auto;
+    border-radius: 8px; /* Adds rounded corners to images */
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.portfolio-item img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.portfolio-item p {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #333; /* Dark text for description */
 }
 
 /* Styling for project images page */
