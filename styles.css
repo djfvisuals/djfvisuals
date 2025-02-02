@@ -74,44 +74,29 @@ h1 {
 .portfolio-item {
     width: 30%;
     margin: 10px;
-    background-color: lightgray; /* Temporary background to make sure the item shows */
+    background-color: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-item img {
     width: 100%;
-    max-width: 500px;  /* Increase the max-width to make it larger */
+    max-width: 500px;  /* Increased max-width */
     height: auto;
     display: block;
-    margin: 0 auto;  /* Center the image */
+    margin: 0 auto;
+    border: 2px solid red;  /* Temporary border to check if image is rendering */
 }
 
 /* Responsive layout for portfolio items */
 @media (max-width: 768px) {
     .portfolio-item {
-        width: 45%; /* Adjust the size for smaller screens */
+        width: 45%;
     }
 }
 
 @media (max-width: 480px) {
     .portfolio-item {
-        width: 100%; /* Stack the portfolio items vertically on very small screens */
+        width: 100%;
     }
-}
-
-/* Styling for project images page (Project 1 Page) */
-.project-images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-gap: 15px;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-.project-image img {
-    width: 100%;
-    height: auto;
-    max-width: 2000px; /* Ensure large size */
-    max-height: 2000px; /* Ensure large size */
 }
