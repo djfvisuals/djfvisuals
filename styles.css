@@ -11,7 +11,7 @@ body {
     background-color: white;
     color: black;
     text-align: center;
-    padding-top: 60px; /* Ensure content is visible below the fixed header */
+    padding-top: 80px; /* Add padding to ensure content is visible below the fixed header */
 }
 
 header {
@@ -65,6 +65,7 @@ nav ul li a:hover {
 /* Adjust the padding of the main section to account for the fixed header */
 main {
     padding: 20px; /* Padding around the content */
+    margin-top: 20px; /* Ensure there's space between content and header */
 }
 
 /* Portfolio items styling */
