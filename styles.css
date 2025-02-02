@@ -5,62 +5,47 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-/* Prevent horizontal scroll */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: white;
     color: black;
     text-align: center;
-    transition: background-color 0.3s ease; /* Smooth page transition */
 }
 
-/* Header with fixed height to prevent bouncing */
 header {
-    background-color: transparent;
+    background-color: white;
     padding: 10px 20px;
-    position: fixed; /* Make sure it's fixed */
+    position: fixed; /* Fix header to top of the page */
     top: 0;
     width: 100%;
     z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-    transition: top 0.3s ease; /* Smooth transition */
+    transition: top 0.3s ease; /* Smooth transition for header */
 }
 
-/* Navbar container */
+/* Fix navigation bouncing */
+body {
+    margin-top: 80px; /* Adjust body margin to prevent content overlap */
+}
+
+/* Navigation container and links */
 .nav-container {
     display: flex;
     align-items: center;
     justify-content: start;
 }
 
-/* Logo styling */
 .nav-container .logo {
     margin-right: 20px;
-    transition: opacity 0.3s ease; /* Fade in transition */
+    transition: opacity 0.3s ease; /* Smooth logo fade */
 }
 
 .nav-container .logo img {
     width: 100px;
     height: auto;
     cursor: pointer;
-    transition: transform 0.3s ease; /* Added smooth transition on hover */
 }
 
-.nav-container .logo img:hover {
-    transform: scale(1.05); /* Hover effect */
-}
-
-/* Navbar text styling */
 nav ul {
     list-style: none;
     display: flex;
@@ -82,9 +67,9 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Prevent the content from shifting */
 main {
-    padding-top: 80px; /* Same height as header */
+    padding: 20px;
+    text-align: center;
 }
 
 /* Portfolio items styling */
@@ -92,7 +77,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Added gap for spacing */
 }
 
 .portfolio-item {
@@ -108,10 +92,55 @@ main {
     height: auto;
 }
 
-/* Footer and other elements */
-footer {
+/* Project image grid styling */
+.project-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-gap: 20px;
     padding: 20px;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Contact form styling */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 15px;
     background-color: #333;
     color: white;
-    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
+
+form button:hover {
+    background-color: #555;
+}
+
+#response-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: green;
+}
+
+.about-photo {
+    margin-top: 20px;
+    width: 100%;
+    max-width:
