@@ -11,6 +11,7 @@ html, body {
     margin: 0;
 }
 
+/* Ensure no layout shift */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -20,16 +21,17 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* Fixed header at the top */
 header {
     background-color: transparent;
     padding: 10px 20px;
-    position: fixed; /* Make the header fixed to the top */
+    position: fixed; /* Fix the header at the top */
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
-    z-index: 100; /* Ensure it stays on top */
-    box-shadow: none; /* Remove box shadow unless needed */
+    z-index: 100; /* Ensure the header stays on top */
+    box-shadow: none; /* Remove box shadow unless you want it */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -71,11 +73,12 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Add padding at the top of the body to prevent overlap */
+/* Add padding to the body to prevent overlap */
 main {
-    padding-top: 100px; /* Adjust this value to the height of your header */
+    padding-top: 70px; /* Adjust this value to match the header's height */
 }
 
+/* Main content styling */
 h1 {
     font-size: 2em;
     margin-bottom: 20px;
