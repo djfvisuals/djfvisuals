@@ -11,6 +11,7 @@ body {
     background-color: white;
     color: black;
     text-align: center;
+    padding-top: 60px; /* Ensure content is visible below the fixed header */
 }
 
 header {
@@ -18,8 +19,11 @@ header {
     padding: 10px 20px;
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
 }
 
 .nav-container {
@@ -58,10 +62,9 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Fix for the bouncing navigation by adding padding to the main content */
+/* Adjust the padding of the main section to account for the fixed header */
 main {
-    padding: 80px 20px 20px 20px; /* Adjust the padding to account for the fixed header height */
-    text-align: center;
+    padding: 20px; /* Padding around the content */
 }
 
 /* Portfolio items styling */
