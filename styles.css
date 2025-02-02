@@ -20,7 +20,6 @@ header {
     top: 0;
     width: 100%;
     z-index: 100;
-    transition: top 0.3s ease; /* Smooth transition for header */
 }
 
 /* Fix navigation bouncing */
@@ -37,7 +36,7 @@ body {
 
 .nav-container .logo {
     margin-right: 20px;
-    transition: opacity 0.3s ease; /* Smooth logo fade */
+    /* Removed transition to prevent flashing logo */
 }
 
 .nav-container .logo img {
@@ -60,7 +59,6 @@ nav ul li a {
     color: black;
     text-decoration: none;
     font-size: 18px;
-    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -105,7 +103,7 @@ main {
     height: auto;
 }
 
-/* Contact form styling */
+/* Contact form styling (Restored to original) */
 form {
     max-width: 600px;
     margin: 20px auto;
@@ -143,4 +141,7 @@ form button:hover {
 .about-photo {
     margin-top: 20px;
     width: 100%;
-    max-width:
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
