@@ -81,7 +81,23 @@ h1 {
 
 .portfolio-item img {
     width: 100%;
+    max-width: 400px; /* Limit the max width */
     height: auto;
+    display: block; /* Ensures the image isn't affected by surrounding padding or margins */
+    margin: 0 auto; /* Center the image */
+}
+
+/* Responsive layout for portfolio items */
+@media (max-width: 768px) {
+    .portfolio-item {
+        width: 45%; /* Adjust the size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-item {
+        width: 100%; /* Stack the portfolio items vertically on very small screens */
+    }
 }
 
 /* Styling for project images page (Project 1 Page) */
