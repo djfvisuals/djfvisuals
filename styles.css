@@ -5,36 +5,37 @@
     box-sizing: border-box;
 }
 
-html, body {
+/* Ensure body has no margin or padding */
+body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Ensuring the body is still centered properly and no layout shifts */
+/* Prevents horizontal scroll */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: white;
     color: black;
     text-align: center;
-    overflow-x: hidden;
+    overflow-x: hidden; /* No horizontal scroll */
 }
 
-/* Header stays in its normal position without sticky behavior */
+/* Header with fixed height to prevent bouncing */
 header {
     background-color: transparent;
     padding: 10px 20px;
-    position: relative; /* Position relative instead of sticky */
+    position: relative;
     width: 100%;
-    z-index: 100; /* Ensure the header stays on top */
+    z-index: 100;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    height: 80px; /* Fixed height */
 }
 
-/* Navbar container to align content properly */
+/* Navbar container */
 .nav-container {
     display: flex;
     align-items: center;
@@ -67,23 +68,24 @@ nav ul li a {
     color: black;
     text-decoration: none;
     font-size: 18px;
-    transition: color 0.3s ease; /* Smooth transition for hover */
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Content below header with padding to prevent header overlap */
+/* Prevent the content from shifting */
 main {
-    padding-top: 80px; /* Padding to account for header */
+    padding-top: 80px; /* Same height as header */
 }
 
-/* Portfolio items styling */
+/* Ensure portfolio items display correctly */
 .portfolio-items {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px; /* Added gap for spacing */
 }
 
 .portfolio-item {
@@ -99,60 +101,120 @@ main {
     height: auto;
 }
 
-/* Styling for project images page */
-.project-images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-gap: 20px;
+/* Style for the footer and other elements (optional) */
+footer {
     padding: 20px;
-    margin-top: 20px;
-}
-
-.project-image img {
-    width: 100%;
-    height: auto;
-    max-width: 2000px; /* Ensure large size */
-    max-height: 2000px; /* Ensure large size */
-}
-
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-}
-
-form input, form textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form button {
-    padding: 10px 15px;
     background-color: #333;
     color: white;
-    border: none;
-    border-radius: 4px;
+    text-align: center;
+}
+/* Basic CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure body has no margin or padding */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Prevents horizontal scroll */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: white;
+    color: black;
+    text-align: center;
+    overflow-x: hidden; /* No horizontal scroll */
+}
+
+/* Header with fixed height to prevent bouncing */
+header {
+    background-color: transparent;
+    padding: 10px 20px;
+    position: relative;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px; /* Fixed height */
+}
+
+/* Navbar container */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+/* Logo styling */
+.nav-container .logo {
+    margin-right: 20px;
+}
+
+.nav-container .logo img {
+    width: 100px;
+    height: auto;
     cursor: pointer;
 }
 
-form button:hover {
-    background-color: #555;
+/* Navbar text styling */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
-#response-message {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: green;
+nav ul li {
+    display: inline-block;
 }
 
-.about-photo {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 8px;
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Prevent the content from shifting */
+main {
+    padding-top: 80px; /* Same height as header */
+}
+
+/* Ensure portfolio items display correctly */
+.portfolio-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Added gap for spacing */
+}
+
+.portfolio-item {
+    width: 30%;
+    margin: 10px;
+    background-color: white;
+    padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+}
+
+/* Style for the footer and other elements (optional) */
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
 }
