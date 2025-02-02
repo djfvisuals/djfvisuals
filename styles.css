@@ -12,23 +12,21 @@ html, body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Ensure no layout shift */
+/* Ensuring the body is still centered properly and no layout shifts */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: white;
     color: black;
     text-align: center;
+    overflow-x: hidden;
 }
 
-/* Fixed sticky header */
+/* Header stays in its normal position without sticky behavior */
 header {
     background-color: transparent;
     padding: 10px 20px;
-    position: sticky;  /* sticky instead of fixed */
-    top: 0;
-    left: 0;
-    right: 0;
+    position: relative; /* Position relative instead of sticky */
     width: 100%;
     z-index: 100; /* Ensure the header stays on top */
     display: flex;
@@ -76,9 +74,9 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Content below header */
+/* Content below header with padding to prevent header overlap */
 main {
-    padding-top: 80px; /* Padding to account for fixed header */
+    padding-top: 80px; /* Padding to account for header */
 }
 
 /* Portfolio items styling */
