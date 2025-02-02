@@ -5,34 +5,35 @@
     box-sizing: border-box;
 }
 
-/* Ensure body has no margin or padding */
-body, html {
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
-/* Prevents horizontal scroll */
+/* Prevent horizontal scroll */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: white;
     color: black;
     text-align: center;
-    overflow-x: hidden; /* No horizontal scroll */
+    transition: background-color 0.3s ease; /* Smooth page transition */
 }
 
 /* Header with fixed height to prevent bouncing */
 header {
     background-color: transparent;
     padding: 10px 20px;
-    position: relative;
+    position: fixed; /* Make sure it's fixed */
+    top: 0;
     width: 100%;
     z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px; /* Fixed height */
+    height: 80px;
+    transition: top 0.3s ease; /* Smooth transition */
 }
 
 /* Navbar container */
@@ -45,12 +46,18 @@ header {
 /* Logo styling */
 .nav-container .logo {
     margin-right: 20px;
+    transition: opacity 0.3s ease; /* Fade in transition */
 }
 
 .nav-container .logo img {
     width: 100px;
     height: auto;
     cursor: pointer;
+    transition: transform 0.3s ease; /* Added smooth transition on hover */
+}
+
+.nav-container .logo img:hover {
+    transform: scale(1.05); /* Hover effect */
 }
 
 /* Navbar text styling */
@@ -80,7 +87,7 @@ main {
     padding-top: 80px; /* Same height as header */
 }
 
-/* Ensure portfolio items display correctly */
+/* Portfolio items styling */
 .portfolio-items {
     display: flex;
     flex-wrap: wrap;
@@ -101,117 +108,7 @@ main {
     height: auto;
 }
 
-/* Style for the footer and other elements (optional) */
-footer {
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    text-align: center;
-}
-/* Basic CSS reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Ensure body has no margin or padding */
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-/* Prevents horizontal scroll */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: white;
-    color: black;
-    text-align: center;
-    overflow-x: hidden; /* No horizontal scroll */
-}
-
-/* Header with fixed height to prevent bouncing */
-header {
-    background-color: transparent;
-    padding: 10px 20px;
-    position: relative;
-    width: 100%;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px; /* Fixed height */
-}
-
-/* Navbar container */
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-}
-
-/* Logo styling */
-.nav-container .logo {
-    margin-right: 20px;
-}
-
-.nav-container .logo img {
-    width: 100px;
-    height: auto;
-    cursor: pointer;
-}
-
-/* Navbar text styling */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li {
-    display: inline-block;
-}
-
-nav ul li a {
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Prevent the content from shifting */
-main {
-    padding-top: 80px; /* Same height as header */
-}
-
-/* Ensure portfolio items display correctly */
-.portfolio-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Added gap for spacing */
-}
-
-.portfolio-item {
-    width: 30%;
-    margin: 10px;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: auto;
-}
-
-/* Style for the footer and other elements (optional) */
+/* Footer and other elements */
 footer {
     padding: 20px;
     background-color: #333;
