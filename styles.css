@@ -11,8 +11,6 @@ body {
     background-color: white;
     color: black;
     text-align: center;
-    margin-top: 0;
-    padding-top: 0;  /* Ensure there's no extra padding */
 }
 
 /* Fixed header styling */
@@ -64,12 +62,11 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Main section padding to prevent content from being hidden */
+/* Adjust the padding and margin of the body to prevent content from being covered */
 main {
     padding: 20px;
     text-align: center;
-    margin-top: 100px; /* Add enough space for the fixed header */
-    transition: margin-top 0.3s ease;  /* Smooth transition for main content */
+    margin-top: 80px; /* Ensure there's space for the fixed header */
 }
 
 /* Portfolio items styling */
