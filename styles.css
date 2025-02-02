@@ -11,18 +11,17 @@ body {
     background-color: white;
     color: black;
     text-align: center;
-    margin-top: 0; /* Remove any body margin */
 }
 
 header {
-    background-color: transparent; /* Remove the background color (no white rectangle) */
+    background-color: transparent; /* No background to avoid white rectangle */
     padding: 10px 20px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
-    z-index: 100; /* Ensure it stays on top of content */
+    z-index: 100; /* Ensure it stays on top */
     box-shadow: none; /* No shadow unless you want to add one */
 }
 
@@ -62,9 +61,9 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Adjust the padding of the main section to account for the fixed header */
+/* Add space at the top to avoid overlap with fixed header */
 main {
-    padding-top: 80px; /* Give enough space to avoid the fixed header overlap */
+    padding-top: 100px; /* Increased padding to make sure header doesn't block content */
 }
 
 h1 {
