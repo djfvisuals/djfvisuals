@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: white;
-    color: black;  /* All text will now be black */
+    color: black;
     text-align: center;
 }
 
@@ -18,11 +18,11 @@ header {
     padding: 10px 20px;
 }
 
-/* Navigation container to align items to the left */
+/* Adjust navigation container to place links next to logo */
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: flex-start;  /* Align the navigation to the left next to the logo */
+    justify-content: flex-start;  /* Align to the left */
 }
 
 .nav-container .logo {
@@ -49,7 +49,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: black;  /* All text links will be black */
+    color: black;  /* Change font color to black */
     text-decoration: none;
     font-size: 18px;
     font-weight: normal;
@@ -60,7 +60,8 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-    font-weight: bold;  /* Keep the active link bold */
+    color: #ff5733;  /* Active link color */
+    font-weight: bold;
 }
 
 main {
