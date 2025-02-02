@@ -5,17 +5,16 @@
     box-sizing: border-box;
 }
 
-/* Global Body Styling */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: white;
     color: black;
     text-align: center;
-    margin-top: 80px; /* Adjust this value to prevent content from being hidden behind fixed header */
+    margin-top: 80px; /* Adjust this value if the header size is different */
 }
 
-/* Fixed Header Styling */
+/* Fixed header styling */
 header {
     background-color: white;
     padding: 10px 20px;
@@ -23,7 +22,6 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000; /* Ensure it sits on top of everything else */
-    box-shadow: 0 4px 2px -2px gray; /* Optional: adds a shadow to distinguish the header */
 }
 
 /* Navigation container and links */
@@ -63,11 +61,11 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Main content section padding */
+/* Main section padding to prevent content from being hidden */
 main {
     padding: 20px;
     text-align: center;
-    margin-top: 100px; /* Add top margin to prevent overlap with fixed header */
+    margin-top: 100px; /* Ensure enough space for header */
 }
 
 /* Portfolio items styling */
@@ -82,9 +80,9 @@ main {
     margin: 10px;
     background-color: white;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Remove shadow from portfolio item */
 .portfolio-item img {
     width: 100%;
     height: auto;
@@ -111,8 +109,7 @@ form {
     flex-direction: column;
 }
 
-form input,
-form textarea {
+form input, form textarea {
     margin-bottom: 10px;
     padding: 10px;
     font-size: 16px;
@@ -139,7 +136,7 @@ form button:hover {
     color: green;
 }
 
-/* About Me photo styling */
+/* About section photo styling */
 .about-photo {
     margin-top: 20px;
     width: 100%;
