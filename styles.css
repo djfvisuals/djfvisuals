@@ -18,10 +18,11 @@ header {
     padding: 10px 20px;
 }
 
+/* Adjust navigation container to place links next to logo */
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;  /* Align to the left */
 }
 
 .nav-container .logo {
@@ -34,10 +35,13 @@ header {
     cursor: pointer;
 }
 
+/* Style for the nav links */
 nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -45,9 +49,10 @@ nav ul li {
 }
 
 nav ul li a {
-    color: black;
+    color: black;  /* Change font color to black */
     text-decoration: none;
     font-size: 18px;
+    font-weight: normal;
 }
 
 nav ul li a:hover {
@@ -55,7 +60,7 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-    color: #ff5733; /* Active link color */
+    color: #ff5733;  /* Active link color */
     font-weight: bold;
 }
 
@@ -86,14 +91,14 @@ h1 {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* To contain image */
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio-item img {
     width: 100%;
     height: auto;
-    border-bottom: 2px solid #ddd; /* Adds a border below the image */
+    border-bottom: 2px solid #ddd;
 }
 
 .portfolio-item p {
@@ -102,79 +107,21 @@ h1 {
     font-size: 1em;
 }
 
-/* Hover effect for portfolio items */
 .portfolio-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Styling for project images page */
-.project-images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    padding: 20px;
-}
-
-.project-image img {
-    width: 100%;
-    height: auto;
-    max-width: 2000px; /* Ensure large size */
-    max-height: 2000px; /* Ensure large size */
-}
-
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-}
-
-form input, form textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form button {
-    padding: 10px 15px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #555;
-}
-
-#response-message {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: green;
-}
-
-.about-photo {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Media Queries for responsiveness */
+/* Responsive Design */
 @media (max-width: 768px) {
     .portfolio-item {
-        width: 45%;  /* 2 items per row on tablets */
+        width: 45%;
     }
 }
 
 @media (max-width: 480px) {
     .portfolio-item {
-        width: 100%;  /* 1 item per row on mobile */
+        width: 100%;
     }
     nav ul {
         flex-direction: column;
