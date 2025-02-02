@@ -11,14 +11,8 @@ body {
     background-color: white;
     color: black;
     text-align: center;
-    min-height: 100vh; /* Ensure the body always takes at least the full height of the viewport */
 }
 
-html {
-    scroll-behavior: smooth; /* Enable smooth scrolling */
-}
-
-/* Header and Navigation */
 header {
     background-color: white;
     padding: 10px 20px;
@@ -64,9 +58,9 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Adjust padding-top to compensate for fixed navbar */
+/* Fix for the bouncing navigation by adding padding to the main content */
 main {
-    padding: 80px 20px 20px 20px; /* Adjust top padding based on navbar height */
+    padding: 80px 20px 20px 20px; /* Adjust the padding to account for the fixed header height */
     text-align: center;
 }
 
@@ -75,7 +69,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
 }
 
 .portfolio-item {
@@ -89,14 +82,14 @@ main {
 .portfolio-item img {
     width: 100%;
     height: auto;
-    display: block;  /* Ensure images are treated as block-level elements */
-    max-width: 100%;  /* Ensure images are responsive */
+    display: block;
+    max-width: 100%; /* Ensure the images are responsive */
 }
 
 /* Styling for project images page */
 .project-images {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
     padding: 20px;
     margin-top: 20px;
@@ -105,8 +98,8 @@ main {
 .project-image img {
     width: 100%;
     height: auto;
-    max-width: 2000px; /* Ensure large size */
-    max-height: 2000px; /* Ensure large size */
+    max-width: 2000px;
+    max-height: 2000px;
 }
 
 form {
