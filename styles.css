@@ -11,7 +11,8 @@ body {
     background-color: white;
     color: black;
     text-align: center;
-    margin-top: 0; /* Don't add top margin here */
+    padding-top: 80px; /* Adjust this top padding to the header height */
+    /* Ensure the body content starts below the header */
 }
 
 /* Fixed header styling */
@@ -23,7 +24,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000; /* Ensure it sits on top of everything else */
-    box-shadow: none; /* Removed the shadow */
+    box-shadow: none; /* No shadow */
 }
 
 /* Navigation container and links */
@@ -63,15 +64,12 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Main content section */
+/* Main content section (add padding to push content below the header) */
 main {
     padding: 20px;
     text-align: center;
-    margin-top: 120px; /* Add sufficient margin to push content below the fixed header */
-    min-height: calc(100vh - 120px); /* Ensure the main section is at least full screen height minus the header height */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    margin-top: 80px; /* Enough space for fixed header */
+    min-height: calc(100vh - 80px); /* Ensures enough height when the header is fixed */
 }
 
 /* Portfolio items styling */
