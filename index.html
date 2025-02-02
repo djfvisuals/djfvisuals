@@ -1,146 +1,46 @@
-/* Basic CSS reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - DJF Graphix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/DJF_GRAPHIX_LOGO2.png" alt="DJF Graphix Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Portfolio</a></li>
+                    <li><a href="aboutme.html">About Me</a></li>
+                    <li><a href="contact-me.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: white;
-    color: black;
-    text-align: center;
-    margin-top: 80px; /* Adjust this value if the header size is different */
-}
-
-/* Fixed header styling */
-header {
-    background-color: white;
-    padding: 10px 20px;
-    position: fixed; /* Fixed position at the top */
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Ensure it sits on top of everything else */
-    box-shadow: 0 4px 2px -2px gray; /* Optional: adds a shadow to distinguish the header */
-}
-
-/* Navigation container and links */
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-}
-
-.nav-container .logo {
-    margin-right: 20px;
-}
-
-.nav-container .logo img {
-    width: 100px;
-    height: auto;
-    cursor: pointer;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li {
-    display: inline-block;
-}
-
-nav ul li a {
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Main section padding to prevent content from being hidden */
-main {
-    padding: 20px;
-    text-align: center;
-    margin-top: 100px; /* Ensure enough space for header */
-}
-
-/* Portfolio items styling */
-.portfolio-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.portfolio-item {
-    width: 30%;
-    margin: 10px;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: auto;
-}
-
-/* Project image grid styling */
-.project-images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-gap: 20px;
-    padding: 20px;
-}
-
-.project-image img {
-    width: 100%;
-    height: auto;
-}
-
-/* Contact form styling (Restored to original) */
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-}
-
-form input, form textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form button {
-    padding: 10px 15px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #555;
-}
-
-#response-message {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: green;
-}
-
-.about-photo {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    <main>
+        <section>
+            <h1>Portfolio</h1>
+            <p>Explore some of my best graphic design works.</p>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <a href="project1.html">
+                        <img src="images/Valuetainment_logo.png" alt="Portfolio Item 1">
+                    </a>
+                </div>
+                <div class="portfolio-item">
+                    <a href="project2.html">
+                        <img src="images/portfolio-image2.jpg" alt="Portfolio Item 2">
+                    </a>
+                    <p>Description of project 2</p>
+                </div>
+                <!-- Add more portfolio items with clickable links for each project -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>
