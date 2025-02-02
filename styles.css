@@ -6,7 +6,7 @@
 }
 
 html, body {
-    height: 100%; /* Prevent any scrolling issue */
+    height: 100%;
     padding: 0;
     margin: 0;
 }
@@ -21,15 +21,18 @@ body {
 }
 
 header {
-    background-color: transparent; /* No background to avoid white rectangle */
+    background-color: transparent;
     padding: 10px 20px;
-    position: fixed;
+    position: fixed; /* Make the header fixed to the top */
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
     z-index: 100; /* Ensure it stays on top */
-    box-shadow: none; /* No shadow unless you want to add one */
+    box-shadow: none; /* Remove box shadow unless needed */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .nav-container {
@@ -68,9 +71,9 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Add space at the top to avoid overlap with fixed header */
+/* Add padding at the top of the body to prevent overlap */
 main {
-    padding-top: 100px; /* Increased padding to make sure header doesn't block content */
+    padding-top: 100px; /* Adjust this value to the height of your header */
 }
 
 h1 {
