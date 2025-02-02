@@ -82,7 +82,7 @@ h1 {
 
 .portfolio-item img {
     width: 100%;
-    max-width: 400px; /* Limit the max width */
+    max-width: 600px; /* Limit the max width */
     height: auto;
     display: block; /* Ensures the image isn't affected by surrounding padding or margins */
     margin: 0 auto; /* Center the image */
