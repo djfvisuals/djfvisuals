@@ -22,7 +22,6 @@ header {
     width: 100%;
     z-index: 1000; /* Ensure it sits on top of everything else */
     box-shadow: none; /* Remove shadow */
-    transition: top 0.3s ease;  /* Smooth transition for header */
 }
 
 /* Navigation container and links */
@@ -62,11 +61,11 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Adjust the padding and margin of the body to prevent content from being covered */
+/* Main section padding to prevent content from being hidden */
 main {
     padding: 20px;
     text-align: center;
-    margin-top: 80px; /* Ensure there's space for the fixed header */
+    margin-top: 100px; /* This fixes the "bouncing" issue */
 }
 
 /* Portfolio items styling */
@@ -81,9 +80,9 @@ main {
     margin: 10px;
     background-color: white;
     padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Portfolio item images */
 .portfolio-item img {
     width: 100%;
     height: auto;
