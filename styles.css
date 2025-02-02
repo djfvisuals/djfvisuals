@@ -11,19 +11,19 @@ body {
     background-color: white;
     color: black;
     text-align: center;
-    padding-top: 80px; /* Add padding to ensure content is visible below the fixed header */
+    margin-top: 0; /* Remove any body margin */
 }
 
 header {
-    background-color: white;
+    background-color: transparent; /* Remove the background color (no white rectangle) */
     padding: 10px 20px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
-    z-index: 100;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+    z-index: 100; /* Ensure it stays on top of content */
+    box-shadow: none; /* No shadow unless you want to add one */
 }
 
 .nav-container {
@@ -64,8 +64,12 @@ nav ul li a:hover {
 
 /* Adjust the padding of the main section to account for the fixed header */
 main {
-    padding: 20px; /* Padding around the content */
-    margin-top: 20px; /* Ensure there's space between content and header */
+    padding-top: 80px; /* Give enough space to avoid the fixed header overlap */
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
 /* Portfolio items styling */
@@ -86,14 +90,12 @@ main {
 .portfolio-item img {
     width: 100%;
     height: auto;
-    display: block;
-    max-width: 100%; /* Ensure the images are responsive */
 }
 
 /* Styling for project images page */
 .project-images {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
     grid-gap: 20px;
     padding: 20px;
     margin-top: 20px;
@@ -102,8 +104,8 @@ main {
 .project-image img {
     width: 100%;
     height: auto;
-    max-width: 2000px;
-    max-height: 2000px;
+    max-width: 2000px; /* Ensure large size */
+    max-height: 2000px; /* Ensure large size */
 }
 
 form {
