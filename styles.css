@@ -181,7 +181,7 @@ p {
     }
 
     form button {
-        padding: 10px; /* Adjust button padding */
+        padding: 10px; /* Adjust button padding for mobile */
     }
 
     /* Portfolio items smaller */
@@ -215,4 +215,40 @@ p {
 .about-me-paragraph {
     letter-spacing: normal; /* Resets any unwanted letter-spacing */
     word-spacing: normal;  /* Ensures words have consistent spacing */
+}
+
+/* Contact Form Styling (Restored to original) */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+#response-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: black;
 }
