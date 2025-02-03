@@ -5,8 +5,12 @@
     box-sizing: border-box;
 }
 
+/* Import Roboto Slab font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+/* Set the entire project font to Roboto Slab */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto Slab', serif; /* Apply Roboto Slab globally */
     line-height: 1.6;
     background-color: white;
     color: black;
@@ -71,13 +75,13 @@ main {
 
 /* Styling for paragraphs in 'About Me' section */
 section p {
-    width: 80%; /* Limit width to 80% of the parent container */
+    width: 50%; /* Make the paragraph narrow (adjust width as necessary) */
     margin: 20px auto; /* Center and add margin around the paragraph */
     font-size: 18px; /* Adjust font size */
     line-height: 1.8; /* Adjust line spacing for readability */
     text-align: left; /* Align text to the left for better readability */
     color: #333; /* Darker text color for better contrast */
-    font-family: 'Arial', sans-serif; /* Optional: Set font to Arial */
+    font-family: 'Roboto Slab', serif; /* Ensure the Roboto Slab font is applied */
 }
 
 /* About Me photo styling */
