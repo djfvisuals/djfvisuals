@@ -14,6 +14,7 @@ body {
     text-align: center;
     margin-top: 80px; /* Adjust this value if the header size is different */
     transition: background-color 0.5s ease; /* Transition effect for the background */
+    min-height: 100vh; /* Ensure the page takes at least the full height of the screen */
 }
 
 /* Fixed Header Styling */
@@ -268,19 +269,16 @@ form button:hover {
 
 /* Footer Styling */
 footer {
-    position: fixed;  /* Fix the footer at the bottom */
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    position: relative;  /* Change from fixed to relative */
     background-color: white;
     color: black;
     padding: 10px 0;
     text-align: center;
     font-size: 14px;
+    margin-top: 50px; /* Ensure the footer is pushed to the bottom */
     box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
 }
 
 footer p {
     margin: 0;
 }
-
