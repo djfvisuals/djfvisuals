@@ -75,10 +75,10 @@ main {
 
 /* Styling for paragraphs in 'About Me' section */
 section p {
-    width: 50%; /* Make the paragraph narrow (adjust width as necessary) */
+    width: 40%; /* Make the paragraph narrower */
     margin: 20px auto; /* Center and add margin around the paragraph */
     font-size: 18px; /* Adjust font size */
-    line-height: 1.8; /* Adjust line spacing for readability */
+    line-height: 2; /* Increase line height to make the paragraph longer */
     text-align: left; /* Align text to the left for better readability */
     color: #333; /* Darker text color for better contrast */
     font-family: 'Roboto Slab', serif; /* Ensure the Roboto Slab font is applied */
