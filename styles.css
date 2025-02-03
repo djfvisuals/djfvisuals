@@ -13,10 +13,6 @@ body {
     color: black;
     text-align: center;
     margin-top: 80px; /* Adjust this value if the header size is different */
-    transition: background-color 0.5s ease; /* Transition for background color change */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 /* Fixed Header Styling */
@@ -57,18 +53,15 @@ nav ul li {
     display: inline-block;
 }
 
-/* Navigation links */
 nav ul li a {
     color: black;
     text-decoration: none;
-    font-family: 'Roboto Slab', serif; /* Use Roboto Slab for navigation links */
     font-size: 18px;
-    position: relative;
+    font-family: 'Roboto Slab', serif; /* Update the font to Robo Slob */
 }
 
-/* Add transition effect when navigating */
-nav ul li a:focus {
-    outline: none;
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
 /* Main Section Padding to Prevent Content from Being Hidden */
@@ -76,7 +69,6 @@ main {
     padding: 20px;
     text-align: center;
     margin-top: 100px; /* Ensure enough space for header */
-    flex: 1;
 }
 
 /* Portfolio Items Styling */
@@ -99,6 +91,19 @@ main {
     height: auto;  /* Maintain aspect ratio */
 }
 
+/* Project Image Grid Styling */
+.project-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.project-image img {
+    width: 100%;   /* Ensure images fit within the grid */
+    height: auto;  /* Maintain aspect ratio */
+}
+
 /* About Me Page Styles */
 .about-me-container {
     width: 60%; /* Makes the paragraph container narrower */
@@ -107,10 +112,9 @@ main {
     font-family: 'Roboto Slab', serif;
     line-height: 1.8; /* Increases line height for readability */
     text-align: justify; /* Justify text to align evenly */
-    letter-spacing: normal; /* Ensures there’s no strange letter spacing */
 }
 
-/* Fixing Letter Spacing on "About Me" */
+/* Adjust About Me Paragraph Style */
 .about-me-paragraph {
     margin-bottom: 50px; /* Adds space between paragraphs */
     text-align: justify; /* Ensures the text is aligned evenly */
@@ -131,23 +135,6 @@ main {
 /* Optional: General Paragraph styling for spacing between sections */
 p {
     margin-bottom: 20px; /* Adds space between paragraphs globally */
-}
-
-/* Add Footer for Copyright Notice */
-footer {
-    padding: 20px 0;
-    color: black;
-    font-family: 'Roboto Slab', serif; /* Footer text uses Roboto Slab */
-    text-align: center;
-    font-size: 14px;
-    width: 100%;
-    position: absolute;
-    bottom: 0; /* Ensures it stays at the bottom */
-}
-
-/* Add transition effect on navigation click */
-body.transitioning {
-    background-color: white; /* Flash white background */
 }
 
 /* Mobile View Adjustments */
@@ -195,7 +182,7 @@ body.transitioning {
     }
 
     form button {
-        padding: 10px; /* Adjust button padding for mobile */
+        padding: 10px; /* Adjust button padding */
     }
 
     /* Portfolio items smaller */
@@ -216,4 +203,36 @@ body.transitioning {
         width: 100%; /* Make images fill the width */
         height: auto; /* Maintain aspect ratio */
     }
+}
+
+/* Fixing Image Scaling for Mobile Devices */
+.portfolio-item img,
+.project-image img {
+    width: 100%;  /* Ensure images are responsive on smaller screens */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Ensure there is no unnecessary space between words in 'About Me' text */
+.about-me-paragraph {
+    letter-spacing: normal; /* Resets any unwanted letter-spacing */
+    word-spacing: normal;  /* Ensures words have consistent spacing */
+}
+
+/* Footer Styling (Fixed at the Bottom) */
+footer {
+    position: fixed; /* Fix the footer at the bottom */
+    bottom: 0;
+    width: 100%; /* Full width of the page */
+    text-align: center; /* Center the text */
+    background-color: white; /* White background for the footer */
+    padding: 10px 0; /* Padding for spacing */
+    color: black; /* Black text color */
+    font-family: 'Roboto Slab', serif; /* Font for the footer text */
+    font-size: 14px; /* Set a smaller font size */
+    border-top: 1px solid #ccc; /* Optional: thin line on top of the footer */
+}
+
+/* Ensure footer text is clearly visible and centered */
+footer p {
+    margin: 0;
 }
