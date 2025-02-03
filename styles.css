@@ -5,24 +5,25 @@
     box-sizing: border-box;
 }
 
-/* General body styles */
+/* Global Body Styling */
 body {
-    font-family: 'Roboto Slab', serif; /* Applies Roboto Slab font to the entire project */
+    font-family: 'Roboto Slab', serif;
     line-height: 1.6;
     background-color: white;
     color: black;
     text-align: center;
+    margin-top: 80px; /* Adjust this value if the header size is different */
 }
 
-/* Fixed header styling */
+/* Fixed Header Styling */
 header {
     background-color: white;
     padding: 10px 20px;
-    position: fixed;
+    position: fixed; /* Fixed position at the top */
     top: 0;
     width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 2px -2px gray;
+    z-index: 1000; /* Ensure it sits on top of everything else */
+    box-shadow: 0 4px 2px -2px gray; /* Optional: adds a shadow to distinguish the header */
 }
 
 /* Navigation container and links */
@@ -62,14 +63,14 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Main section padding to prevent content from being hidden */
+/* Main Section Padding to Prevent Content from Being Hidden */
 main {
     padding: 20px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 100px; /* Ensure enough space for header */
 }
 
-/* Portfolio items styling */
+/* Portfolio Items Styling */
 .portfolio-items {
     display: flex;
     flex-wrap: wrap;
@@ -89,10 +90,10 @@ main {
     height: auto;
 }
 
-/* Project image grid styling */
+/* Project Image Grid Styling */
 .project-images {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
     grid-gap: 20px;
     padding: 20px;
 }
@@ -102,7 +103,7 @@ main {
     height: auto;
 }
 
-/* Contact form styling (Restored to original) */
+/* Contact Form Styling (Restored to original) */
 form {
     max-width: 600px;
     margin: 20px auto;
@@ -138,15 +139,7 @@ form button:hover {
     color: green;
 }
 
-.about-photo {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* About Me page specific styles */
+/* About Me Page Styles */
 .about-me-container {
     width: 60%; /* Makes the paragraph container narrower */
     margin: 0 auto; /* Centers the container */
@@ -158,22 +151,27 @@ form button:hover {
 
 .about-me-paragraph {
     margin-bottom: 50px; /* Adds space between paragraphs */
-}
-
-/* Fix alignment issue for "David" */
-.about-me-container p {
     text-align: justify; /* Ensures the text is aligned evenly */
-    margin: 0 auto; /* Ensures the paragraph is centered */
     padding-left: 10px; /* Adds slight padding to push text slightly right */
     padding-right: 10px; /* Adds slight padding to the right for symmetry */
+    letter-spacing: normal; /* Resets any unwanted letter spacing */
 }
 
-/* Optional: Other global styling like links, headings, etc. */
-a {
-    color: black;
-    text-decoration: none;
+/* Optional: You can also tweak line-height to make text more compact or relaxed */
+.about-me-paragraph {
+    line-height: 1.6; /* Controls the space between lines within a paragraph */
 }
 
-a:hover {
-    text-decoration: underline;
+/* About Me Page Paragraph Specific Fix */
+.about-me-paragraph:nth-child(1) {
+    margin-top: 0;
+}
+
+.about-me-paragraph:nth-child(2) {
+    margin-top: 40px; /* Adds extra space between two paragraphs if needed */
+}
+
+/* Optional: General Paragraph styling for spacing between sections */
+p {
+    margin-bottom: 20px; /* Adds space between paragraphs globally */
 }
