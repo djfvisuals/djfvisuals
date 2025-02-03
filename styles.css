@@ -103,6 +103,30 @@ main {
     font-family: 'Roboto Slab', serif;
     line-height: 1.8; /* Increases line height for readability */
     text-align: justify; /* Justify text to align evenly */
+    letter-spacing: normal; /* Ensures there’s no strange letter spacing */
+}
+
+/* Fixing Letter Spacing on "About Me" */
+.about-me-paragraph {
+    margin-bottom: 50px; /* Adds space between paragraphs */
+    text-align: justify; /* Ensures the text is aligned evenly */
+    padding-left: 10px; /* Adds slight padding to push text slightly right */
+    padding-right: 10px; /* Adds slight padding to the right for symmetry */
+    letter-spacing: normal; /* Resets any unwanted letter spacing */
+}
+
+/* About Me Page Paragraph Specific Fix */
+.about-me-paragraph:nth-child(1) {
+    margin-top: 0;
+}
+
+.about-me-paragraph:nth-child(2) {
+    margin-top: 40px; /* Adds extra space between two paragraphs if needed */
+}
+
+/* Optional: General Paragraph styling for spacing between sections */
+p {
+    margin-bottom: 20px; /* Adds space between paragraphs globally */
 }
 
 /* Add Footer for Copyright Notice */
