@@ -5,21 +5,21 @@
     box-sizing: border-box;
 }
 
-/* Body styling */
+/* General body styles */
 body {
-    font-family: 'Roboto Slab', serif; /* Sets the font family for the entire page */
+    font-family: 'Roboto Slab', serif; /* Applies Roboto Slab font to the entire project */
     line-height: 1.6;
     background-color: white;
     color: black;
     text-align: center;
-    margin-top: 80px; /* Adjust this value if the header size is different */
 }
 
 /* Fixed header styling */
 header {
     background-color: white;
     padding: 10px 20px;
-    position: fixed; /* Fixed position at the top */
+    position: fixed;
+    /* Fixed position at the top */
     top: 0;
     width: 100%;
     z-index: 1000; /* Ensure it sits on top of everything else */
@@ -103,7 +103,7 @@ main {
     height: auto;
 }
 
-/* Contact form styling */
+/* Contact form styling (Restored to original) */
 form {
     max-width: 600px;
     margin: 20px auto;
@@ -139,6 +139,14 @@ form button:hover {
     color: green;
 }
 
+.about-photo {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 /* About Me page specific styles */
 .about-me-container {
     width: 60%; /* Makes the paragraph container narrower */
@@ -146,17 +154,24 @@ form button:hover {
     padding: 20px; /* Adds padding inside the container */
     font-family: 'Roboto Slab', serif; /* Applies Roboto Slab font */
     line-height: 1.8; /* Adds spacing within lines for readability */
+    text-align: justify; /* Aligns the text evenly on both sides */
 }
 
 .about-me-paragraph {
     margin-bottom: 40px; /* Adds extra space below the paragraph */
 }
 
-/* About photo styling */
-.about-photo {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Styling for About Me page text alignment */
+.about-me-paragraph {
+    margin-bottom: 40px; /* Adds extra space below the paragraph */
+}
+
+/* Optional: Other global styling like links, headings, etc. */
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
