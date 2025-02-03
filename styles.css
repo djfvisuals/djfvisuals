@@ -23,7 +23,9 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000; /* Ensure it sits on top of everything else */
-    box-shadow: 0 4px 2px -2px gray; /* Optional: adds a shadow to distinguish the header */
+    /* Removed box-shadow */
+    box-shadow: none; /* No shadow anymore */
+    /* Removed any background color or white rectangles */
 }
 
 /* Navigation container and links */
@@ -65,7 +67,7 @@ nav ul li a:hover {
 
 /* Main Section Padding to Prevent Content from Being Hidden */
 main {
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     margin-top: 100px; /* Ensure enough space for header */
 }
@@ -150,7 +152,7 @@ form button:hover {
 }
 
 .about-me-paragraph {
-    margin-bottom: 25px; /* Adds space between paragraphs */
+    margin-bottom: 50px; /* Adds space between paragraphs */
     text-align: justify; /* Ensures the text is aligned evenly */
     padding-left: 10px; /* Adds slight padding to push text slightly right */
     padding-right: 10px; /* Adds slight padding to the right for symmetry */
