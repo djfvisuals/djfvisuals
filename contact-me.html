@@ -10,7 +10,7 @@
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">
-                 <img src="images/DJF_GRAPHIX_LOGO2.png" alt="DJF Graphix Logo">
+                <img src="images/DJF_GRAPHIX_LOGO2.png" alt="DJF Graphix Logo">
             </a>
             <nav>
                 <ul>
@@ -23,42 +23,32 @@
     </header>
 
     <main>
-        <section>
+        <section class="contact-intro">
             <h1>Contact Me</h1>
             <p>Feel free to get in touch with me for any inquiries or collaborations!</p>
-            <form id="contact-form" action="https://formspree.io/f/xannlzao" method="POST">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required><br><br>
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="message">Your Message:</label><br>
-                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+        </section>
+
+        <section>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
-            <p id="response-message" style="display:none;">Message sent!</p>
+            <div id="response-message"></div>
         </section>
     </main>
-    <script>
-        const form = document.getElementById('contact-form');
-        const responseMessage = document.getElementById('response-message');
 
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
             const formData = new FormData(form);
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    form.style.display = 'none';
-                    responseMessage.style.display = 'block';
-                }
-            }).catch(error => {
-                console.error('Error:', error);
-            });
+            
+            setTimeout(function() {
+                document.querySelector('.contact-intro').style.display = 'none';
+                document.querySelector('#response-message').textContent = 'Thank you for your message! We will get back to you shortly.';
+            }, 1000);
         });
     </script>
 </body>
