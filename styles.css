@@ -14,6 +14,9 @@ body {
     text-align: center;
     margin-top: 80px; /* Adjust this value if the header size is different */
     transition: background-color 0.5s ease; /* Transition for background color change */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Fixed Header Styling */
@@ -73,6 +76,7 @@ main {
     padding: 20px;
     text-align: center;
     margin-top: 100px; /* Ensure enough space for header */
+    flex: 1;
 }
 
 /* Portfolio Items Styling */
@@ -132,16 +136,13 @@ p {
 /* Add Footer for Copyright Notice */
 footer {
     padding: 20px 0;
-    background-color: #333;
-    color: white;
+    color: black;
     font-family: 'Roboto Slab', serif; /* Footer text uses Roboto Slab */
     text-align: center;
     font-size: 14px;
-}
-
-footer p {
-    margin: 0;
-    line-height: 1.5;
+    width: 100%;
+    position: absolute;
+    bottom: 0; /* Ensures it stays at the bottom */
 }
 
 /* Add transition effect on navigation click */
