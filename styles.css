@@ -13,6 +13,7 @@ body {
     color: black;
     text-align: center;
     margin-top: 80px; /* Adjust this value if the header size is different */
+    transition: background-color 0.5s ease; /* Transition effect for the background */
 }
 
 /* Fixed Header Styling */
@@ -51,17 +52,28 @@ nav ul {
 
 nav ul li {
     display: inline-block;
+    position: relative;
 }
 
 nav ul li a {
     color: black;
     text-decoration: none;
     font-size: 18px;
-    font-family: 'Roboto Slab', serif; /* Update the font to Robo Slob */
+    font-family: 'Roboto Slab', serif; /* Ensure it's Roboto Slab */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform effect */
 }
 
 nav ul li a:hover {
     text-decoration: underline;
+    color: #555;
+    transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+/* Add the white transition effect when clicked on navigation links */
+nav ul li a:active {
+    background-color: white;  /* White background on click */
+    color: black;             /* Keep the text black */
+    transition: background-color 0.5s ease; /* Transition to white background */
 }
 
 /* Main Section Padding to Prevent Content from Being Hidden */
@@ -182,7 +194,7 @@ p {
     }
 
     form button {
-        padding: 10px; /* Adjust button padding */
+        padding: 10px; /* Adjust button padding for mobile */
     }
 
     /* Portfolio items smaller */
@@ -218,21 +230,57 @@ p {
     word-spacing: normal;  /* Ensures words have consistent spacing */
 }
 
-/* Footer Styling (Fixed at the Bottom) */
-footer {
-    position: fixed; /* Fix the footer at the bottom */
-    bottom: 0;
-    width: 100%; /* Full width of the page */
-    text-align: center; /* Center the text */
-    background-color: white; /* White background for the footer */
-    padding: 10px 0; /* Padding for spacing */
-    color: black; /* Black text color */
-    font-family: 'Roboto Slab', serif; /* Font for the footer text */
-    font-size: 14px; /* Set a smaller font size */
-    border-top: 1px solid #ccc; /* Optional: thin line on top of the footer */
+/* Contact Form Styling (Restored to original) */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Ensure footer text is clearly visible and centered */
+form input,
+form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+#response-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: black;
+}
+
+/* Footer Styling */
+footer {
+    position: fixed;  /* Fix the footer at the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
 footer p {
     margin: 0;
 }
+
