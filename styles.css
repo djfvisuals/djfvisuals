@@ -19,11 +19,10 @@ header {
     background-color: white;
     padding: 10px 20px;
     position: fixed;
-    /* Fixed position at the top */
     top: 0;
     width: 100%;
-    z-index: 1000; /* Ensure it sits on top of everything else */
-    box-shadow: 0 4px 2px -2px gray; /* Optional: adds a shadow to distinguish the header */
+    z-index: 1000;
+    box-shadow: 0 4px 2px -2px gray;
 }
 
 /* Navigation container and links */
@@ -67,7 +66,7 @@ nav ul li a:hover {
 main {
     padding: 20px;
     text-align: center;
-    margin-top: 100px; /* Ensure enough space for header */
+    margin-top: 100px;
 }
 
 /* Portfolio items styling */
@@ -93,7 +92,7 @@ main {
 /* Project image grid styling */
 .project-images {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
     padding: 20px;
 }
@@ -150,20 +149,23 @@ form button:hover {
 /* About Me page specific styles */
 .about-me-container {
     width: 60%; /* Makes the paragraph container narrower */
-    margin: 0 auto; /* Centers the container on the page */
-    padding: 20px; /* Adds padding inside the container */
-    font-family: 'Roboto Slab', serif; /* Applies Roboto Slab font */
-    line-height: 1.8; /* Adds spacing within lines for readability */
-    text-align: justify; /* Aligns the text evenly on both sides */
+    margin: 0 auto; /* Centers the container */
+    padding: 20px; /* Adds padding inside */
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.8; /* Increases line height for readability */
+    text-align: justify; /* Justify text to align evenly */
 }
 
 .about-me-paragraph {
-    margin-bottom: 40px; /* Adds extra space below the paragraph */
+    margin-bottom: 40px; /* Adds space between paragraphs */
 }
 
-/* Styling for About Me page text alignment */
-.about-me-paragraph {
-    margin-bottom: 40px; /* Adds extra space below the paragraph */
+/* Fix alignment issue for "David" */
+.about-me-container p {
+    text-align: justify; /* Ensures the text is aligned evenly */
+    margin: 0 auto; /* Ensures the paragraph is centered */
+    padding-left: 10px; /* Adds slight padding to push text slightly right */
+    padding-right: 10px; /* Adds slight padding to the right for symmetry */
 }
 
 /* Optional: Other global styling like links, headings, etc. */
