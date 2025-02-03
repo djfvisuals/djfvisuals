@@ -151,17 +151,13 @@ form button:hover {
     text-align: justify; /* Justify text to align evenly */
 }
 
+/* Adjust About Me Paragraph Style */
 .about-me-paragraph {
     margin-bottom: 50px; /* Adds space between paragraphs */
     text-align: justify; /* Ensures the text is aligned evenly */
     padding-left: 10px; /* Adds slight padding to push text slightly right */
     padding-right: 10px; /* Adds slight padding to the right for symmetry */
     letter-spacing: normal; /* Resets any unwanted letter spacing */
-}
-
-/* Optional: You can also tweak line-height to make text more compact or relaxed */
-.about-me-paragraph {
-    line-height: 1.6; /* Controls the space between lines within a paragraph */
 }
 
 /* About Me Page Paragraph Specific Fix */
@@ -176,4 +172,62 @@ form button:hover {
 /* Optional: General Paragraph styling for spacing between sections */
 p {
     margin-bottom: 20px; /* Adds space between paragraphs globally */
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    /* Adjust header padding for smaller screens */
+    header {
+        padding: 10px 10px;
+    }
+
+    /* Adjust logo size for mobile */
+    .nav-container .logo img {
+        width: 80px;
+    }
+
+    /* Make Portfolio items take more space on smaller screens */
+    .portfolio-item {
+        width: 45%; /* More flexible for smaller screens */
+    }
+
+    /* Adjust font size for mobile */
+    nav ul li a {
+        font-size: 16px; /* Smaller font on mobile */
+    }
+
+    /* Make About Me section a bit more responsive */
+    .about-me-container {
+        width: 80%; /* Makes the paragraph container even narrower on mobile */
+    }
+
+    /* Adjust the text and paragraph spacing */
+    .about-me-paragraph {
+        margin-bottom: 30px; /* Less space between paragraphs */
+        padding-left: 10px; /* Ensure text alignment is consistent */
+        padding-right: 10px; /* Ensure symmetry */
+    }
+
+    /* Contact Form Adjustments */
+    form {
+        width: 90%; /* Make form inputs take more space on smaller screens */
+    }
+
+    form input,
+    form textarea {
+        font-size: 14px; /* Smaller input and textarea fonts */
+    }
+
+    form button {
+        padding: 10px; /* Adjust button padding */
+    }
+
+    /* Portfolio items smaller */
+    .portfolio-item {
+        width: 90%;
+    }
+
+    .portfolio-items {
+        display: block; /* Stack portfolio items vertically on mobile */
+    }
 }
