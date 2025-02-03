@@ -5,8 +5,9 @@
     box-sizing: border-box;
 }
 
+/* Body styling */
 body {
-    font-family: 'Roboto Slab', serif; /* Set to Roboto Slab */
+    font-family: 'Roboto Slab', serif; /* Sets the font family for the entire page */
     line-height: 1.6;
     background-color: white;
     color: black;
@@ -33,7 +34,7 @@ header {
 }
 
 .nav-container .logo {
-    margin-right: 30px;
+    margin-right: 20px;
 }
 
 .nav-container .logo img {
@@ -102,15 +103,7 @@ main {
     height: auto;
 }
 
-/* About Me page paragraph adjustments */
-.about-me-paragraph {
-    width: 60%; /* Adjust the width to make it narrower */
-    margin: 0 auto; /* Center the paragraph */
-    font-size: 1.1em; /* Change font size */
-    line-height: 1.8; /* Increase line height for better readability */
-}
-
-/* Contact form styling (Restored to original) */
+/* Contact form styling */
 form {
     max-width: 600px;
     margin: 20px auto;
@@ -146,7 +139,20 @@ form button:hover {
     color: green;
 }
 
-/* About Me photo styling */
+/* About Me page specific styles */
+.about-me-container {
+    width: 60%; /* Makes the paragraph container narrower */
+    margin: 0 auto; /* Centers the container on the page */
+    padding: 20px; /* Adds padding inside the container */
+    font-family: 'Roboto Slab', serif; /* Applies Roboto Slab font */
+    line-height: 1.8; /* Adds spacing within lines for readability */
+}
+
+.about-me-paragraph {
+    margin-bottom: 40px; /* Adds extra space below the paragraph */
+}
+
+/* About photo styling */
 .about-photo {
     margin-top: 20px;
     width: 100%;
