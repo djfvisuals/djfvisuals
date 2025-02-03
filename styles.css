@@ -150,7 +150,7 @@ form button:hover {
 }
 
 .about-me-paragraph {
-    margin-bottom: 35px; /* Adds space between paragraphs */
+    margin-bottom: 25px; /* Adds space between paragraphs */
     text-align: justify; /* Ensures the text is aligned evenly */
     padding-left: 10px; /* Adds slight padding to push text slightly right */
     padding-right: 10px; /* Adds slight padding to the right for symmetry */
