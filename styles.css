@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* General Body Style */
+/* Global Body Styling */
 body {
     font-family: 'Roboto Slab', serif;
     line-height: 1.6;
@@ -23,10 +23,10 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000; /* Ensure it sits on top of everything else */
-    box-shadow: 0 4px 2px -2px gray; /* Optional: adds a shadow to distinguish the header */
+    box-shadow: none; /* No shadow anymore */
 }
 
-/* Navigation Container and Links */
+/* Navigation container and links */
 .nav-container {
     display: flex;
     align-items: center;
@@ -63,7 +63,7 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Main Section Padding */
+/* Main Section Padding to Prevent Content from Being Hidden */
 main {
     padding: 20px;
     text-align: center;
@@ -74,21 +74,20 @@ main {
 .portfolio-items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center;
 }
 
 .portfolio-item {
-    width: 30%; /* Adjust this for desktop (3 images per row) */
-    margin: 10px 0;
+    width: 30%;
+    margin: 10px;
     background-color: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-item img {
-    width: 100%;
-    height: auto;
+    width: 100%;   /* Ensure image scales correctly on desktop */
+    height: auto;  /* Maintain aspect ratio */
 }
 
 /* Project Image Grid Styling */
@@ -100,102 +99,120 @@ main {
 }
 
 .project-image img {
-    width: 100%;
-    height: auto;
+    width: 100%;   /* Ensure images fit within the grid */
+    height: auto;  /* Maintain aspect ratio */
 }
 
-/* About Me Page Styling */
+/* About Me Page Styles */
 .about-me-container {
-    width: 80%;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 30px;
-    text-align: left;
-    line-height: 1.7;
+    width: 60%; /* Makes the paragraph container narrower */
+    margin: 0 auto; /* Centers the container */
+    padding: 20px; /* Adds padding inside */
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.8; /* Increases line height for readability */
+    text-align: justify; /* Justify text to align evenly */
 }
 
+/* Adjust About Me Paragraph Style */
 .about-me-paragraph {
-    margin-bottom: 50px;
-    letter-spacing: 0.5px;
-    text-align: justify;
-    font-size: 18px;
+    margin-bottom: 50px; /* Adds space between paragraphs */
+    text-align: justify; /* Ensures the text is aligned evenly */
+    padding-left: 10px; /* Adds slight padding to push text slightly right */
+    padding-right: 10px; /* Adds slight padding to the right for symmetry */
+    letter-spacing: normal; /* Resets any unwanted letter spacing */
 }
 
-.about-me-container p {
-    margin-bottom: 20px;
+/* About Me Page Paragraph Specific Fix */
+.about-me-paragraph:nth-child(1) {
+    margin-top: 0;
 }
 
-/* Contact Form Styling */
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
+.about-me-paragraph:nth-child(2) {
+    margin-top: 40px; /* Adds extra space between two paragraphs if needed */
 }
 
-form input,
-form textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* Optional: General Paragraph styling for spacing between sections */
+p {
+    margin-bottom: 20px; /* Adds space between paragraphs globally */
 }
 
-form button {
-    padding: 10px 15px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #555;
-}
-
-#response-message {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: green;
-}
-
-/* About Photo Styling */
-.about-photo {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Mobile Layout for Portfolio */
+/* Mobile View Adjustments */
 @media (max-width: 768px) {
-    .portfolio-items {
-        display: block;
-        width: 100%;
+    /* Adjust header padding for smaller screens */
+    header {
+        padding: 10px 10px;
     }
 
+    /* Adjust logo size for mobile */
+    .nav-container .logo img {
+        width: 80px;
+    }
+
+    /* Make Portfolio items take more space on smaller screens */
     .portfolio-item {
-        width: 100%; /* Full width for each item */
-        margin: 10px 0; /* Ensure some space between each item */
+        width: 100%; /* Full width for each item on mobile */
     }
 
-    .portfolio-item img {
-        width: 100%; /* Make sure the image fits within the container */
-        height: auto; /* Maintain aspect ratio */
+    /* Adjust font size for mobile */
+    nav ul li a {
+        font-size: 16px; /* Smaller font on mobile */
     }
-}
 
-/* Mobile Layout for Contact Page */
-@media (max-width: 768px) {
+    /* Make About Me section a bit more responsive */
+    .about-me-container {
+        width: 90%; /* Makes the paragraph container even narrower on mobile */
+    }
+
+    /* Adjust the text and paragraph spacing */
+    .about-me-paragraph {
+        margin-bottom: 30px; /* Less space between paragraphs */
+        padding-left: 10px; /* Ensure text alignment is consistent */
+        padding-right: 10px; /* Ensure symmetry */
+    }
+
+    /* Contact Form Adjustments */
     form {
-        width: 90%; /* Increase the width of the form */
+        width: 90%; /* Make form inputs take more space on smaller screens */
     }
 
     form input,
     form textarea {
-        font-size: 14px; /* Reduce font size for smaller screens */
+        font-size: 14px; /* Smaller input and textarea fonts */
     }
+
+    form button {
+        padding: 10px; /* Adjust button padding */
+    }
+
+    /* Portfolio items smaller */
+    .portfolio-item {
+        width: 100%; /* Stack portfolio items vertically on mobile */
+    }
+
+    .portfolio-items {
+        display: block; /* Stack portfolio items vertically on mobile */
+    }
+
+    /* Adjust project image grid for mobile */
+    .project-images {
+        grid-template-columns: 1fr; /* Stack project images vertically on mobile */
+    }
+
+    .project-image img {
+        width: 100%; /* Make images fill the width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Fixing Image Scaling for Mobile Devices */
+.portfolio-item img,
+.project-image img {
+    width: 100%;  /* Ensure images are responsive on smaller screens */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Ensure there is no unnecessary space between words in 'About Me' text */
+.about-me-paragraph {
+    letter-spacing: normal; /* Resets any unwanted letter-spacing */
+    word-spacing: normal;  /* Ensures words have consistent spacing */
 }
