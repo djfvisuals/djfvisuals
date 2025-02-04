@@ -40,7 +40,7 @@
                         <img src="images/print.png" alt="Aframe Design">
                     </a>
                 </div>
-                <!-- Add the new link for the Photography 2 project -->
+                <!-- Add more portfolio items with clickable links for each project -->
                 <div class="portfolio-item">
                     <a href="project4.html">
                         <img src="images/photography2.png" alt="Photography 2">
@@ -49,9 +49,24 @@
             </div>
         </section>
     </main>
+
+    <footer>
+        <p>All content copyright David J. Franco "DJF Graphix" © 2025.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var images = document.querySelectorAll('img');
+            images.forEach(function(img) {
+                img.addEventListener('contextmenu', function(e) {
+                    e.preventDefault(); // Prevent the right-click menu
+                });
+
+                img.addEventListener('dragstart', function(e) {
+                    e.preventDefault(); // Prevent drag functionality
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
-<footer>
-    <p>All content copyright David J. Franco "DJF Graphix" © 2025.</p>
-</footer>
