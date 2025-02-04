@@ -107,8 +107,8 @@ main {
 /* Project Image Grid Styling */
 .project-images {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    gap: 20px; /* Ensures spacing between images */
     padding: 20px;
 }
 
