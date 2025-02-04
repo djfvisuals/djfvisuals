@@ -146,21 +146,4 @@ main {
 .portfolio-item img,
 .project-image img {
     width: 100%;  /* Ensure images are responsive on smaller screens */
-    height: auto; /* Maintain aspect ratio */
-}
-
-/* Footer Styling */
-footer {
-    position: relative;  /* Change from fixed to relative */
-    background-color: white;
-    color: black;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 14px;
-    margin-top: 50px; /* Ensure the footer is pushed to the bottom */
-    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
-}
-
-footer p {
-    margin: 0;
-}
+    height: auto; /* Maintain aspec
