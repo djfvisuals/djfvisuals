@@ -168,7 +168,7 @@ p {
     .portfolio-item img {
         margin: 0 auto;  /* Center images inside the portfolio items */
         display: block;  /* Remove the inline display so it can be centered properly */
-        width: 80%;  /* Make images smaller to fit well on mobile */
+        width: 100%;  /* Ensure images are responsive and fit well */
         max-width: 100%; /* Ensure images don't stretch too large */
     }
 
