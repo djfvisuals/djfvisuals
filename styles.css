@@ -12,19 +12,19 @@ body {
     background-color: white;
     color: black;
     text-align: center;
-    margin-top: 80px;
-    transition: background-color 0.5s ease;
-    min-height: 100vh;
+    margin-top: 80px; /* Adjust this value if the header size is different */
+    transition: background-color 0.5s ease; /* Transition effect for the background */
+    min-height: 100vh; /* Ensure the page takes at least the full height of the screen */
 }
 
 /* Fixed Header Styling */
 header {
     background-color: white;
     padding: 10px 20px;
-    position: fixed;
+    position: fixed; /* Fixed position at the top */
     top: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1000; /* Ensure it sits on top of everything else */
 }
 
 /* Navigation container and links */
@@ -59,51 +59,26 @@ nav ul li a {
     color: black;
     text-decoration: none;
     font-size: 18px;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-    color: #555;
-}
-
-/* Main Section Padding to Prevent Content from Being Hidden */
-main {
-    padding: 20px;
-    text-align: center;
-    margin-top: 100px;
+    font-family: 'Roboto Slab', serif; /* Ensure it's Roboto Slab */
 }
 
 /* Portfolio Items Styling */
 .portfolio-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* This will make two columns */
+    gap: 20px;  /* Adds space between the portfolio items */
+    padding: 20px;
 }
 
 .portfolio-item {
-    width: 30%;
-    margin: 10px;
     background-color: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-item img {
-    width: 100%;
-    height: auto;
-}
-
-/* Project Image Grid Styling */
-.project-images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    padding: 20px;
-}
-
-.project-image img {
-    width: 100%;
-    height: auto;
+    width: 100%;  /* Ensure the image fills its container */
+    height: auto;  /* Maintain aspect ratio */
 }
 
 /* Footer Styling */
@@ -114,31 +89,14 @@ footer {
     padding: 10px 0;
     text-align: center;
     font-size: 14px;
-    margin-top: 50px;
-}
-
-footer p {
-    margin: 0;
+    margin-top: 50px; /* Ensure the footer is pushed to the bottom */
 }
 
 /* Mobile View Adjustments */
 @media (max-width: 768px) {
-    /* Center portfolio items on mobile */
     .portfolio-items {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;  /* Stack the portfolio items vertically on mobile */
     }
-
+    
     .portfolio-item {
-        width: 80%;
-        margin-bottom: 20px;
-    }
-
-    .portfolio-item img {
-        margin: 0 auto;
-        display: block;
-        width: 100%;
-        max-width: 100%;
-    }
-}
+        width: 100%; /* Ensure each item tak
