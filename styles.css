@@ -25,6 +25,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000; /* Ensure it sits on top of everything else */
+    box-shadow: none; /* No shadow anymore */
 }
 
 /* Navigation container and links */
@@ -60,43 +61,231 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
     font-family: 'Roboto Slab', serif; /* Ensure it's Roboto Slab */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform effect */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #555;
+    transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+/* Add the white transition effect when clicked on navigation links */
+nav ul li a:active {
+    background-color: white;  /* White background on click */
+    color: black;             /* Keep the text black */
+    transition: background-color 0.5s ease; /* Transition to white background */
+}
+
+/* Main Section Padding to Prevent Content from Being Hidden */
+main {
+    padding: 20px;
+    text-align: center;
+    margin-top: 100px; /* Ensure enough space for header */
 }
 
 /* Portfolio Items Styling */
 .portfolio-items {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* This will make two columns */
-    gap: 20px;  /* Adds space between the portfolio items */
-    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .portfolio-item {
+    width: 30%;
+    margin: 10px;
     background-color: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-item img {
-    width: 100%;  /* Ensure the image fills its container */
+    width: 100%;   /* Ensure image scales correctly on desktop */
     height: auto;  /* Maintain aspect ratio */
+}
+
+/* Project Image Grid Styling */
+.project-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.project-image img {
+    width: 100%;   /* Ensure images fit within the grid */
+    height: auto;  /* Maintain aspect ratio */
+}
+
+/* About Me Page Styles (Restored to Original) */
+.about-me-container {
+    width: 60%; /* Makes the paragraph container narrower */
+    margin: 0 auto; /* Centers the container */
+    padding: 20px; /* Adds padding inside */
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.8; /* Increases line height for readability */
+    text-align: justify; /* Justify text to align evenly */
+}
+
+/* Adjust About Me Paragraph Style */
+.about-me-paragraph {
+    margin-bottom: 50px; /* Adds space between paragraphs */
+    text-align: justify; /* Ensures the text is aligned evenly */
+    padding-left: 10px; /* Adds slight padding to push text slightly right */
+    padding-right: 10px; /* Adds slight padding to the right for symmetry */
+    letter-spacing: normal; /* Resets any unwanted letter spacing */
+}
+
+/* About Me Page Paragraph Specific Fix */
+.about-me-paragraph:nth-child(1) {
+    margin-top: 0;
+}
+
+.about-me-paragraph:nth-child(2) {
+    margin-top: 40px; /* Adds extra space between two paragraphs if needed */
+}
+
+/* Optional: General Paragraph styling for spacing between sections */
+p {
+    margin-bottom: 20px; /* Adds space between paragraphs globally */
+}
+
+/* Contact Me Form Styling (Restored to Original) */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+#response-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: black;
 }
 
 /* Footer Styling */
 footer {
-    position: relative;
+    position: relative;  /* Change from fixed to relative */
     background-color: white;
     color: black;
     padding: 10px 0;
     text-align: center;
     font-size: 14px;
     margin-top: 50px; /* Ensure the footer is pushed to the bottom */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
 }
 
 /* Mobile View Adjustments */
 @media (max-width: 768px) {
+    /* Center portfolio items on mobile */
     .portfolio-items {
-        grid-template-columns: 1fr;  /* Stack the portfolio items vertically on mobile */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* This will center the portfolio items horizontally */
     }
-    
+
     .portfolio-item {
-        width: 100%; /* Ensure each item tak
+        width: 80%;  /* Make portfolio items take up most of the width on mobile */
+        margin-bottom: 20px;  /* Add space between items */
+        text-align: center; /* Ensure the text inside is centered */
+    }
+
+    .portfolio-item img {
+        margin: 0 auto;  /* Center images inside the portfolio items */
+        display: block;  /* Remove the inline display so it can be centered properly */
+        width: 100%;  /* Ensure images are responsive and fit well */
+        max-width: 100%; /* Ensure images don't stretch too large */
+    }
+
+    /* Adjust header padding for smaller screens */
+    header {
+        padding: 10px 10px;
+    }
+
+    /* Adjust logo size for mobile */
+    .nav-container .logo img {
+        width: 80px;
+    }
+
+    /* Make Portfolio items take more space on smaller screens */
+    .portfolio-item {
+        width: 100%; /* Full width for each item on mobile */
+    }
+
+    /* Adjust font size for mobile */
+    nav ul li a {
+        font-size: 16px; /* Smaller font on mobile */
+    }
+
+    /* Make About Me section a bit more responsive */
+    .about-me-container {
+        width: 90%; /* Makes the paragraph container even narrower on mobile */
+    }
+
+    /* Adjust the text and paragraph spacing */
+    .about-me-paragraph {
+        margin-bottom: 30px; /* Less space between paragraphs */
+        padding-left: 10px; /* Ensure text alignment is consistent */
+        padding-right: 10px; /* Ensure symmetry */
+    }
+
+    /* Contact Form Adjustments */
+    form {
+        width: 90%; /* Make form inputs take more space on smaller screens */
+    }
+
+    form input,
+    form textarea {
+        font-size: 14px; /* Smaller input and textarea fonts */
+    }
+
+    form button {
+        padding: 10px; /* Adjust button padding for mobile */
+    }
+
+    /* Portfolio items smaller */
+    .portfolio-item {
+        width: 100%; /* Stack portfolio items vertically on mobile */
+    }
+
+    .portfolio-items {
+        display: block; /* Stack portfolio items vertically on mobile */
+    }
+
+    /* Adjust project image grid for mobile */
+    .project-images {
+        grid-template-columns: 1fr; /* Stack project images vertically on mobile */
+    }
+
+    .project-image img {
+        width: 100%; /* Make images fill the width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
