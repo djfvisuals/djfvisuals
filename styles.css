@@ -70,13 +70,6 @@ nav ul li a:hover {
     transform: translateY(-3px); /* Slight lift effect on hover */
 }
 
-/* Add the white transition effect when clicked on navigation links */
-nav ul li a:active {
-    background-color: white;  /* White background on click */
-    color: black;             /* Keep the text black */
-    transition: background-color 0.5s ease; /* Transition to white background */
-}
-
 /* Main Section Padding to Prevent Content from Being Hidden */
 main {
     padding: 20px;
@@ -88,20 +81,34 @@ main {
 .portfolio-items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* Center the portfolio items */
 }
 
 .portfolio-item {
-    width: 30%;
-    margin: 10px;
+    width: 48%;  /* Set width to 48% to have two items per row */
+    margin: 10px 1%; /* Adds some space between items */
     background-color: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-item img {
-    width: 100%;   /* Ensure image scales correctly on desktop */
+    width: 100%;   /* Ensure image scales correctly */
     height: auto;  /* Maintain aspect ratio */
+}
+
+/* Media Query for Desktop and Larger Screens */
+@media (min-width: 1024px) {
+    .portfolio-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Ensure there's space between items */
+    }
+
+    .portfolio-item {
+        width: 48%;  /* Set portfolio items to 48% width for two per row */
+        margin-bottom: 20px;  /* Adds space between rows */
+    }
 }
 
 /* Project Image Grid Styling */
@@ -117,7 +124,7 @@ main {
     height: auto;  /* Maintain aspect ratio */
 }
 
-/* About Me Page Styles (Restored to Original) */
+/* About Me Page Styles */
 .about-me-container {
     width: 60%; /* Makes the paragraph container narrower */
     margin: 0 auto; /* Centers the container */
@@ -148,58 +155,6 @@ main {
 /* Optional: General Paragraph styling for spacing between sections */
 p {
     margin-bottom: 20px; /* Adds space between paragraphs globally */
-}
-
-/* Contact Me Form Styling (Restored to Original) */
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-}
-
-form input,
-form textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form button {
-    padding: 10px 15px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #555;
-}
-
-#response-message {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: black;
-}
-
-/* Footer Styling */
-footer {
-    position: relative;  /* Change from fixed to relative */
-    background-color: white;
-    color: black;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 14px;
-    margin-top: 50px; /* Ensure the footer is pushed to the bottom */
-    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
-}
-
-footer p {
-    margin: 0;
 }
 
 /* Mobile View Adjustments */
@@ -289,3 +244,66 @@ footer p {
         height: auto; /* Maintain aspect ratio */
     }
 }
+
+/* Fixing Image Scaling for Mobile Devices */
+.portfolio-item img,
+.project-image img {
+    width: 100%;  /* Ensure images are responsive on smaller screens */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Ensure there is no unnecessary space between words in 'About Me' text */
+.about-me-paragraph {
+    letter-spacing: normal; /* Resets any unwanted letter-spacing */
+    word-spacing: normal;  /* Ensures words have consistent spacing */
+}
+
+/* Contact Form Styling (Restored to original) */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+#response-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: black;
+}
+
+/* Footer Styling */
+footer {
+    position: relative;  /* Change from fixed to relative */
+    background-color: white;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 50px; /* Ensure the footer is pushed to the bottom */
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p
