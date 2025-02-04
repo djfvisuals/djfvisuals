@@ -23,20 +23,38 @@
     </header>
 
     <main>
+        <section class="contact-intro">
+            <h1>Contact Me</h1>
+            <p>Feel free to get in touch with me for any inquiries or collaborations!</p>
+        </section>
+
         <section>
-            <h2>Contact Me</h2>
             <form id="contact-form">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <textarea name="message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
             <div id="response-message"></div>
         </section>
     </main>
 
-    <footer>
-        <p>All content copyright David J. Franco "DJF Graphix" © 2025.</p>
-    </footer>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            
+            setTimeout(function() {
+                document.querySelector('.contact-intro').style.display = 'none';
+                document.querySelector('#response-message').textContent = 'Thank you for your message! I will get back to you shortly.';
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
+<footer>
+    <p>All content copyright David J. Franco "DJF Graphix" © 2025.</p>
+</footer>
+
+
