@@ -70,6 +70,13 @@ nav ul li a:hover {
     transform: translateY(-3px); /* Slight lift effect on hover */
 }
 
+/* Add the white transition effect when clicked on navigation links */
+nav ul li a:active {
+    background-color: white;  /* White background on click */
+    color: black;             /* Keep the text black */
+    transition: background-color 0.5s ease; /* Transition to white background */
+}
+
 /* Main Section Padding to Prevent Content from Being Hidden */
 main {
     padding: 20px;
@@ -77,44 +84,30 @@ main {
     margin-top: 100px; /* Ensure enough space for header */
 }
 
-/* Portfolio Items Styling */
+/* Portfolio Items Styling - Two Columns on Desktop */
 .portfolio-items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between; /* Make two columns */
+    gap: 20px; /* Space between portfolio items */
 }
 
 .portfolio-item {
-    width: 45%; /* Ensure two images per row on desktop */
+    width: 48%; /* Adjust width for two columns */
     margin: 10px;
     background-color: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Allow clicking, disable right-click, drag and save on project images */
 .portfolio-item img {
-    width: 100%;   /* Ensure image scales correctly on desktop */
+    width: 100%;   /* Ensure image scales correctly */
     height: auto;  /* Maintain aspect ratio */
+    pointer-events: auto;  /* Allow clicks on the images */
+    user-select: none; /* Disable text selection */
+    -webkit-user-drag: none; /* Disable drag on WebKit browsers */
 }
-
-/* Disable interaction with portfolio images */
-.portfolio-item img {
-    pointer-events: none; /* Prevent clicking and interactions */
-}
-
-/* Prevent right-click and saving of images */
-document.addEventListener("DOMContentLoaded", function() {
-    var images = document.querySelectorAll('img');
-    images.forEach(function(img) {
-        img.addEventListener('contextmenu', function(e) {
-            e.preventDefault(); // Prevent the right-click menu
-        });
-
-        img.addEventListener('dragstart', function(e) {
-            e.preventDefault(); // Prevent drag functionality
-        });
-    });
-});
 
 /* Footer Styling */
 footer {
@@ -130,4 +123,92 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    /* Center portfolio items on mobile */
+    .portfolio-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* This will center the portfolio items horizontally */
+    }
+
+    .portfolio-item {
+        width: 80%;  /* Make portfolio items take up most of the width on mobile */
+        margin-bottom: 20px;  /* Add space between items */
+        text-align: center; /* Ensure the text inside is centered */
+    }
+
+    .portfolio-item img {
+        margin: 0 auto;  /* Center images inside the portfolio items */
+        display: block;  /* Remove the inline display so it can be centered properly */
+        width: 100%;  /* Ensure images are responsive and fit well */
+        max-width: 100%; /* Ensure images don't stretch too large */
+    }
+
+    /* Adjust header padding for smaller screens */
+    header {
+        padding: 10px 10px;
+    }
+
+    /* Adjust logo size for mobile */
+    .nav-container .logo img {
+        width: 80px;
+    }
+
+    /* Make Portfolio items take more space on smaller screens */
+    .portfolio-item {
+        width: 100%; /* Full width for each item on mobile */
+    }
+
+    /* Adjust font size for mobile */
+    nav ul li a {
+        font-size: 16px; /* Smaller font on mobile */
+    }
+
+    /* Make About Me section a bit more responsive */
+    .about-me-container {
+        width: 90%; /* Makes the paragraph container even narrower on mobile */
+    }
+
+    /* Adjust the text and paragraph spacing */
+    .about-me-paragraph {
+        margin-bottom: 30px; /* Less space between paragraphs */
+        padding-left: 10px; /* Ensure text alignment is consistent */
+        padding-right: 10px; /* Ensure symmetry */
+    }
+
+    /* Contact Form Adjustments */
+    form {
+        width: 90%; /* Make form inputs take more space on smaller screens */
+    }
+
+    form input,
+    form textarea {
+        font-size: 14px; /* Smaller input and textarea fonts */
+    }
+
+    form button {
+        padding: 10px; /* Adjust button padding for mobile */
+    }
+
+    /* Portfolio items smaller */
+    .portfolio-item {
+        width: 100%; /* Stack portfolio items vertically on mobile */
+    }
+
+    .portfolio-items {
+        display: block; /* Stack portfolio items vertically on mobile */
+    }
+
+    /* Adjust project image grid for mobile */
+    .project-images {
+        grid-template-columns: 1fr; /* Stack project images vertically on mobile */
+    }
+
+    .project-image img {
+        width: 100%; /* Make images fill the width */
+        height: auto; /* Maintain aspect ratio */
+    }
 }
