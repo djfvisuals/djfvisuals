@@ -107,8 +107,8 @@ main {
 /* Project Image Grid Styling */
 .project-images {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
-    gap: 20px; /* Ensures spacing between images */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-gap: 20px;
     padding: 20px;
 }
 
@@ -152,6 +152,26 @@ p {
 
 /* Mobile View Adjustments */
 @media (max-width: 768px) {
+    /* Center portfolio items on mobile */
+    .portfolio-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* This will center the portfolio items horizontally */
+    }
+
+    .portfolio-item {
+        width: 80%;  /* Make portfolio items take up most of the width on mobile */
+        margin-bottom: 20px;  /* Add space between items */
+        text-align: center; /* Ensure the text inside is centered */
+    }
+
+    .portfolio-item img {
+        margin: 0 auto;  /* Center images inside the portfolio items */
+        display: block;  /* Remove the inline display so it can be centered properly */
+        width: 80%;  /* Make images smaller to fit well on mobile */
+        max-width: 100%; /* Ensure images don't stretch too large */
+    }
+
     /* Adjust header padding for smaller screens */
     header {
         padding: 10px 10px;
