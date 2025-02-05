@@ -60,12 +60,9 @@ nav ul li a {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        justify-content: center;
-        align-items: center;
     }
 
     /* Make contact form more narrow only on desktop */
-    .contact-intro,
     #contact-form {
         max-width: 400px;
         margin: 0 auto;
@@ -81,7 +78,7 @@ nav ul li a {
     }
 
     .project-image {
-        width: 90%;
+        width: 100%;
         display: flex;
         justify-content: center;
     }
@@ -98,9 +95,7 @@ nav ul li a {
     }
 
     /* Center Contact Form */
-    .contact-intro,
     #contact-form {
-        text-align: center;
         width: 90%;
         margin: 0 auto;
     }
