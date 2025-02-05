@@ -105,24 +105,25 @@ main {
 }
 
 /* Project Image Grid Styling */
-.project-images {
+.portfolio-items {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Stack the images 2 by 2 on desktop */
+    grid-template-columns: repeat(2, 1fr); /* Stack images 2 by 2 on desktop */
     grid-gap: 20px;
     padding: 20px;
 }
 
-/* Ensure the images stack 1 by 1 on mobile */
+/* Ensure images stack 1 by 1 on mobile */
 @media (max-width: 768px) {
-    .project-images {
+    .portfolio-items {
         grid-template-columns: 1fr; /* Stack images in a single column on mobile */
     }
 }
 
-.project-image img {
-    width: 100%;   /* Ensure images fit within the grid */
+.portfolio-item img {
+    width: 100%;   /* Ensure images fit within their grid item */
     height: auto;  /* Maintain aspect ratio */
 }
+
 
 
 /* About Me Page Styles (Restored to Original) */
