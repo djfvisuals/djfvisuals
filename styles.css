@@ -107,22 +107,25 @@ main {
 /* Project Image Grid Styling */
 .portfolio-items {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Stack images 2 by 2 on desktop */
+    grid-template-columns: repeat(2, 1fr); /* Two columns for desktop */
     grid-gap: 20px;
     padding: 20px;
 }
 
-/* Ensure images stack 1 by 1 on mobile */
+/* Ensure images fill the grid area and take up more space */
+.portfolio-item img {
+    width: 100%;
+    height: 100%;  /* Ensure the images take up the full height of their grid item */
+    object-fit: cover;  /* Ensure images cover the container without stretching */
+}
+
+/* Stack images 1 by 1 on mobile */
 @media (max-width: 768px) {
     .portfolio-items {
         grid-template-columns: 1fr; /* Stack images in a single column on mobile */
     }
 }
 
-.portfolio-item img {
-    width: 100%;   /* Ensure images fit within their grid item */
-    height: auto;  /* Maintain aspect ratio */
-}
 
 
 
