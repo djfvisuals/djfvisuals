@@ -84,29 +84,106 @@ main {
     margin-top: 100px; /* Ensure enough space for header */
 }
 
-/* Portfolio Items Styling - Two Columns on Desktop */
+/* Portfolio Items Styling */
 .portfolio-items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Make two columns */
-    gap: 20px; /* Space between portfolio items */
+    justify-content: center;
 }
 
 .portfolio-item {
-    width: 48%; /* Adjust width for two columns */
+    width: 30%;
     margin: 10px;
     background-color: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Allow clicking, disable right-click, drag and save on project images */
 .portfolio-item img {
-    width: 100%;   /* Ensure image scales correctly */
+    width: 100%;   /* Ensure image scales correctly on desktop */
     height: auto;  /* Maintain aspect ratio */
-    pointer-events: auto;  /* Allow clicks on the images */
-    user-select: none; /* Disable text selection */
-    -webkit-user-drag: none; /* Disable drag on WebKit browsers */
+}
+
+/* Project Image Grid Styling */
+.project-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.project-image img {
+    width: 100%;   /* Ensure images fit within the grid */
+    height: auto;  /* Maintain aspect ratio */
+}
+
+/* About Me Page Styles (Restored to Original) */
+.about-me-container {
+    width: 60%; /* Makes the paragraph container narrower */
+    margin: 0 auto; /* Centers the container */
+    padding: 20px; /* Adds padding inside */
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.8; /* Increases line height for readability */
+    text-align: justify; /* Justify text to align evenly */
+}
+
+/* Adjust About Me Paragraph Style */
+.about-me-paragraph {
+    margin-bottom: 50px; /* Adds space between paragraphs */
+    text-align: justify; /* Ensures the text is aligned evenly */
+    padding-left: 10px; /* Adds slight padding to push text slightly right */
+    padding-right: 10px; /* Adds slight padding to the right for symmetry */
+    letter-spacing: normal; /* Resets any unwanted letter spacing */
+}
+
+/* About Me Page Paragraph Specific Fix */
+.about-me-paragraph:nth-child(1) {
+    margin-top: 0;
+}
+
+.about-me-paragraph:nth-child(2) {
+    margin-top: 40px; /* Adds extra space between two paragraphs if needed */
+}
+
+/* Optional: General Paragraph styling for spacing between sections */
+p {
+    margin-bottom: 20px; /* Adds space between paragraphs globally */
+}
+
+/* Contact Me Form Styling (Restored to Original) */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+#response-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: black;
 }
 
 /* Footer Styling */
@@ -212,3 +289,5 @@ footer p {
         height: auto; /* Maintain aspect ratio */
     }
 }
+
+
