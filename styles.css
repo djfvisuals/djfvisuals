@@ -113,10 +113,10 @@ main {
     padding: 20px;
 }
 
-/* Make the images stack 1 by 1 on mobile */
+/* Ensure the images stack 1 by 1 on mobile */
 @media (max-width: 768px) {
     .project-images {
-        grid-template-columns: 1fr; /* Stack the images in a single column on mobile */
+        grid-template-columns: 1fr; /* Stack images in a single column on mobile */
     }
 }
 
@@ -124,6 +124,7 @@ main {
     width: 100%;   /* Ensure images fit within the grid */
     height: auto;  /* Maintain aspect ratio */
 }
+
 
 
 /* About Me Page Styles (Restored to Original) */
