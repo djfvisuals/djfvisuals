@@ -33,8 +33,13 @@ header {
   height: 50px;
   cursor: pointer;
 }
+/* Center the navigation in the available space */
+nav {
+  flex: 1; /* Takes up remaining space between logo and end */
+  display: flex;
+  justify-content: center; /* Center the nav items */
 
-nav ul {
+  nav ul {
   list-style: none;
   display: flex;
   gap: 30px;
