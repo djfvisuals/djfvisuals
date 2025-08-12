@@ -1,98 +1,100 @@
-/* ===== GLOBAL STYLES ===== */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJF Visuals</title>
 
-/* Make sure the whole page uses the full height of the browser */
-html, body {
-  height: 100%;      /* Full height */
-  margin: 0;         /* Remove default margin */
-  font-family: 'Montserrat', sans-serif;  /* Set font */
-  background-color: white;  /* White background */
-  color: black;      /* Black text */
-  display: flex;     /* Use flexbox layout */
-  flex-direction: column; /* Stack items vertically */
-  min-height: 100vh; /* Minimum height: full viewport */
-}
+  <!-- Google Fonts: Bold Sans Serif -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 
-/* Wrapper to hold main content and allow footer at bottom */
-.wrapper {
-  flex: 1;             /* Take up remaining space */
-  display: flex;       /* Use flexbox */
-  flex-direction: column; /* Stack content vertically */
-}
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-/* ===== HEADER / NAVIGATION ===== */
-header {
-  display: flex;               /* Layout children side by side */
-  justify-content: space-between; /* Space between logo and nav */
-  align-items: center;         /* Vertically center items */
-  padding: 20px 50px;          /* Space inside header */
-  position: absolute;          /* Keep header on top */
-  width: 100%;                 /* Full width */
-  z-index: 10;                 /* Stay above other elements */
-}
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <!-- Change logo image in src="" below -->
+  <header>
+    <div class="logo">
+      <img src="images/DJF_VISUALS_LOGO_FINAL_GB.png">
+    </div>
+    <nav>
+      <ul>
+        <!-- These links go to your other pages -->
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="contact-me.html">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
 
-.logo img {
-  height: 50px;                /* Logo size */
-}
+  <!-- ===== HERO SECTION ===== -->
+  <!-- Fullscreen banner with video or image background -->
+  <section class="hero">
+    <!-- VIDEO BACKGROUND -->
+    <!-- Replace video-placeholder.mp4 with your own file, or remove this block if you don't want video -->
+    <video autoplay muted loop class="hero-video">
+      <source src="video-placeholder.mp4" type="video/mp4">
+    </video>
 
-nav ul {
-  list-style: none;            /* Remove bullets */
-  display: flex;               /* Show links horizontally */
-  gap: 30px;                   /* Space between links */
-  margin: 0;                   /* Remove default margin */
-}
+    <!-- IMAGE FALLBACK -->
+    <!-- Replace hero-placeholder.jpg with your own image -->
+    <div class="hero-image"></div>
 
-nav a {
-  text-decoration: none;       /* Remove underline */
-  color: black;                /* Link color */
-  font-weight: bold;           /* Bold text */
-}
+    <!-- Text that appears in front of the hero background -->
+    <!-- Change YOUR NAME HERE and subheading as you like -->
+    <div class="hero-text">
+      <h1>David J. Franco</h1>
+      <h2>Designer • Brand Strategist • Creative Director • Project Manager</h2>
+    </div>
+  </section>
 
-/* ===== HERO SECTION ===== */
+  <!-- ===== MAIN PORTFOLIO GRID ===== -->
+  <main>
+    <section>
+      <div class="portfolio-items">
 
-/* ===== PORTFOLIO GRID ===== */
-.portfolio-items {
-  display: grid;                     /* Grid layout for items */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-  gap: 30px;                        /* Space between items */
-  padding: 60px 10%;                /* Padding around the grid */
-  flex-grow: 1;                    /* Grow to fill space */
-}
+        <!-- Project 1 -->
+        <!-- Change link in href="", and update image in src="" -->
+        <div class="portfolio-item">
+          <a href="valuetainment.html">
+            <img src="images/Valuetainment_logo.png" alt="Valuetainment Logo">
+          </a>
+        </div>
 
-.portfolio-item img {
-  width: 100%;                     /* Full width images */
-  height: auto;                    /* Maintain aspect ratio */
-  border-radius: 8px;              /* Rounded corners */
-  transition: transform 0.3s ease; /* Smooth hover effect */
-}
+        <!-- Project 2 -->
+        <div class="portfolio-item">
+          <a href="miamialkalinewater.html">
+            <img src="images/miami_alkaline_logo2.png" alt="Miami Alkaline Water Logo">
+          </a>
+        </div>
 
-.portfolio-item img:hover {
-  transform: scale(1.05);          /* Slight zoom on hover */
-}
+        <!-- Project 3 -->
+        <div class="portfolio-item">
+          <a href="print.html">
+            <img src="images/print.png" alt="Aframe Design">
+          </a>
+        </div>
 
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;              /* Center text */
-  padding: 20px;                   /* Space inside footer */
-  font-size: 0.9rem;               /* Smaller text */
-  background: white;               /* Background color */
-  flex-shrink: 0;                  /* Don’t shrink footer */
-}
+        <!-- Project 4 -->
+        <!-- Add the new link for the Photography 2 project -->
+        <div class="portfolio-item">
+          <a href="photography.html">
+            <img src="images/photography2.png" alt="Photography 2">
+          </a>
+        </div>
 
-/* ===== ANIMATION ===== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-50%);
-  }
-}
+      </div>
+    </section>
+  </main>
 
-/* ===== RESPONSIVE STYLES ===== */
-@media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 2.5rem;             /* Smaller heading on small screens */
-  }
-}
+  <!-- ===== FOOTER ===== -->
+  <!-- You can update your copyright -->
+  <footer>
+    <p>All content copyright David J. Franco "DJF Visuals" © 2025.</p>
+  </footer>
+
+</body>
+</html>
+
