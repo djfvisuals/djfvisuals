@@ -150,7 +150,7 @@ footer {
 /* ===== CONTACT FORM STYLES ===== */
 form {
   max-width: 600px;
-  margin: 20px auto;
+  margin: 40px auto;
   display: flex;
   flex-direction: column;
   padding: 0 20px;
