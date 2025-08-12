@@ -14,37 +14,37 @@ body {
 
 /* ===== HEADER ===== */
 header {
-  display: flex;                 /* Flexbox layout for header */
-  align-items: center;           /* Vertically center logo and nav */
-  padding: 20px 50px;            /* Padding around */
-  position: relative;            /* Position relative */
+  display: flex;
+  align-items: center;
+  padding: 20px 50px;
+  position: relative;
   width: 100%;
-  box-sizing: border-box;        /* Include padding in width */
+  box-sizing: border-box;
+  justify-content: flex-start; /* Align items to left */
+  gap: 50px; /* Space between logo and nav */
 }
 
-/* Logo stays on the left, no shrinking or growing */
 .logo {
-  flex: 0 0 auto;
-  cursor: pointer;
+  flex: 0 0 auto; /* Fixed size so logo doesn't move */
 }
 
 .logo img {
   height: 50px;                  /* Logo size */
+  cursor: pointer;               /* Pointer cursor on hover */
 }
 
-/* Nav container takes remaining space and centers nav items */
 nav {
-  flex: 1;
+  flex: 1 1 auto; /* Nav takes remaining space */
   display: flex;
-  justify-content: center;       /* Center navigation horizontally */
+  justify-content: center; /* Center nav buttons */
 }
 
 nav ul {
-  list-style: none;              /* Remove bullets */
-  display: flex;                 /* Horizontal layout */
+  list-style: none;              /* Remove bullet points */
+  display: flex;                 /* Horizontal list */
   gap: 30px;                    /* Space between nav items */
-  margin: 0;
-  padding: 0;
+  margin: 0;                    /* Remove default margin */
+  padding: 0;                   /* Remove default padding */
 }
 
 nav a {
@@ -54,7 +54,7 @@ nav a {
   font-size: 1rem;               /* Readable size */
 }
 
-/* ===== HERO SECTION (only homepage) ===== */
+/* ===== HERO SECTION (only for homepage) ===== */
 .hero {
   position: relative;
   height: 100vh;                 /* Full viewport height */
@@ -121,9 +121,9 @@ footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
-  background-color: #ffffff;     /* White background */
+  background-color: #ffffff;    /* Background color */
   margin-top: 40px;
-  font-weight: 300;              /* Light font weight */
+  font-weight: 300;             /* Light font weight */
 }
 
 /* ===== ANIMATION ===== */
