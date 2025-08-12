@@ -1,102 +1,222 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DJF Visuals</title>
+/* ===== GLOBAL STYLES ===== */
+body {
+  margin: 0;                     
+  font-family: 'Montserrat', sans-serif; 
+  background-color: white;       
+  color: black;                  
+}
 
-  <!-- Google Fonts: Bold Sans Serif -->
- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+.wrapper {
+  max-width: 1200px;             
+  margin: 0 auto;                
+  padding: 0 20px;               
+}
 
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px 50px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: flex-start; /* Logo on left */
+  gap: 50px; 
+}
 
-  <!-- Link to your CSS file -->
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+.logo {
+  flex: 0 0 auto; 
+}
 
-  <!-- ===== HEADER / NAVIGATION ===== -->
-  <!-- Change logo image in src="" below -->
-  <header>
-    <div class="logo">
-      <img src="images/DJF_VISUALS_LOGO_FINAL_GB.png">
-    </div>
-    <nav>
-      <ul>
-        <!-- These links go to your other pages -->
-        <li><a href="work.html">Work</a></li>
-        <li><a href="aboutme.html">About Me</a></li>
-        <li><a href="contact-me.html">Contact Me</a></li>
-      </ul>
-    </nav>
-  </header>
+.logo img {
+  height: 50px;                  
+  cursor: pointer;               
+}
 
-  <!-- ===== HERO SECTION ===== -->
-  <!-- Fullscreen banner with video or image background -->
-  <section class="hero">
-    <!-- VIDEO BACKGROUND -->
-    <!-- Replace video-placeholder.mp4 with your own file, or remove this block if you don't want video -->
-    <video autoplay muted loop class="hero-video">
-      <source src="video-placeholder.mp4" type="video/mp4">
-    </video>
+/* Navigation takes remaining space and centers links */
+nav {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center; /* Center navigation */
+}
 
-    <!-- IMAGE FALLBACK -->
-    <!-- Replace hero-placeholder.jpg with your own image -->
-    <div class="hero-image"></div>
+nav ul {
+  list-style: none;              
+  display: flex;                 
+  gap: 30px;                    
+  margin: 0;                    
+  padding: 0;                   
+}
 
-    <!-- Text that appears in front of the hero background -->
-    <!-- Change YOUR NAME HERE and subheading as you like -->
-    <div class="hero-text">
-      <h1>David J. Franco</h1>
-      <h2>Designer • Brand Strategist • Creative Director • Project Manager</h2>
-    </div>
-  </section>
+nav a {
+  text-decoration: none;         
+  color: black;                  
+  font-weight: bold;             
+  font-size: 1rem;               
+}
 
-  <!-- ===== MAIN PORTFOLIO GRID ===== -->
-  <main>
-    <section>
-      <div class="portfolio-items">
+/* ===== HERO SECTION (homepage only) ===== */
+.hero {
+  position: relative;
+  height: 100vh;                 
+  overflow: hidden;
+}
 
-        <!-- Project 1 -->
-        <!-- Change link in href="", and update image in src="" -->
-        <div class="portfolio-item">
-          <a href="valuetainment.html">
-            <img src="images/Valuetainment_logo.png" alt="Valuetainment Logo">
-          </a>
-        </div>
+.hero-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;             
+}
 
-        <!-- Project 2 -->
-        <div class="portfolio-item">
-          <a href="miamialkalinewater.html">
-            <img src="images/miami_alkaline_logo2.png" alt="Miami Alkaline Water Logo">
-          </a>
-        </div>
+.hero-image {
+  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
-        <!-- Project 3 -->
-        <div class="portfolio-item">
-          <a href="print.html">
-            <img src="images/print.png" alt="Aframe Design">
-          </a>
-        </div>
+.hero-text {
+  position: relative;
+  z-index: 2;                   
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: fadeIn 2s ease-in;
+}
 
-        <!-- Project 4 -->
-        <!-- Add the new link for the Photography 2 project -->
-        <div class="portfolio-item">
-          <a href="photography.html">
-            <img src="images/photography2.png" alt="Photography 2">
-          </a>
-        </div>
+.hero-text h1 {
+  font-size: 4rem;
+  margin: 0;
+}
 
-      </div>
-    </section>
-  </main>
+.hero-text h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
 
-  <!-- ===== FOOTER ===== -->
-  <!-- You can update your copyright -->
-  <footer>
-    <p>All content copyright David J. Franco "DJF Visuals" © 2025.</p>
-  </footer>
+/* ===== PORTFOLIO GRID ===== */
+.portfolio-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 30px;
+  padding: 60px 10%;
+  box-sizing: border-box;
+}
 
-</body>
-</html>
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;           
+  transition: transform 0.3s ease;
+  cursor: pointer;              
+}
 
+.portfolio-item img:hover {
+  transform: scale(1.05);       
+}
 
+/* ===== CONTACT PAGE SPECIFIC STYLES ===== */
+
+/* Center the intro text on contact page */
+.contact-intro {
+  max-width: 600px;
+  margin: 40px auto 20px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+}
+
+/* Form styles (original contact form style) */
+form#contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form#contact-form input,
+form#contact-form textarea {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+form#contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+form#contact-form button {
+  padding: 12px;
+  background-color: #333;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form#contact-form button:hover {
+  background-color: #555;
+}
+
+#response-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: black;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  background-color: #ffffff;
+  margin-top: 40px;
+  font-weight: 300;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  header {
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .portfolio-items {
+    padding: 40px 5%;
+  }
+
+  .contact-intro,
+  form#contact-form {
+    width: 90%;
+  }
+}
