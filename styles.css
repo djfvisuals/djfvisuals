@@ -257,3 +257,38 @@ form button:hover {
     max-width: 300px;
   }
 }
+
+/* ===== NAVIGATION FONT FIX ===== */
+nav a {
+  font-family: 'Montserrat', sans-serif; /* Make sure font matches all pages */
+  font-weight: 500; /* Medium weight, same as other pages */
+  color: black;
+  text-decoration: none;
+}
+
+/* ===== PROJECT IMAGES LAYOUT ===== */
+.project-images {
+  max-width: 800px;        /* Limits the total width of the images container */
+  margin: 40px auto;       /* Center horizontally and add vertical spacing */
+  padding: 0 20px;         /* Add some side padding for smaller screens */
+  display: flex;           /* Use flexbox */
+  flex-direction: column;  /* Stack images vertically */
+  gap: 30px;               /* Space between images */
+}
+
+.project-image img {
+  width: 100%;             /* Image fills container width */
+  height: auto;            /* Keep aspect ratio */
+  border-radius: 8px;      /* Slightly rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* subtle shadow for nice effect */
+  display: block;          /* Removes bottom space below images */
+}
+
+/* ===== RESPONSIVE (small screens) ===== */
+@media (max-width: 600px) {
+  .project-images {
+    max-width: 100%;       /* Full width on small devices */
+    padding: 0 10px;
+  }
+}
+
