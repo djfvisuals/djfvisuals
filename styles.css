@@ -1,5 +1,3 @@
-
-
 /* ===== GLOBAL ===== */
 body {
   margin: 0;
@@ -48,7 +46,7 @@ nav a {
   font-weight: bold;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO (MAIN PAGE) ===== */
 .hero {
   position: relative;
   height: 100vh;
@@ -114,10 +112,11 @@ footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
-
+  position: relative;
+  bottom: 0;
   width: 100%;
   background: white;
-  margin-top: 100px;
+  margin-top: 100px; /* pushes footer down */
 }
 
 /* ===== ANIMATION ===== */
@@ -196,97 +195,61 @@ form button:hover {
     padding: 10px;
   }
 }
-/* ABOUT PAGE HERO */
+
+/* ========================================================== */
+/* ===== ABOUT ME PAGE STYLES (Added for your request) ===== */
+/* ========================================================== */
+
+/* HERO section for about page (image background) */
 .about-hero {
   position: relative;
-  height: 60vh; /* Adjust hero height here */
-  overflow: hidden;
-  margin-bottom: 40px; /* Space between hero and content - adjust as needed */
-}
-
-.about-hero .hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.about-hero .hero-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  height: 60vh; /* 👈 Change this to make hero taller/shorter */
   background: url('images/hero-placeholder.jpg') center/cover no-repeat;
-  z-index: 0;
+  margin-top: 100px; /* 👈 Creates space under fixed header */
 }
 
-.about-hero .hero-text {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
-}
-
-.about-hero .hero-text h1 {
-  font-size: 3rem;
-  margin: 0;
-}
-
-.about-hero .hero-text h2 {
-  font-weight: 300;
-  font-size: 1.2rem;
-  margin-top: 10px;
-}
-
-/* ABOUT PAGE CONTENT SIDE BY SIDE */
-.about-content-wrapper {
+/* Content layout under hero (image left, text right) */
+.about-content {
   display: flex;
-  gap: 40px; /* Space between image and text - adjust as needed */
-  max-width: 1200px;
-  margin: 0 auto 80px auto; /* centers content and adds bottom margin */
-  padding: 0 20px;
+  flex-direction: row; /* 👈 Image on left, text on right */
+  justify-content: center;
   align-items: flex-start;
+  gap: 40px; /* 👈 Space between image and text */
+  max-width: 1200px;
+  margin: 50px auto 80px auto; /* 👈 Top and bottom spacing */
+  padding: 0 20px;
 }
 
-/* Placeholder image styles */
-.about-image-placeholder img {
+/* Image block */
+.about-image img {
   max-width: 100%;
+  width: 300px; /* 👈 Control image size here */
   height: auto;
   border-radius: 8px;
-  width: 45%; /* image takes 45% width */
-  object-fit: cover;
 }
 
-/* Text container */
+/* Text block */
 .about-text {
-  width: 55%; /* text takes 55% width */
-  text-align: justify; /* Justify the paragraphs for neat look */
-  font-weight: 300;
-  font-size: 1.1rem;
+  flex: 1;
+  text-align: justify; /* 👈 Makes text look neat and aligned */
+  font-size: 16px;
   line-height: 1.6;
 }
 
-/* Responsive for small screens */
+/* Mobile view: stack text and image */
 @media (max-width: 768px) {
-  .about-content-wrapper {
+  .about-content {
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    text-align: center;
   }
 
-  .about-image-placeholder img,
   .about-text {
-    width: 100%;
+    text-align: justify;
   }
 
-  .about-hero .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .about-hero .hero-text h2 {
-    font-size: 1rem;
+  .about-image img {
+    width: 90%;
+    max-width: 300px;
   }
 }
