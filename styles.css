@@ -1,74 +1,134 @@
 /* ===== GLOBAL STYLES ===== */
+
+/* Basic CSS reset to remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;                       /* Remove default margin */
-  font-family: 'Montserrat', sans-serif; /* Clean sans-serif font */
-  background-color: white;         /* White background */
-  color: black;                    /* Black text */
+  font-family: 'Montserrat', sans-serif; /* Clean, modern font */
+  background-color: white;
+  color: black;
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
 }
 
-.wrapper {
-  max-width: 1200px;               /* Limit page width */
-  margin: 0 auto;                  /* Center page horizontally */
-  padding: 0 20px;                 /* Side padding */
-}
+/* ===== HEADER & NAVIGATION ===== */
 
-/* ===== HEADER ===== */
 header {
-  display: flex;                   /* Use flexbox for layout */
-  align-items: center;             /* Vertically center items */
-  justify-content: flex-start;     /* Align items to the left */
-  gap: 50px;                      /* Space between logo and nav */
-  padding: 20px 50px;              /* Padding around header */
-  position: relative;
+  background-color: white;
+  padding: 20px 50px;
+  position: fixed;   /* Fixed on top */
+  top: 0;
   width: 100%;
-  box-sizing: border-box;          /* Include padding in width */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Logo left, nav right */
+  z-index: 1000;
+  border-bottom: 1px solid #eee; /* subtle line under header */
 }
 
 .logo img {
-  height: 50px;                    /* Logo size */
-  cursor: pointer;                 /* Pointer cursor on hover */
+  height: 50px;
+  cursor: pointer;
 }
 
 nav ul {
-  list-style: none;                /* Remove bullets */
-  display: flex;                   /* Horizontal list */
-  gap: 30px;                      /* Space between nav items */
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
-  text-decoration: none;           /* Remove underline */
-  color: black;
-  font-weight: 500;                /* Medium weight for nav */
-  font-size: 1rem;
-}
-
-/* ===== CENTER NAVIGATION BUTTONS ===== */
-/* Keep the logo on left, nav buttons centered */
-.nav-container {
+  list-style: none;
   display: flex;
-  align-items: center;
-  justify-content: space-between; /* logo left, nav right container */
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  gap: 30px;
+  justify-content: center; /* center nav items */
+  flex-grow: 1; /* take all remaining space */
+  margin-left: 50px; /* space between logo and nav */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #555;
+  text-decoration: underline;
+}
+
+/* ===== MAIN CONTENT ===== */
+
+main {
+  flex: 1; /* fill vertical space between header and footer */
+  padding: 120px 20px 40px; /* Top padding accounts for fixed header */
+}
+
+/* ===== HERO SECTION (only on homepage) ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0; left: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
 
-nav {
-  flex-grow: 1;                   /* Make nav take remaining space */
-  text-align: center;             /* Center nav content */
+.hero-image {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
+  z-index: 1;
 }
 
-nav ul {
-  justify-content: center;        /* Center nav links horizontally */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  animation: fadeIn 2s ease-in;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.hero-text h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* ===== ABOUT ME PAGE ===== */
+.about-me-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.about-me-paragraph {
+  margin-bottom: 30px;
 }
 
 /* ===== PORTFOLIO GRID ===== */
 .portfolio-items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   padding: 60px 10%;
   box-sizing: border-box;
@@ -78,91 +138,126 @@ nav ul {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  transition: transform 0.3s ease;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .portfolio-item img:hover {
   transform: scale(1.05);
 }
 
-/* ===== FOOTER ===== */
-footer {
+/* ===== CONTACT ME FORM ===== */
+.contact-intro {
+  max-width: 600px;
+  margin: 0 auto 40px;
   text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  background-color: #ffffff;
-  margin-top: 40px;
-  font-weight: 300;               /* Light font weight */
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* ===== CONTACT FORM ===== */
-form#contact-form {
+form {
   max-width: 600px;
-  margin: 20px auto 60px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-form#contact-form input,
-form#contact-form textarea {
-  padding: 12px 15px;
+form input,
+form textarea {
+  padding: 12px;
+  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1rem;
   font-family: 'Montserrat', sans-serif;
+}
+
+form textarea {
+  min-height: 120px;
   resize: vertical;
 }
 
-form#contact-form textarea {
-  min-height: 120px;
-}
-
-form#contact-form button {
-  background-color: black;
+form button {
+  padding: 12px;
+  background-color: #333;
   color: white;
+  font-weight: 600;
   border: none;
-  padding: 15px 0;
   border-radius: 5px;
-  font-size: 1.1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-form#contact-form button:hover {
-  background-color: #333;
+form button:hover {
+  background-color: #555;
 }
 
-/* ===== ABOUT ME PAGE TEXT ===== */
-.about-me-container {
-  max-width: 800px;
-  margin: 40px auto 60px;
-  padding: 0 20px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #222;
+#response-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: black;
 }
 
-.about-me-paragraph {
-  margin-bottom: 1.5rem;
+/* ===== FOOTER ===== */
+footer {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 300;
+  border-top: 1px solid #eee;
+  margin-top: auto; /* Push footer to bottom */
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   header {
-    padding: 20px;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+  }
+
+  nav ul {
+    margin-left: 0;
+    gap: 15px;
+    justify-content: center;
+    flex-grow: unset;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  main {
+    padding: 100px 15px 30px;
+  }
+
+  .about-me-container {
+    width: 90%;
+  }
+
+  form,
+  .contact-intro {
+    width: 90%;
   }
 
   .portfolio-items {
     padding: 40px 5%;
-  }
-
-  nav ul {
-    gap: 15px;
-  }
-
-  .about-me-container {
-    font-size: 1rem;
+    grid-template-columns: 1fr;
   }
 }
+
