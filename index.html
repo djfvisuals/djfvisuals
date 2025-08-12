@@ -1,222 +1,56 @@
-/* ===== GLOBAL STYLES ===== */
-body {
-  margin: 0;                     
-  font-family: 'Montserrat', sans-serif; 
-  background-color: white;       
-  color: black;                  
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DJF Visuals - Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-.wrapper {
-  max-width: 1200px;             
-  margin: 0 auto;                
-  padding: 0 20px;               
-}
+  <header>
+    <a href="index.html" class="logo">
+      <img src="images/DJF_VISUALS_LOGO_FINAL_GB.png" alt="DJF Visuals Logo" />
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="contact-me.html">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
 
-/* ===== HEADER ===== */
-header {
-  display: flex;
-  align-items: center;
-  padding: 20px 50px;
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
-  justify-content: flex-start; /* Logo on left */
-  gap: 50px; 
-}
+  <main>
+    <section class="hero">
+      <!-- You can replace the video or image below -->
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="videos/hero-video.mp4" type="video/mp4" />
+        Sorry, your browser does not support the video tag.
+      </video>
+      <div class="hero-text">
+        <h1>Welcome to DJF Visuals</h1>
+        <h2>Capturing moments, creating memories</h2>
+      </div>
+    </section>
 
-.logo {
-  flex: 0 0 auto; 
-}
+    <section class="portfolio-items">
+      <div class="portfolio-item">
+        <img src="images/project1.jpg" alt="Project 1" />
+      </div>
+      <div class="portfolio-item">
+        <img src="images/project2.jpg" alt="Project 2" />
+      </div>
+      <div class="portfolio-item">
+        <img src="images/project3.jpg" alt="Project 3" />
+      </div>
+      <!-- Add more portfolio items here -->
+    </section>
+  </main>
 
-.logo img {
-  height: 50px;                  
-  cursor: pointer;               
-}
+  <footer>
+    <p>All content copyright David J. Franco "DJF Visuals" © 2025.</p>
+  </footer>
 
-/* Navigation takes remaining space and centers links */
-nav {
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: center; /* Center navigation */
-}
-
-nav ul {
-  list-style: none;              
-  display: flex;                 
-  gap: 30px;                    
-  margin: 0;                    
-  padding: 0;                   
-}
-
-nav a {
-  text-decoration: none;         
-  color: black;                  
-  font-weight: bold;             
-  font-size: 1rem;               
-}
-
-/* ===== HERO SECTION (homepage only) ===== */
-.hero {
-  position: relative;
-  height: 100vh;                 
-  overflow: hidden;
-}
-
-.hero-video {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;             
-}
-
-.hero-image {
-  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-text {
-  position: relative;
-  z-index: 2;                   
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  animation: fadeIn 2s ease-in;
-}
-
-.hero-text h1 {
-  font-size: 4rem;
-  margin: 0;
-}
-
-.hero-text h2 {
-  font-size: 1.5rem;
-  font-weight: normal;
-}
-
-/* ===== PORTFOLIO GRID ===== */
-.portfolio-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-  gap: 30px;
-  padding: 60px 10%;
-  box-sizing: border-box;
-}
-
-.portfolio-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;           
-  transition: transform 0.3s ease;
-  cursor: pointer;              
-}
-
-.portfolio-item img:hover {
-  transform: scale(1.05);       
-}
-
-/* ===== CONTACT PAGE SPECIFIC STYLES ===== */
-
-/* Center the intro text on contact page */
-.contact-intro {
-  max-width: 600px;
-  margin: 40px auto 20px;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  color: black;
-}
-
-/* Form styles (original contact form style) */
-form#contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-form#contact-form input,
-form#contact-form textarea {
-  padding: 12px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-family: 'Montserrat', sans-serif;
-  box-sizing: border-box;
-}
-
-form#contact-form textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-form#contact-form button {
-  padding: 12px;
-  background-color: #333;
-  color: white;
-  font-weight: 600;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-form#contact-form button:hover {
-  background-color: #555;
-}
-
-#response-message {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 1.2rem;
-  color: black;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  background-color: #ffffff;
-  margin-top: 40px;
-  font-weight: 300;
-}
-
-/* ===== ANIMATION ===== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-50%);
-  }
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-
-  header {
-    padding: 20px;
-    flex-wrap: wrap;
-  }
-
-  nav ul {
-    gap: 15px;
-  }
-
-  .portfolio-items {
-    padding: 40px 5%;
-  }
-
-  .contact-intro,
-  form#contact-form {
-    width: 90%;
-  }
-}
+</body>
+</html>
