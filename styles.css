@@ -1,132 +1,138 @@
-/* GLOBAL */
+/* ===== GLOBAL STYLES ===== */
+
+/* Make sure the whole page uses the full height of the browser */
 html, body {
-  height: 100%;
-  margin: 0;
+  height: 100%;      /* Full height */
+  margin: 0;         /* Remove default margin */
+  font-family: 'Montserrat', sans-serif;  /* Set font */
+  background-color: white;  /* White background */
+  color: black;      /* Black text */
+  display: flex;     /* Use flexbox layout */
+  flex-direction: column; /* Stack items vertically */
+  min-height: 100vh; /* Minimum height: full viewport */
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: white;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
+/* Wrapper to hold main content and allow footer at bottom */
 .wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  flex: 1;             /* Take up remaining space */
+  display: flex;       /* Use flexbox */
+  flex-direction: column; /* Stack content vertically */
 }
 
-/* HEADER */
+/* ===== HEADER / NAVIGATION ===== */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  position: absolute;
-  width: 100%;
-  z-index: 10;
+  display: flex;               /* Layout children side by side */
+  justify-content: space-between; /* Space between logo and nav */
+  align-items: center;         /* Vertically center items */
+  padding: 20px 50px;          /* Space inside header */
+  position: absolute;          /* Keep header on top */
+  width: 100%;                 /* Full width */
+  z-index: 10;                 /* Stay above other elements */
 }
 
 .logo img {
-  height: 50px;
+  height: 50px;                /* Logo size */
 }
 
 nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin: 0;
+  list-style: none;            /* Remove bullets */
+  display: flex;               /* Show links horizontally */
+  gap: 30px;                   /* Space between links */
+  margin: 0;                   /* Remove default margin */
 }
 
 nav a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
+  text-decoration: none;       /* Remove underline */
+  color: black;                /* Link color */
+  font-weight: bold;           /* Bold text */
 }
 
-/* HERO */
+/* ===== HERO SECTION ===== */
 .hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+  position: relative;          /* For absolutely positioned children */
+  height: 100vh;               /* Full viewport height */
+  overflow: hidden;            /* Hide overflow */
 }
 
 .hero-video {
-  position: absolute;
+  position: absolute;          /* Cover entire hero */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;           /* Make video cover area nicely */
 }
 
 .hero-image {
-  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
+  background: url('images/hero-placeholder.jpg') center/cover no-repeat; /* Background fallback */
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
 .hero-text {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  animation: fadeIn 2s ease-in;
+  position: relative;          /* Put above video/image */
+  z-index: 2;                  /* Make sure text is on top */
+  text-align: center;          /* Center the text */
+  top: 50%;                   /* Push text halfway down */
+  transform: translateY(-50%); /* Center text vertically */
+  animation: fadeIn 2s ease-in; /* Fade in effect */
 }
 
 .hero-text h1 {
-  font-size: 4rem;
-  margin: 0;
+  font-size: 4rem;             /* Large heading */
+  margin: 0;                   /* Remove default margin */
 }
 
 .hero-text h2 {
-  font-size: 1.5rem;
-  font-weight: normal;
+  font-size: 1.5rem;           /* Smaller subheading */
+  font-weight: normal;         /* Normal weight */
 }
 
-/* PORTFOLIO GRID */
+/* ===== PORTFOLIO GRID ===== */
 .portfolio-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 60px 10%;
-  flex-grow: 1;
+  display: grid;                     /* Grid layout for items */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 30px;                        /* Space between items */
+  padding: 60px 10%;                /* Padding around the grid */
+  flex-grow: 1;                    /* Grow to fill space */
 }
 
 .portfolio-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  width: 100%;                     /* Full width images */
+  height: auto;                    /* Maintain aspect ratio */
+  border-radius: 8px;              /* Rounded corners */
+  transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
 .portfolio-item img:hover {
-  transform: scale(1.05);
+  transform: scale(1.05);          /* Slight zoom on hover */
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  background: white;
-  flex-shrink: 0;
+  text-align: center;              /* Center text */
+  padding: 20px;                   /* Space inside footer */
+  font-size: 0.9rem;               /* Smaller text */
+  background: white;               /* Background color */
+  flex-shrink: 0;                  /* Don’t shrink footer */
 }
 
-/* ANIMATION */
+/* ===== ANIMATION ===== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(-50%); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE STYLES ===== */
 @media (max-width: 768px) {
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 2.5rem;             /* Smaller heading on small screens */
   }
 }
