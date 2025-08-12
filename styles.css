@@ -1,30 +1,25 @@
-/* ===== BASE LAYOUT ===== */
-html, body {
-  height: 100%;                     /* Make page fill full height */
-  margin: 0;                        /* Remove default margin */
-  padding: 0;                       /* Remove default padding */
-  display: flex;
-  flex-direction: column;          /* Stack header, main, footer vertically */
+/* ===== GLOBAL STYLES ===== */
+body {
+  margin: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: white;
   color: black;
 }
 
-/* Main content wrapper */
 .wrapper {
-  max-width: 1200px;               /* Limit page width */
-  margin: 0 auto;                  /* Center horizontally */
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 20px;
-  flex: 1;                         /* Take up remaining vertical space */
   box-sizing: border-box;
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER (Logo left, nav center) ===== */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
+  position: relative;
   width: 100%;
   box-sizing: border-box;
 }
@@ -33,13 +28,14 @@ header {
   height: 50px;
   cursor: pointer;
 }
-/* Center the navigation in the available space */
-nav {
-  flex: 1; /* Takes up remaining space between logo and end */
-  display: flex;
-  justify-content: center; /* Center the nav items */
 
-  nav ul {
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center nav buttons */
+}
+
+nav ul {
   list-style: none;
   display: flex;
   gap: 30px;
@@ -54,7 +50,7 @@ nav a {
   font-size: 1rem;
 }
 
-/* ===== HERO SECTION (Homepage only) ===== */
+/* ===== HERO SECTION (only for homepage) ===== */
 .hero {
   position: relative;
   height: 100vh;
@@ -122,12 +118,11 @@ footer {
   padding: 20px;
   font-size: 0.9rem;
   background-color: #ffffff;
-  font-weight: 300;                  /* Light font weight */
-  color: #333;
-  margin-top: auto;                 /* Push footer to bottom */
+  margin-top: 40px;
+  font-weight: 300; /* Light font weight */
 }
 
-/* ===== ANIMATIONS ===== */
+/* ===== ANIMATION ===== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -147,6 +142,13 @@ footer {
 
   header {
     padding: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    justify-content: center;
+    margin-top: 15px;
   }
 
   .portfolio-items {
