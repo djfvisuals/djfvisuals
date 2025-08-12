@@ -28,7 +28,7 @@ header {
 /* Center the nav bar */
 nav {
   position: absolute;
-  left: 45%;
+  left: 55%;
   transform: translateX(-50%);
 }
 
