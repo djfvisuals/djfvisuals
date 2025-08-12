@@ -1,37 +1,44 @@
 /* ===== GLOBAL ===== */
-body {
+body, html {
+  height: 100%;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: white;
   color: black;
-  padding-top: 100px; /* space for fixed header */
+
+  /* Flex layout for footer at bottom */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make main content take all space between header and footer */
+main {
+  flex: 1;
 }
 
 /* ===== HEADER ===== */
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* center nav */
   align-items: center;
   padding: 20px 50px;
-  position: fixed;
-  top: 0;
+  position: relative; /* changed from absolute so hero stays */
   width: 100%;
   z-index: 10;
-  background-color: white;
-  border-bottom: 1px solid #eee;
+}
+
+/* Logo fixed top-left */
+.logo {
+  position: absolute;
+  left: 50px;
+  top: 20px;
 }
 
 .logo img {
   height: 50px;
 }
 
-/* Center the nav bar */
-nav {
-  position: absolute;
-  left: 48%;
-  transform: translateX(-50%);
-}
-
+/* Navigation styling */
 nav ul {
   list-style: none;
   display: flex;
@@ -88,35 +95,12 @@ nav a {
   font-weight: normal;
 }
 
-/* ===== PORTFOLIO GRID ===== */
-.portfolio-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 60px 10%;
-}
-
-.portfolio-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.portfolio-item img:hover {
-  transform: scale(1.05);
-}
-
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
-  position: relative;
-  bottom: 0;
-  width: 100%;
   background: white;
-  margin-top: 100px;
 }
 
 /* ===== ANIMATION ===== */
@@ -131,57 +115,6 @@ footer {
     font-size: 2.5rem;
   }
 
-  nav ul {
-    gap: 15px;
-  }
-}
-
-/* ===== CONTACT PAGE ===== */
-.contact-intro {
-  text-align: center;
-  margin: 60px auto 30px auto;
-  padding: 0 20px;
-}
-
-/* ===== CONTACT FORM STYLES ===== */
-form {
-  max-width: 600px;
-  margin: 20px auto;
-  display: flex;
-  flex-direction: column;
-  padding: 0 20px;
-}
-
-form input,
-form textarea {
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form button {
-  padding: 10px 15px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #555;
-}
-
-#response-message {
-  margin-top: 20px;
-  font-size: 1.2em;
-  color: black;
-}
-
-/* Responsive form */
-@media (max-width: 768px) {
   form {
     width: 90%;
   }
@@ -195,23 +128,3 @@ form button:hover {
     padding: 10px;
   }
 }
-
-/* Make footer stick at bottom, visible only on scroll */
-body, html {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1; /* main grows to fill space */
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  background: white;
-}
-
