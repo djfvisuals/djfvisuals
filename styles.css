@@ -4,6 +4,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: white;
   color: black;
+  padding-top: 100px; /* space for fixed header */
 }
 
 /* ===== HEADER ===== */
@@ -12,13 +13,23 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  position: absolute;
+  position: fixed;
+  top: 0;
   width: 100%;
   z-index: 10;
+  background-color: white;
+  border-bottom: 1px solid #eee;
 }
 
 .logo img {
   height: 50px;
+}
+
+/* Center the nav bar */
+nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 nav ul {
@@ -26,6 +37,7 @@ nav ul {
   display: flex;
   gap: 30px;
   margin: 0;
+  padding: 0;
 }
 
 nav a {
@@ -100,6 +112,11 @@ footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  margin-top: 100px;
 }
 
 /* ===== ANIMATION ===== */
@@ -113,6 +130,17 @@ footer {
   .hero-text h1 {
     font-size: 2.5rem;
   }
+
+  nav ul {
+    gap: 15px;
+  }
+}
+
+/* ===== CONTACT PAGE ===== */
+.contact-intro {
+  text-align: center;
+  margin: 60px auto 30px auto;
+  padding: 0 20px;
 }
 
 /* ===== CONTACT FORM STYLES ===== */
@@ -121,6 +149,7 @@ form {
   margin: 20px auto;
   display: flex;
   flex-direction: column;
+  padding: 0 20px;
 }
 
 form input,
