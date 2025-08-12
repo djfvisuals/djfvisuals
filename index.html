@@ -2,18 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DJF Visuals - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJF Visuals</title>
+
+  <!-- Google Fonts: Bold Sans Serif -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+  <!-- Link to your CSS file -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <!-- Change logo image in src="" below -->
   <header>
-    <a href="index.html" class="logo">
-      <img src="images/DJF_VISUALS_LOGO_FINAL_GB.png" alt="DJF Visuals Logo" />
-    </a>
+    <div class="logo">
+      <img src="images/DJF_VISUALS_LOGO_FINAL_GB.png">
+    </div>
     <nav>
       <ul>
+        <!-- These links go to your other pages -->
         <li><a href="index.html">Portfolio</a></li>
         <li><a href="aboutme.html">About Me</a></li>
         <li><a href="contact-me.html">Contact Me</a></li>
@@ -21,36 +29,72 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <!-- You can replace the video or image below -->
-      <video class="hero-video" autoplay muted loop playsinline>
-        <source src="videos/hero-video.mp4" type="video/mp4" />
-        Sorry, your browser does not support the video tag.
-      </video>
-      <div class="hero-text">
-        <h1>Welcome to DJF Visuals</h1>
-        <h2>Capturing moments, creating memories</h2>
-      </div>
-    </section>
+  <!-- ===== HERO SECTION ===== -->
+  <!-- Fullscreen banner with video or image background -->
+  <section class="hero">
+    <!-- VIDEO BACKGROUND -->
+    <!-- Replace video-placeholder.mp4 with your own file, or remove this block if you don't want video -->
+    <video autoplay muted loop class="hero-video">
+      <source src="video-placeholder.mp4" type="video/mp4">
+    </video>
 
-    <section class="portfolio-items">
-      <div class="portfolio-item">
-        <img src="images/project1.jpg" alt="Project 1" />
+    <!-- IMAGE FALLBACK -->
+    <!-- Replace hero-placeholder.jpg with your own image -->
+    <div class="hero-image"></div>
+
+    <!-- Text that appears in front of the hero background -->
+    <!-- Change YOUR NAME HERE and subheading as you like -->
+    <div class="hero-text">
+      <h1>David J. Franco</h1>
+      <h2>Designer • Brand Strategist • Creative Director • Project Manager</h2>
+    </div>
+  </section>
+
+  <!-- ===== MAIN PORTFOLIO GRID ===== -->
+  <main>
+    <section>
+      <div class="portfolio-items">
+
+        <!-- Project 1 -->
+        <!-- Change link in href="", and update image in src="" -->
+        <div class="portfolio-item">
+          <a href="valuetainment.html">
+            <img src="images/Valuetainment_logo.png" alt="Valuetainment Logo">
+          </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="portfolio-item">
+          <a href="miamialkalinewater.html">
+            <img src="images/miami_alkaline_logo2.png" alt="Miami Alkaline Water Logo">
+          </a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="portfolio-item">
+          <a href="print.html">
+            <img src="images/print.png" alt="Aframe Design">
+          </a>
+        </div>
+
+        <!-- Project 4 -->
+        <!-- Add the new link for the Photography 2 project -->
+        <div class="portfolio-item">
+          <a href="photography.html">
+            <img src="images/photography2.png" alt="Photography 2">
+          </a>
+        </div>
+
       </div>
-      <div class="portfolio-item">
-        <img src="images/project2.jpg" alt="Project 2" />
-      </div>
-      <div class="portfolio-item">
-        <img src="images/project3.jpg" alt="Project 3" />
-      </div>
-      <!-- Add more portfolio items here -->
     </section>
   </main>
 
+  <!-- ===== FOOTER ===== -->
+  <!-- You can update your copyright -->
   <footer>
     <p>All content copyright David J. Franco "DJF Visuals" © 2025.</p>
   </footer>
 
 </body>
 </html>
+
