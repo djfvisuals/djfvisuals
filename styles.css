@@ -48,46 +48,6 @@ nav a {
 }
 
 /* ===== HERO SECTION ===== */
-.hero {
-  position: relative;          /* For absolutely positioned children */
-  height: 100vh;               /* Full viewport height */
-  overflow: hidden;            /* Hide overflow */
-}
-
-.hero-video {
-  position: absolute;          /* Cover entire hero */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;           /* Make video cover area nicely */
-}
-
-.hero-image {
-  background: url('images/hero-placeholder.jpg') center/cover no-repeat; /* Background fallback */
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-text {
-  position: relative;          /* Put above video/image */
-  z-index: 2;                  /* Make sure text is on top */
-  text-align: center;          /* Center the text */
-  top: 50%;                   /* Push text halfway down */
-  transform: translateY(-50%); /* Center text vertically */
-  animation: fadeIn 2s ease-in; /* Fade in effect */
-}
-
-.hero-text h1 {
-  font-size: 4rem;             /* Large heading */
-  margin: 0;                   /* Remove default margin */
-}
-
-.hero-text h2 {
-  font-size: 1.5rem;           /* Smaller subheading */
-  font-weight: normal;         /* Normal weight */
-}
 
 /* ===== PORTFOLIO GRID ===== */
 .portfolio-items {
