@@ -196,3 +196,97 @@ form button:hover {
     padding: 10px;
   }
 }
+/* ABOUT PAGE HERO */
+.about-hero {
+  position: relative;
+  height: 60vh; /* Adjust hero height here */
+  overflow: hidden;
+  margin-bottom: 40px; /* Space between hero and content - adjust as needed */
+}
+
+.about-hero .hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.about-hero .hero-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
+  z-index: 0;
+}
+
+.about-hero .hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.about-hero .hero-text h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.about-hero .hero-text h2 {
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* ABOUT PAGE CONTENT SIDE BY SIDE */
+.about-content-wrapper {
+  display: flex;
+  gap: 40px; /* Space between image and text - adjust as needed */
+  max-width: 1200px;
+  margin: 0 auto 80px auto; /* centers content and adds bottom margin */
+  padding: 0 20px;
+  align-items: flex-start;
+}
+
+/* Placeholder image styles */
+.about-image-placeholder img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  width: 45%; /* image takes 45% width */
+  object-fit: cover;
+}
+
+/* Text container */
+.about-text {
+  width: 55%; /* text takes 55% width */
+  text-align: justify; /* Justify the paragraphs for neat look */
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .about-content-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-image-placeholder img,
+  .about-text {
+    width: 100%;
+  }
+
+  .about-hero .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .about-hero .hero-text h2 {
+    font-size: 1rem;
+  }
+}
