@@ -28,14 +28,14 @@ header {
 /* Center the nav bar */
 nav {
   position: absolute;
-  left: 54%;
+  left: 55%;
   transform: translateX(-50%);
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 38px;
+  gap: 36px;
   margin: 0;
   padding: 0;
 }
