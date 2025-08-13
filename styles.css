@@ -134,7 +134,7 @@ nav a {
   font-size: 1.9rem;
   letter-spacing: 1px;
   font-weight: 500;
-  padding-left: 10px;  /* nudges text 10px to the right */
+  padding-left: 0px;  /* nudges text 10px to the right */
 }
 
 
@@ -275,7 +275,7 @@ form button:hover {
   text-align: left; /* Left-justify text */
 
   margin: 60px auto 30px auto;
-  padding: 0 20px;
+  padding: 0 25px;
 }
 
 .about-intro h1 {
