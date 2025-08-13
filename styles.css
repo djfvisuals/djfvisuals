@@ -123,6 +123,7 @@ nav a {
   font-weight: normal;
 }
 
+/* "EXPLORE SOME OF MY WORK" */
 .work-intro {
   text-align: Center; /* Left-justify text */
   margin: 60px auto 30px auto;
@@ -130,7 +131,7 @@ nav a {
 }
 
 .work-intro h1 {
-  font-size: 1.3rem;
+  font-size: 1.9rem;
   letter-spacing: 1px;
   font-weight: 500;
   padding-left: 10px;  /* nudges text 10px to the right */
