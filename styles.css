@@ -255,15 +255,16 @@ form button:hover {
   margin: 50px auto 80px auto; /* 👈 Top and bottom spacing */
   padding: 0 20px;
 }
-
+/*"EXPERIENCE*/
 .about-intro {
-  text-align: center;
+  text-align: left; /* Left-justify text */
+
   margin: 60px auto 30px auto;
   padding: 0 20px;
 }
 
 .about-intro h1 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   letter-spacing: 1px;
   font-weight: 500;
 }
