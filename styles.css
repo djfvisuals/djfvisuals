@@ -57,7 +57,7 @@ header {
 
 .logo img {
   height: 50px;
-  transform: translateX(-10px); /* 👈 Nudges logo to the left */
+  transform: translateX(-15px); /* 👈 Nudges logo to the left */
 }
 
 /* Center the nav bar */
@@ -152,7 +152,7 @@ footer {
   width: 100%;
   background: white;
   margin-top: 100px; /* pushes footer down */
-  transform: translateX(-10px); /* 👈 Nudges logo to the left */
+  transform: translateX(-15px); /* 👈 Nudges logo to the FOOTER */
 }
 
 /* ===== ANIMATION ===== */
