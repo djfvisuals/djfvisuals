@@ -256,13 +256,7 @@ form button:hover {
   padding: 0 20px;
 }
 
-/* Image block */
-.about-image img {
-  max-width: 100%;
-  width: 300px; /* 👈 Control image size here */
-  height: auto;
-  border-radius: 8px;
-}
+
 
 /* Text block */
 .about-text {
