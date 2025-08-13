@@ -354,3 +354,27 @@ nav a {
   }
 }
 
+/* ===== TEXT REVEAL ANIMATION FOR MAIN PAGE "EXPLORE SOME OF MY WORK===== */
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.work-intro h1 {
+  font-size: 4rem;      /* match your hero font size */
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: center;
+  animation: textReveal 1.2s ease forwards;
+  animation-delay: 0.3s;  /* delay to time it nicely */
+  opacity: 0;             /* start invisible */
+}
+
+
