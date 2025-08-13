@@ -1,8 +1,32 @@
 /* ===== GLOBAL ===== */
-/* Stop sideways (horizontal) scrolling */
-body {
+
+/* ✅ Prevent horizontal scroll on all pages */
+html, body {
   overflow-x: hidden;
 }
+
+/* ✅ Add wrapper styling */
+.site-wrapper {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* ✅ Optional: Fix navigation on small screens */
+@media (max-width: 768px) {
+  nav {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+  }
+
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
 
 
 body {
