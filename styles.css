@@ -264,9 +264,10 @@ form button:hover {
 }
 
 .about-intro h1 {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   letter-spacing: 1px;
   font-weight: 500;
+  padding-left: 10px;  /* nudges text 10px to the right */
 }
 
 
