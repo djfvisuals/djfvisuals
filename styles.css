@@ -57,6 +57,7 @@ header {
 
 .logo img {
   height: 50px;
+  transform: translateX(-10px);
 }
 
 /* Center the nav bar */
