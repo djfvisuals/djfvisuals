@@ -256,6 +256,19 @@ form button:hover {
   padding: 0 20px;
 }
 
+.about-intro {
+  text-align: center;
+  margin: 60px auto 30px auto;
+  padding: 0 20px;
+}
+
+.about-intro h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+
 
 
 /* Text block */
