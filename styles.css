@@ -57,7 +57,7 @@ header {
 
 .logo img {
   height: 50px;
-  transform: translateX(-50px); /* 👈 Nudges logo to the left */
+  transform: translateX(-40px); /* 👈 Nudges logo to the left */
 }
 
 /* Center the nav bar */
