@@ -152,7 +152,7 @@ footer {
   width: 100%;
   background: white;
   margin-top: 100px; /* pushes footer down */
-  transform: translateX(-15px); /* 👈 Nudges logo to the FOOTER */
+  transform: translateX(-15px); /* 👈 Nudges FOOTER "ALL RIGHT RESERVED" to the LEFT */
 }
 
 /* ===== ANIMATION ===== */
