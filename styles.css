@@ -123,6 +123,20 @@ nav a {
   font-weight: normal;
 }
 
+.work-intro {
+  text-align: left; /* Left-justify text */
+  margin: 60px auto 30px auto;
+  padding: 0 20px;
+}
+
+.work-intro h1 {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  padding-left: 10px;  /* nudges text 10px to the right */
+}
+
+
 /* ===== PORTFOLIO GRID ===== */
 .portfolio-items {
   display: grid;
