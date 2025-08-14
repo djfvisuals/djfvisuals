@@ -270,6 +270,7 @@ form button:hover {
   margin: 50px auto 80px auto; /* 👈 Top and bottom spacing */
   padding: 0 20px;
 }
+
 /*"EXPERIENCE*/
 .about-intro {
   text-align: left; /* Left-justify text */
@@ -284,6 +285,18 @@ form button:hover {
   font-weight: 500;
   padding-left: 52px;  /* nudges text 10px to the right */
 }
+
+
+/*"Who am I"*/
+.about-text .sub-heading {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  padding-left: 52px; /* align with your other headings */
+  margin-top: 60px;    /* add some space from previous paragraph */
+  text-align: left;
+}
+
 
 
 
