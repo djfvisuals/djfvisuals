@@ -314,7 +314,7 @@ form button:hover {
   letter-spacing: 0.4px;     /* Adds subtle kerning */
   word-spacing: 1px;         /* Optional: Adds spacing between words */
   font-weight: 300;          /* Lighter feel */
-  max-width: 700px;          /* Keeps line width comfortable */
+  max-width: 800px;          /* Keeps line width comfortable */
   margin: 0 auto;            /* Center it if alone in the row */
 }
 
