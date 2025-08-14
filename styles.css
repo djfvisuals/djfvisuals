@@ -986,6 +986,12 @@ nav a {
 }
 
 @media (max-width: 768px) {
+  /* ===== HAMBURGER MENU - MOBILE ===== */
+.hamburger {
+  display: none; /* hidden by default */
+}
+
+@media (max-width: 768px) {
   .hamburger {
     display: block;
     position: absolute;
@@ -1003,6 +1009,7 @@ nav a {
     transition: 0.4s;
   }
 }
+
 
 
 /* ABOUT PAGE: Hero title font size */
