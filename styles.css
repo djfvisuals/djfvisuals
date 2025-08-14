@@ -115,11 +115,11 @@ nav a {
 /* =================== PAGE-SPECIFIC HERO TITLES =================== */
 
 /* Desktop titles */
-.home-page .hero-text h1 { font-size: 8rem; letter-spacing: 4px; font-weight: 700; color: black; }
-.work-page .hero-text h1 { font-size: 14rem; letter-spacing: 3px; font-weight: 700; color: black; }
+.home-page .hero-text h1 { font-size: 8rem; letter-spacing: 4px; font-weight: 700; color: black; } /* DAVID J. FRANCO */
+.work-page .hero-text h1 { font-size: 14rem; letter-spacing: 3px; font-weight: 700; color: black; } /* WORK */
 .about-page .hero-text h1,
-.about-hero .hero-text h1 { font-size: 9rem; letter-spacing: 3px; font-weight: 700; color: black; }
-.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 2px; font-weight: 700; color: black; }
+.about-hero .hero-text h1 { font-size: 9rem; letter-spacing: 3px; font-weight: 700; color: black; }/* ABOUT */
+.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 2px; font-weight: 700; color: black; } /* CONTACT */
 
 /* =================== PORTFOLIO / WORK =================== */
 
