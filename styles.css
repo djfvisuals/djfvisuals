@@ -7,7 +7,7 @@ html, body {
   overflow-x: hidden;                 /* Prevents sideways scrolling */
   scroll-padding-top: 100px;          /* Makes anchor links appear below fixed header */
   margin: 0;                           /* Removes default margin */
-  font-family: 'Montserrat', sans-serif; /* Set default font */
+  font-family: 'Montserrat', sans-serif; /* Default font */
   background-color: white;            /* Page background */
   color: black;                       /* Default text color */
   padding-top: 100px;                 /* Space for fixed header */
@@ -25,14 +25,14 @@ html, body {
 /* ========================================================== */
 
 header {
-  display: flex;                      /* Flex layout for logo + nav */
+  display: flex;                      
   justify-content: space-between;     /* Space between logo and nav */
   align-items: center;
-  padding: 20px 50px;                 /* Spacing inside header */
+  padding: 20px 50px;                 
   position: fixed;                     /* Stays at top while scrolling */
   top: 0;
   width: 100%;
-  z-index: 10;                         /* Ensure it’s above other content */
+  z-index: 100;                        /* Above other content */
   background-color: white;
   border-bottom: 1px solid #eee;      /* Light bottom border */
 }
@@ -46,28 +46,39 @@ header {
 /* Navigation styling */
 nav {
   position: absolute;
-  left: 46%;                          /* Center nav */
+  left: 46%;                          
   transform: translateX(-50%);
 }
 
 nav ul {
-  list-style: none;                   /* Remove bullet points */
+  list-style: none;                   
   display: flex;
-  gap: 30px;                          /* Space between links */
+  gap: 30px;                          
   margin: 0;
   padding: 0;
 }
 
 nav a {
-  font-family: 'Montserrat', sans-serif; /* Matches page font */
-  font-weight: 500;                   /* Medium weight */
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 500;                   
   color: black;
-  text-decoration: none;              /* Remove underline */
+  text-decoration: none;              
 }
 
-/* Hamburger menu (hidden by default) */
+/* Hamburger menu (hidden by default on desktop) */
 .hamburger {
-  display: none;
+  display: none;                      /* Hidden on desktop */
+  flex-direction: column;             /* Stack the three bars vertically */
+  cursor: pointer;
+  gap: 5px;                           /* Space between bars */
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;                        /* Width of each bar */
+  height: 3px;                         /* Height of each bar */
+  background-color: black;             /* Bar color */
+  border-radius: 2px;                  /* Slightly rounded edges */
 }
 
 /* ========================================================== */
@@ -76,7 +87,7 @@ nav a {
 
 .hero {
   position: relative;
-  height: 100vh;                      /* Full viewport height */
+  height: 100vh;                      
   overflow: hidden;
 }
 
@@ -86,7 +97,7 @@ nav a {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;                  /* Cover entire hero area */
+  object-fit: cover;                  
 }
 
 .hero-image {
@@ -98,29 +109,17 @@ nav a {
 
 .hero-text {
   position: relative;
-  z-index: 2;                         /* Above video/image */
+  z-index: 2;                         
   text-align: center;
-  top: 50%;                            /* Center vertically */
+  top: 50%;                            
   transform: translateY(-50%);
-  animation: fadeIn 2s ease-in;        /* Fade-in effect */
+  animation: fadeIn 2s ease-in;        
 }
 
-.hero-text h2 { /* Designer • Brand Strategist • Creative Director • Project Manager */
-  font-size: 1.3rem;
-  font-weight: normal;
-  margin-top: -50px;                   /* Moves subtitle up slightly */
-  margin-bottom: 0;
-}
+.hero-text h1 { font-size: 8rem; letter-spacing: 4px; font-weight: 700; color: black; } /* Desktop hero title */
+.hero-text h2 { font-size: 1.3rem; font-weight: 300; margin-top: -50px; margin-bottom: 0; }
 
-/* =================== PAGE-SPECIFIC HERO TITLES =================== */
-
-/* Desktop titles */
-.home-page .hero-text h1 { font-size: 8rem; letter-spacing: 4px; font-weight: 700; color: black; } /* DAVID J. FRANCO */
-.work-page .hero-text h1 { font-size: 14rem; letter-spacing: 3px; font-weight: 700; color: black; } /* WORK */
-.about-page .hero-text h1,
-.about-hero .hero-text h1 { font-size: 9rem; letter-spacing: 3px; font-weight: 700; color: black; }/* ABOUT */
-.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 2px; font-weight: 700; color: black; } /* CONTACT */
-
+/* ========================================================== */
 /* =================== PORTFOLIO / WORK =================== */
 
 .work-intro {
@@ -157,6 +156,7 @@ nav a {
   transform: scale(1.05);                 /* Slight zoom on hover */
 }
 
+/* ========================================================== */
 /* =================== ABOUT PAGE =================== */
 
 .about-hero {
@@ -208,6 +208,7 @@ nav a {
   margin: 0 auto;
 }
 
+/* ========================================================== */
 /* =================== CONTACT PAGE =================== */
 
 .contact-intro {
@@ -252,6 +253,7 @@ form button:hover {
   color: black;
 }
 
+/* ========================================================== */
 /* =================== PROJECT IMAGES =================== */
 
 .project-images {
@@ -271,6 +273,7 @@ form button:hover {
   display: block;
 }
 
+/* ========================================================== */
 /* =================== FOOTER =================== */
 
 footer {
@@ -281,9 +284,10 @@ footer {
   width: 100%;
   background: white;
   margin-top: 100px;
-  transform: translateX(-15px);          /* Nudges footer text slightly left */
+  transform: translateX(-15px);          
 }
 
+/* ========================================================== */
 /* =================== ANIMATIONS =================== */
 
 @keyframes fadeIn {
@@ -296,40 +300,45 @@ footer {
   100% { opacity: 1; transform: translateY(0); }
 }
 
+/* ========================================================== */
 /* =================== RESPONSIVE / MOBILE =================== */
 
 @media (max-width: 768px) {
 
-  /* ===== MOBILE HERO TITLES ===== */
+  /* ===== MOBILE HERO TITLE ===== */
   .home-page .hero-text h1 {
-    font-size: 1.9rem;       /* Smaller font for mobile */
-    letter-spacing: 2px;   /* Reduce spacing for mobile */
+    font-size: 3rem;       /* Smaller font for mobile */
+    letter-spacing: 2px;   /* Reduce spacing */
   }
 
-  /* General hero text adjustment */
-  .hero-text h1 {
-    font-size: 0.7rem;      /* Override other hero titles if needed */
+  /* Show hamburger menu on mobile */
+  .hamburger {
+    display: flex;
   }
 
-  /* Navigation adjustments */
+  /* Hide nav links initially on mobile */
   nav {
     display: none;
-    position: static;
-    transform: none;
-    margin-top: 10px;
+    position: absolute;
+    top: 70px;                /* Below header */
+    right: 20px;              /* Right corner */
+    background-color: white;  /* White menu background */
+    border: 1px solid #eee;   /* Light border */
+    border-radius: 8px;       /* Rounded edges */
+    padding: 10px 20px;       /* Space inside menu */
+    flex-direction: column;   /* Vertical links */
   }
 
-  nav.show, nav.active {
+  /* Show nav when hamburger clicked */
+  nav.show {
     display: flex;
   }
 
   nav ul {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    flex-direction: column;
+    flex-direction: column;   /* Stack links vertically */
+    gap: 15px;                /* Space between links */
     align-items: center;
-    padding: 20px 0;
+    padding: 10px 0;
   }
 
   nav ul li {
@@ -342,11 +351,7 @@ footer {
     padding: 10px 0;
   }
 
-  .hamburger {
-    display: flex;
-  }
-
-  /* About page stacking */
+  /* Stack about page content */
   .about-content {
     flex-direction: column;
     align-items: center;
@@ -367,7 +372,7 @@ footer {
     text-justify: inter-word;
   }
 
-  /* Forms */
+  /* Forms on mobile */
   form {
     width: 90%;
   }
@@ -382,7 +387,7 @@ footer {
   }
 }
 
-/* Smaller screens - project images */
+/* Extra small screens */
 @media (max-width: 600px) {
   .project-images {
     max-width: 100%;
