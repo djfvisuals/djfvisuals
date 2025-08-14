@@ -334,6 +334,7 @@ form button:hover {
   .about-text .sub-heading  /* Who Am I */ {
     padding-left: 0;
     text-align: left;
+    margin: 0;
   }
 }
 
