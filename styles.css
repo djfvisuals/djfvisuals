@@ -258,7 +258,7 @@ form button:hover {
   position: relative;
   height: 60vh; /* 👈 Change this to make hero taller/shorter */
   background: url('images/hero-placeholder.jpg') center/cover no-repeat;
-  margin-top: 100px; /* 👈 Creates space under fixed header */
+ 
 }
 
 /* Content layout under hero (image left, text right) */
