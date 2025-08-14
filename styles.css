@@ -278,7 +278,7 @@ form button:hover {
   letter-spacing: 1px;      /* Space between letters */
   font-weight: 500;         /* Medium-bold font */
   padding-left: 52px;       /* Align left consistently */
-  margin-top: 0;
+  margin-top: 20;
   margin-bottom: 30px;
 }
 
