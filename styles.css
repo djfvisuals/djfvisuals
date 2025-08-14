@@ -121,7 +121,7 @@ nav a {
 }
 
 .hero-text h2 {
-  font-size: 4rem;
+  font-size: 1.3rem;
   font-weight: normal;
 }
 
@@ -133,7 +133,7 @@ nav a {
 }
 
 .work-intro h1 {
-  font-size: 4rem;
+  font-size: 1.9rem;
   letter-spacing: 1px;
   font-weight: 500;
   padding-left: 0px;  /* nudges text 10px to the right */
