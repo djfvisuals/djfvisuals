@@ -177,22 +177,21 @@ body.contact-page .hero-text h2 {
   margin: 0 auto;
 }
 
-.portfolio-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 60px 10%;
+.project-image {
+  width: 100%;
 }
 
-.portfolio-item img {
+.project-image img {
   width: 100%;
   height: auto;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
 
-.portfolio-item img:hover {
+.project-image img:hover {
   transform: scale(1.05);
+}
+
 }
 
 /* ========================================================== */
