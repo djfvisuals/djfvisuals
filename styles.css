@@ -161,6 +161,8 @@ nav a {
 .hero-text h2 {
   font-size: 1.3rem;
   font-weight: normal;
+  margin-top: -10px; /* moves it up */
+  margin-bottom: 0;
 }
 
 /* "EXPLORE SOME OF MY WORK" */
