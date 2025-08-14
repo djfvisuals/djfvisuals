@@ -1,50 +1,28 @@
-Last css 
+/* ========================================================== */
+/* ====================== GLOBAL =========================== */
+/* ========================================================== */
 
-/* ===== GLOBAL ===== */
-
-/* ✅ Prevent horizontal scroll on all pages */
+/* Prevent horizontal scroll */
 html, body {
   overflow-x: hidden;
-}
-
-/* ✅ Add wrapper styling */
-.site-wrapper {
-  overflow-x: hidden;
-  position: relative;
-  width: 100%;
-}
-
-/* ✅ Optional: Fix navigation on small screens */
-@media (max-width: 768px) {
-  nav {
-    position: static;
-    transform: none;
-    margin-top: 10px;
-  }
-
-  nav ul {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-}
-
-
-
-body {
+  scroll-padding-top: 100px; /* adjust if header height changes */
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: white;
   color: black;
   padding-top: 100px; /* space for fixed header */
 }
-html {
-  scroll-padding-top: 100px; /* Adjust this if your header height changes */
+
+.site-wrapper {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
 }
 
+/* ========================================================== */
+/* ====================== HEADER =========================== */
+/* ========================================================== */
 
-
-/* ===== HEADER ===== */
 header {
   display: flex;
   justify-content: space-between;
@@ -58,13 +36,12 @@ header {
   border-bottom: 1px solid #eee;
 }
 
-
 .logo img {
   height: 50px;
-  transform: translateX(-40px); /* 👈 Nudges logo to the left */
+  transform: translateX(-40px); /* nudges logo to the left */
 }
 
-/* Center the nav bar */
+/* Navigation */
 nav {
   position: absolute;
   left: 46%;
@@ -80,923 +57,18 @@ nav ul {
 }
 
 nav a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
-
-/* ===== HERO (MAIN PAGE) ===== */
-.hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-image {
-  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-text {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  animation: fadeIn 2s ease-in;
-}
-
-/* ===== PAGE-SPECIFIC HERO TITLES ===== */
-
-/* DAVID J. FRANCO Homepage Hero Title */
-.home-page .hero-text h1 {
-  font-size: 8rem;
-  letter-spacing: 4px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* Bold */
-  color: black;
-}
-
-/* Work Page Hero Title */
-.work-page .hero-text h1 {
-  font-size: 14rem;
-  letter-spacing: 3px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* Bold */
-  color: black;
-}
-
-/* About Page Hero Title */
-.about-page .hero-text h1 {
-  font-size: 9rem;
-  letter-spacing: 3px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* Bold */
-  color: black;
-}
-
-/* Contact Page Hero Title */
-.contact-page .hero-text h1 {
-  font-size: 9rem;
-  letter-spacing: 2px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* Bold */
-  color: black;
-}
-
-
-}
-
-.hero-text h2 {
-  font-size: 1.3rem;
-  font-weight: normal;
-  margin-top: -30px; /* moves it up */
-  margin-bottom: 0;
-}
-
-/* "EXPLORE SOME OF MY WORK" */
-.work-intro {
-  text-align: Center; /* Left-justify text */
-  margin: 60px auto 30px auto;
-  padding: 0 20px;
-}
-
-.work-intro h1 {
-  font-size: 1.9rem;
-  letter-spacing: 1px;
   font-weight: 500;
-  padding-left: 0px;  /* nudges text 10px to the right */
-}
-
-
-/* ===== PORTFOLIO GRID ===== */
-.portfolio-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 60px 10%;
-}
-
-.portfolio-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.portfolio-item img:hover {
-  transform: scale(1.05);
-}
-
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.6rem;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  background: white;
-  margin-top: 100px; /* pushes footer down */
-  transform: translateX(-15px); /* 👈 Nudges FOOTER "ALL RIGHT RESERVED" to the LEFT */
-}
-
-/* ===== ANIMATION ===== */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(-50%); }
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-
-  nav ul {
-    gap: 15px;
-  }
-}
-
-/* ===== CONTACT PAGE ===== */
-.contact-intro {
-  text-align: center;
-  margin: 60px auto 30px auto;
-  padding: 0 20px;
-}
-
-/* ===== CONTACT FORM STYLES ===== */
-form {
-  max-width: 600px;
-  margin: 50px auto;
-  display: flex;
-  flex-direction: column;
-  padding: 0 20px;
-}
-
-form input,
-form textarea {
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form button {
-  padding: 10px 15px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #555;
-}
-
-#response-message {
-  margin-top: 20px;
-  font-size: 1.2em;
-  color: black;
-}
-
-/* Responsive form */
-@media (max-width: 768px) {
-  form {
-    width: 90%;
-  }
-
-  form input,
-  form textarea {
-    font-size: 14px;
-  }
-
-  form button {
-    padding: 10px;
-  }
-}
-
-/* ========================================================== */
-/* ===== ABOUT ME PAGE STYLES (Added for your request) ===== */
-/* ========================================================== */
-
-/* HERO section for about page (image background) */
-.about-hero {
-  position: relative;
-  height: 60vh; /* 👈 Change this to make hero taller/shorter */
-  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
-  margin-top: 100px; /* 👈 Creates space under fixed header */
-}
-
-/* Content layout under hero (image left, text right) */
-.about-content {
-  display: flex;
-  flex-direction: row; /* 👈 Image on left, text on right */
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px; /* 👈 Space between image and text */
-  max-width: 1200px;
-  margin: 50px auto 80px auto; /* 👈 Top and bottom spacing */
-  padding: 0 20px;
-}
-
-/* "Experience" and "Who AM I" Ensures both headings and paragraphs are aligned */
-.about-text h1,
-.about-text .sub-heading {
-  font-size: 1.3rem;        /* Make both headings the same size */
-  letter-spacing: 1px;      /* Space between letters */
-  font-weight: 500;         /* Medium-bold font */
-  padding-left: 52px;       /* Align left consistently */
-  margin-top: 40;           /* space between Who Am I and paragraph on top*/
-  margin-bottom: 30px;
-}
-
-/* Align both paragraphs under the headings */
-.about-text p {
-  font-weight: 300;
-  line-height: 1.8;
-  font-size: 18px;
-  padding-left: 52px;       /* Same left indent as headings */
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-
-
-
-
-
-
-
-/* Text block */
-.about-text {
- .about-text {
-  flex: 1;
-  text-align: justify;  /* makes text look neat */
-  font-size: 18px;
-  line-height: 1.8;
-  letter-spacing: 0.4px;     /* Adds subtle kerning */
-  word-spacing: 1px;         /* Optional: Adds spacing between words */
-  font-weight: 300;          /* Lighter feel */
-  max-width: 700px;          /* Keeps line width comfortable */
-  margin: 0 auto;            /* Center it if alone in the row */
-}
-
-}
-
-/* Mobile view: stack text and image */
-@media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-text {
-    text-align: justify;
-  }
-
- @media (max-width: 768px) {
-  .about-intro h1,          /* Experience */
-  .about-text .sub-heading  /* Who Am I */ {
-    padding-left: 0;
-    text-align: left;
-  }
-}
-
-
-    /* Styles for screens smaller than 768 pixels (like phones and small tablets) */
-@media (max-width: 768px) {
-  
-  /* Target all paragraphs inside the "about-text" section */
-  .about-text p {
-    
-    hyphens: auto;           /* Allows words to break with hyphens if needed */
-    word-spacing: normal;    /* Use normal spacing between words */
-    letter-spacing: normal;  /* Use normal spacing between letters */
-    text-justify: inter-word; /* Justify text by adjusting space between words */
-  }
-}
-
-}
-
-
-  
-  }
-}
-
-/* ===== NAVIGATION FONT FIX ===== */
-nav a {
-  font-family: 'Montserrat', sans-serif; /* Make sure font matches all pages */
-  font-weight: 500; /* Medium weight, same as other pages */
   color: black;
   text-decoration: none;
 }
 
-/* ===== PROJECT IMAGES LAYOUT ===== */
-.project-images {
-  max-width: 800px;        /* Limits the total width of the images container */
-  margin: 40px auto;       /* Center horizontally and add vertical spacing */
-  padding: 0 20px;         /* Add some side padding for smaller screens */
-  display: flex;           /* Use flexbox */
-  flex-direction: column;  /* Stack images vertically */
-  gap: 30px;               /* Space between images */
-}
-
-.project-image img {
-  width: 100%;             /* Image fills container width */
-  height: auto;            /* Keep aspect ratio */
-  border-radius: 8px;      /* Slightly rounded corners */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* subtle shadow for nice effect */
-  display: block;          /* Removes bottom space below images */
-}
-
-/* ===== RESPONSIVE (small screens) ===== */
-@media (max-width: 600px) {
-  .project-images {
-    max-width: 100%;       /* Full width on small devices */
-    padding: 0 10px;
-  }
-}
-
-/* ===== TEXT REVEAL ANIMATION FOR MAIN PAGE "EXPLORE SOME OF MY WORK===== */
-@keyframes textReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.work-intro h1 {
-  font-size: 1.9rem;      /* match your hero font size */
-  margin: 0;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-align: center;
-  animation: textReveal 5.0s ease forwards;
-  animation-delay: 0.14s;  /* delay to time it nicely */
-  opacity: 0;             /* start invisible */
-}
-/* ===== MOBILE NAVIGATION ===== */
-@media (max-width: 768px) {
-
-
-  nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    border-top: 1px solid #eee;
-    z-index: 10;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 20px 0;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  nav a {
-    font-size: 16px;
-    padding: 10px 0;
-    display: block;
-    width: 100%;
-  }
-  /* ===== GLOBAL ===== */
-
-/* ✅ Prevent horizontal scroll on all pages */
-html, body {
-  overflow-x: hidden;
-}
-
-/* ✅ Add wrapper styling */
-.site-wrapper {
-  overflow-x: hidden;
-  position: relative;
-  width: 100%;
-}
-
-/* ✅ Optional: Fix navigation on small screens */
-@media (max-width: 768px) {
-  nav {
-    position: static;
-    transform: none;
-    margin-top: 10px;
-  }
-
-  nav ul {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-}
-
-
-
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: white;
-  color: black;
-  padding-top: 100px; /* space for fixed header */
-}
-html {
-  scroll-padding-top: 100px; /* Adjust this if your header height changes */
-}
-
-
-
-/* ===== HEADER ===== */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-  background-color: white;
-  border-bottom: 1px solid #eee;
-}
-
-
-.logo img {
-  height: 50px;
-  transform: translateX(-40px); /* 👈 Nudges logo to the left */
-}
-
-/* Center the nav bar */
-nav {
-  position: absolute;
-  left: 46%;
-  transform: translateX(-50%);
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
-
-/* ===== HERO (MAIN PAGE) ===== */
-.hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-image {
-  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-text {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  animation: fadeIn 2s ease-in;
-}
-
-/* ===== PAGE-SPECIFIC HERO TITLES ===== */
-
-/* DAVID J. FRANCO Homepage Hero Title */
-.home-page .hero-text h1 {
-  font-size: 8rem;
-  letter-spacing: 4px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* Bold */
-  color: black;
-}
-
-/* Work Page Hero Title */
-.work-page .hero-text h1 {
-  font-size: 14rem;
-  letter-spacing: 3px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* Bold */
-  color: black;
-}
-
-/* About Page Hero Title */
-.about-page .hero-text h1 {
-  font-size: 9rem;
-  letter-spacing: 3px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* Bold */
-  color: black;
-}
-
-/* Contact Page Hero Title */
-.contact-page .hero-text h1 {
-  font-size: 9rem;
-  letter-spacing: 2px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700; /* Bold */
-  color: black;
-}
-
-
-}
-
-.hero-text h2 {
-  font-size: 1.3rem;
-  font-weight: normal;
-}
-
-/* "EXPLORE SOME OF MY WORK" */
-.work-intro {
-  text-align: Center; /* Left-justify text */
-  margin: 60px auto 30px auto;
-  padding: 0 20px;
-}
-
-.work-intro h1 {
-  font-size: 1.9rem;
-  letter-spacing: 1px;
-  font-weight: 500;
-  padding-left: 0px;  /* nudges text 10px to the right */
-}
-
-
-/* ===== PORTFOLIO GRID ===== */
-.portfolio-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 60px 10%;
-}
-
-.portfolio-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.portfolio-item img:hover {
-  transform: scale(1.05);
-}
-
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.6rem;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  background: white;
-  margin-top: 100px; /* pushes footer down */
-  transform: translateX(-15px); /* 👈 Nudges FOOTER "ALL RIGHT RESERVED" to the LEFT */
-}
-
-/* ===== ANIMATION ===== */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(-50%); }
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-
-  nav ul {
-    gap: 15px;
-  }
-}
-
-/* ===== CONTACT PAGE ===== */
-.contact-intro {
-  text-align: center;
-  margin: 60px auto 30px auto;
-  padding: 0 20px;
-}
-
-/* ===== CONTACT FORM STYLES ===== */
-form {
-  max-width: 600px;
-  margin: 50px auto;
-  display: flex;
-  flex-direction: column;
-  padding: 0 20px;
-}
-
-form input,
-form textarea {
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form button {
-  padding: 10px 15px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #555;
-}
-
-#response-message {
-  margin-top: 20px;
-  font-size: 1.2em;
-  color: black;
-}
-
-/* Responsive form */
-@media (max-width: 768px) {
-  form {
-    width: 90%;
-  }
-
-  form input,
-  form textarea {
-    font-size: 14px;
-  }
-
-  form button {
-    padding: 10px;
-  }
-}
-
-/* ========================================================== */
-/* ===== ABOUT ME PAGE STYLES (Added for your request) ===== */
-/* ========================================================== */
-
-/* HERO section for about page (image background) */
-.about-hero {
-  position: relative;
-  height: 60vh; /* 👈 Change this to make hero taller/shorter */
-  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
-  margin-top: 100px; /* 👈 Creates space under fixed header */
-}
-
-/* Content layout under hero (image left, text right) */
-.about-content {
-  display: flex;
-  flex-direction: row; /* 👈 Image on left, text on right */
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px; /* 👈 Space between image and text */
-  max-width: 1200px;
-  margin: 50px auto 80px auto; /* 👈 Top and bottom spacing */
-  padding: 0 20px;
-}
-
-/* "Experience" and "Who AM I" Ensures both headings and paragraphs are aligned */
-.about-text h1,
-.about-text .sub-heading {
-  font-size: 1.3rem;        /* Make both headings the same size */
-  letter-spacing: 1px;      /* Space between letters */
-  font-weight: 500;         /* Medium-bold font */
-  padding-left: 52px;       /* Align left consistently */
-  margin-top: 40;           /* space between Who Am I and paragraph on top*/
-  margin-bottom: 30px;
-}
-
-/* Align both paragraphs under the headings */
-.about-text p {
-  font-weight: 300;
-  line-height: 1.8;
-  font-size: 18px;
-  padding-left: 52px;       /* Same left indent as headings */
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-
-
-
-
-
-
-
-/* Text block */
-.about-text {
- .about-text {
-  flex: 1;
-  text-align: justify;  /* makes text look neat */
-  font-size: 18px;
-  line-height: 1.8;
-  letter-spacing: 0.4px;     /* Adds subtle kerning */
-  word-spacing: 1px;         /* Optional: Adds spacing between words */
-  font-weight: 300;          /* Lighter feel */
-  max-width: 700px;          /* Keeps line width comfortable */
-  margin: 0 auto;            /* Center it if alone in the row */
-}
-
-}
-
-/* Mobile view: stack text and image */
-@media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-text {
-    text-align: justify;
-  }
-
- @media (max-width: 768px) {
-  .about-intro h1,          /* Experience */
-  .about-text .sub-heading  /* Who Am I */ {
-    padding-left: 0;
-    text-align: left;
-  }
-}
-
-
-    /* Styles for screens smaller than 768 pixels (like phones and small tablets) */
-@media (max-width: 768px) {
-  
-  /* Target all paragraphs inside the "about-text" section */
-  .about-text p {
-    
-    hyphens: auto;           /* Allows words to break with hyphens if needed */
-    word-spacing: normal;    /* Use normal spacing between words */
-    letter-spacing: normal;  /* Use normal spacing between letters */
-    text-justify: inter-word; /* Justify text by adjusting space between words */
-  }
-}
-
-}
-
-
-  
-  }
-}
-
-/* ===== NAVIGATION FONT FIX ===== */
-nav a {
-  font-family: 'Montserrat', sans-serif; /* Make sure font matches all pages */
-  font-weight: 500; /* Medium weight, same as other pages */
-  color: black;
-  text-decoration: none;
-}
-
-/* ===== PROJECT IMAGES LAYOUT ===== */
-.project-images {
-  max-width: 800px;        /* Limits the total width of the images container */
-  margin: 40px auto;       /* Center horizontally and add vertical spacing */
-  padding: 0 20px;         /* Add some side padding for smaller screens */
-  display: flex;           /* Use flexbox */
-  flex-direction: column;  /* Stack images vertically */
-  gap: 30px;               /* Space between images */
-}
-
-.project-image img {
-  width: 100%;             /* Image fills container width */
-  height: auto;            /* Keep aspect ratio */
-  border-radius: 8px;      /* Slightly rounded corners */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* subtle shadow for nice effect */
-  display: block;          /* Removes bottom space below images */
-}
-
-/* ===== RESPONSIVE (small screens) ===== */
-@media (max-width: 600px) {
-  .project-images {
-    max-width: 100%;       /* Full width on small devices */
-    padding: 0 10px;
-  }
-}
-
-/* ===== TEXT REVEAL ANIMATION FOR MAIN PAGE "EXPLORE SOME OF MY WORK===== */
-@keyframes textReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.work-intro h1 {
-  font-size: 1.9rem;      /* match your hero font size */
-  margin: 0;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-align: center;
-  animation: textReveal 5.0s ease forwards;
-  animation-delay: 0.14s;  /* delay to time it nicely */
-  opacity: 0;             /* start invisible */
-}
-/* ===== MOBILE NAVIGATION ===== */
-@media (max-width: 768px) {
-
-
-  nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    border-top: 1px solid #eee;
-    z-index: 10;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 20px 0;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  nav a {
-    font-size: 16px;
-    padding: 10px 0;
-    display: block;
-    width: 100%;
-  }
-/* Hamburger menu - mobile */
+/* Mobile navigation */
 .hamburger {
-  display: none; /* hidden by default */
+  display: none;
 }
 
 @media (max-width: 768px) {
-  /* ===== HAMBURGER MENU - MOBILE ===== */
-
-
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
   nav {
     display: none;
     flex-direction: column;
@@ -1005,9 +77,11 @@ nav a {
     left: 0;
     width: 100%;
     background-color: white;
+    border-top: 1px solid #eee;
+    z-index: 10;
   }
 
-  nav.show {
+  nav.show, nav.active {
     display: flex;
   }
 
@@ -1027,18 +101,276 @@ nav a {
     display: block;
     width: 100%;
     padding: 10px 0;
+    font-size: 16px;
+  }
+
+  .hamburger {
+    display: flex;
   }
 }
 
+/* ========================================================== */
+/* ====================== HERO ============================= */
+/* ========================================================== */
 
-
-/* ABOUT PAGE: Hero title font size */
-.about-hero .hero-text h1 {
-  font-size: 9rem;  /* Change this to any size you want */
-  color: black;     /* Optional: make sure it's visible over the video */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
+.hero-image {
+  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: fadeIn 2s ease-in;
+}
 
+.hero-text h2 {
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin-top: -30px;
+  margin-bottom: 0;
+}
 
+/* Page-specific hero titles */
+.home-page .hero-text h1 { font-size: 8rem; letter-spacing: 4px; font-weight: 700; color: black; }
+.work-page .hero-text h1 { font-size: 14rem; letter-spacing: 3px; font-weight: 700; color: black; }
+.about-page .hero-text h1,
+.about-hero .hero-text h1 { font-size: 9rem; letter-spacing: 3px; font-weight: 700; color: black; }
+.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 2px; font-weight: 700; color: black; }
+
+/* ========================================================== */
+/* ====================== PORTFOLIO ======================== */
+/* ========================================================== */
+
+.work-intro {
+  text-align: center;
+  margin: 60px auto 30px auto;
+  padding: 0 20px;
+}
+
+.work-intro h1 {
+  font-size: 1.9rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-align: center;
+  animation: textReveal 5s ease forwards;
+  animation-delay: 0.14s;
+  opacity: 0;
+}
+
+.portfolio-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 60px 10%;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item img:hover {
+  transform: scale(1.05);
+}
+
+/* ========================================================== */
+/* ====================== ABOUT PAGE ======================= */
+/* ========================================================== */
+
+.about-hero {
+  position: relative;
+  height: 60vh;
+  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
+  margin-top: 100px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 50px auto 80px auto;
+  padding: 0 20px;
+}
+
+.about-text {
+  flex: 1;
+  text-align: justify;
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: 0.4px;
+  word-spacing: 1px;
+  font-weight: 300;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-text h1,
+.about-text .sub-heading {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  padding-left: 52px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.about-text p {
+  font-weight: 300;
+  line-height: 1.8;
+  font-size: 18px;
+  padding-left: 52px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ========================================================== */
+/* ====================== CONTACT PAGE ===================== */
+/* ========================================================== */
+
+.contact-intro {
+  text-align: center;
+  margin: 60px auto 30px auto;
+  padding: 0 20px;
+}
+
+form {
+  max-width: 600px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+form input,
+form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 10px 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+#response-message {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: black;
+}
+
+/* ========================================================== */
+/* ====================== PROJECT IMAGES =================== */
+/* ========================================================== */
+
+.project-images {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: block;
+}
+
+/* ========================================================== */
+/* ====================== FOOTER =========================== */
+/* ========================================================== */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.6rem;
+  position: relative;
+  width: 100%;
+  background: white;
+  margin-top: 100px;
+  transform: translateX(-15px);
+}
+
+/* ========================================================== */
+/* ====================== ANIMATIONS ======================= */
+/* ========================================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(-50%); }
+}
+
+@keyframes textReveal {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================================== */
+/* ====================== RESPONSIVE ======================= */
+/* ========================================================== */
+
+@media (max-width: 768px) {
+  /* Hero text */
+  .hero-text h1 { font-size: 2.5rem; }
+
+  /* Nav */
+  nav { position: static; transform: none; margin-top: 10px; }
+  nav ul { justify-content: center; flex-wrap: wrap; gap: 20px; }
+
+  /* About content stack */
+  .about-content { flex-direction: column; align-items: center; text-align: center; }
+  .about-text, .about-intro h1, .about-text .sub-heading { padding-left: 0; text-align: left; }
+  .about-text p { hyphens: auto; word-spacing: normal; letter-spacing: normal; text-justify: inter-word; }
+
+  /* Forms */
+  form { width: 90%; }
+  form input, form textarea { font-size: 14px; }
+  form button { padding: 10px; }
+
+  /* Portfolio gap */
+  nav ul { gap: 15px; }
+}
+
+@media (max-width: 600px) {
+  .project-images { max-width: 100%; padding: 0 10px; }
+}
