@@ -309,9 +309,9 @@ form button:hover {
   font-size: 18px;
   line-height: 1.8;
   letter-spacing: 0.4px;     /* Adds subtle kerning */
-  word-spacing: 1px;         /* Optional: Adds spacing between words */
+  word-spacing: 0.8px;         /* Optional: Adds spacing between words */
   font-weight: 300;          /* Lighter feel */
-  max-width: 800px;          /* Keeps line width comfortable */
+  max-width: 900px;          /* Keeps line width comfortable */
   margin: 0 auto;            /* Center it if alone in the row */
 }
 
