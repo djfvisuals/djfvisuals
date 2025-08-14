@@ -2,19 +2,20 @@
 /* ====================== GLOBAL =========================== */
 /* ========================================================== */
 
-/* Prevent horizontal scroll */
+/* Prevent horizontal scroll on all pages */
 html, body {
-  overflow-x: hidden;
-  scroll-padding-top: 100px; /* adjust if header height changes */
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: white;
-  color: black;
-  padding-top: 100px; /* space for fixed header */
+  overflow-x: hidden;                 /* Prevents sideways scrolling */
+  scroll-padding-top: 100px;          /* Makes anchor links appear below fixed header */
+  margin: 0;                           /* Removes default margin */
+  font-family: 'Montserrat', sans-serif; /* Set default font */
+  background-color: white;            /* Page background */
+  color: black;                       /* Default text color */
+  padding-top: 100px;                 /* Space for fixed header */
 }
 
+/* Wrapper to contain all content */
 .site-wrapper {
-  overflow-x: hidden;
+  overflow-x: hidden;                 /* Ensures no horizontal scroll */
   position: relative;
   width: 100%;
 }
@@ -24,89 +25,49 @@ html, body {
 /* ========================================================== */
 
 header {
-  display: flex;
-  justify-content: space-between;
+  display: flex;                      /* Flex layout for logo + nav */
+  justify-content: space-between;     /* Space between logo and nav */
   align-items: center;
-  padding: 20px 50px;
-  position: fixed;
+  padding: 20px 50px;                 /* Spacing inside header */
+  position: fixed;                     /* Stays at top while scrolling */
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 10;                         /* Ensure it’s above other content */
   background-color: white;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eee;      /* Light bottom border */
 }
 
+/* Logo styling */
 .logo img {
   height: 50px;
-  transform: translateX(-40px); /* nudges logo to the left */
+  transform: translateX(-40px);       /* Nudges logo to the left */
 }
 
-/* Navigation */
+/* Navigation styling */
 nav {
   position: absolute;
-  left: 46%;
+  left: 46%;                          /* Center nav */
   transform: translateX(-50%);
 }
 
 nav ul {
-  list-style: none;
+  list-style: none;                   /* Remove bullet points */
   display: flex;
-  gap: 30px;
+  gap: 30px;                          /* Space between links */
   margin: 0;
   padding: 0;
 }
 
 nav a {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
+  font-family: 'Montserrat', sans-serif; /* Matches page font */
+  font-weight: 500;                   /* Medium weight */
   color: black;
-  text-decoration: none;
+  text-decoration: none;              /* Remove underline */
 }
 
-/* Mobile navigation */
+/* Hamburger menu (hidden by default) */
 .hamburger {
   display: none;
-}
-
-@media (max-width: 768px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    border-top: 1px solid #eee;
-    z-index: 10;
-  }
-
-  nav.show, nav.active {
-    display: flex;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 20px 0;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  nav a {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-  }
-
-  .hamburger {
-    display: flex;
-  }
 }
 
 /* ========================================================== */
@@ -115,7 +76,7 @@ nav a {
 
 .hero {
   position: relative;
-  height: 100vh;
+  height: 100vh;                      /* Full viewport height */
   overflow: hidden;
 }
 
@@ -125,7 +86,7 @@ nav a {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;                  /* Cover entire hero area */
 }
 
 .hero-image {
@@ -137,30 +98,30 @@ nav a {
 
 .hero-text {
   position: relative;
-  z-index: 2;
+  z-index: 2;                         /* Above video/image */
   text-align: center;
-  top: 50%;
+  top: 50%;                            /* Center vertically */
   transform: translateY(-50%);
-  animation: fadeIn 2s ease-in;
+  animation: fadeIn 2s ease-in;        /* Fade-in effect */
 }
 
 .hero-text h2 {
   font-size: 1.3rem;
   font-weight: normal;
-  margin-top: -30px;
+  margin-top: -30px;                   /* Moves subtitle up slightly */
   margin-bottom: 0;
 }
 
-/* Page-specific hero titles */
+/* =================== PAGE-SPECIFIC HERO TITLES =================== */
+
+/* Desktop titles */
 .home-page .hero-text h1 { font-size: 8rem; letter-spacing: 4px; font-weight: 700; color: black; }
 .work-page .hero-text h1 { font-size: 14rem; letter-spacing: 3px; font-weight: 700; color: black; }
 .about-page .hero-text h1,
 .about-hero .hero-text h1 { font-size: 9rem; letter-spacing: 3px; font-weight: 700; color: black; }
 .contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 2px; font-weight: 700; color: black; }
 
-/* ========================================================== */
-/* ====================== PORTFOLIO ======================== */
-/* ========================================================== */
+/* =================== PORTFOLIO / WORK =================== */
 
 .work-intro {
   text-align: center;
@@ -173,9 +134,9 @@ nav a {
   letter-spacing: 1px;
   font-weight: 500;
   text-align: center;
-  animation: textReveal 5s ease forwards;
+  animation: textReveal 5s ease forwards;  /* Text reveal animation */
   animation-delay: 0.14s;
-  opacity: 0;
+  opacity: 0;                               /* Starts invisible */
 }
 
 .portfolio-items {
@@ -193,12 +154,10 @@ nav a {
 }
 
 .portfolio-item img:hover {
-  transform: scale(1.05);
+  transform: scale(1.05);                 /* Slight zoom on hover */
 }
 
-/* ========================================================== */
-/* ====================== ABOUT PAGE ======================= */
-/* ========================================================== */
+/* =================== ABOUT PAGE =================== */
 
 .about-hero {
   position: relative;
@@ -209,7 +168,7 @@ nav a {
 
 .about-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: row;                    /* Image left, text right */
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
@@ -249,9 +208,7 @@ nav a {
   margin: 0 auto;
 }
 
-/* ========================================================== */
-/* ====================== CONTACT PAGE ===================== */
-/* ========================================================== */
+/* =================== CONTACT PAGE =================== */
 
 .contact-intro {
   text-align: center;
@@ -295,9 +252,7 @@ form button:hover {
   color: black;
 }
 
-/* ========================================================== */
-/* ====================== PROJECT IMAGES =================== */
-/* ========================================================== */
+/* =================== PROJECT IMAGES =================== */
 
 .project-images {
   max-width: 800px;
@@ -316,9 +271,7 @@ form button:hover {
   display: block;
 }
 
-/* ========================================================== */
-/* ====================== FOOTER =========================== */
-/* ========================================================== */
+/* =================== FOOTER =================== */
 
 footer {
   text-align: center;
@@ -328,12 +281,10 @@ footer {
   width: 100%;
   background: white;
   margin-top: 100px;
-  transform: translateX(-15px);
+  transform: translateX(-15px);          /* Nudges footer text slightly left */
 }
 
-/* ========================================================== */
-/* ====================== ANIMATIONS ======================= */
-/* ========================================================== */
+/* =================== ANIMATIONS =================== */
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
@@ -345,32 +296,96 @@ footer {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ========================================================== */
-/* ====================== RESPONSIVE ======================= */
-/* ========================================================== */
+/* =================== RESPONSIVE / MOBILE =================== */
 
 @media (max-width: 768px) {
-  /* Hero text */
-  .hero-text h1 { font-size: 2.5rem; }
 
-  /* Nav */
-  nav { position: static; transform: none; margin-top: 10px; }
-  nav ul { justify-content: center; flex-wrap: wrap; gap: 20px; }
+  /* ===== MOBILE HERO TITLES ===== */
+  .home-page .hero-text h1 {
+    font-size: 3rem;       /* Smaller font for mobile */
+    letter-spacing: 2px;   /* Reduce spacing for mobile */
+  }
 
-  /* About content stack */
-  .about-content { flex-direction: column; align-items: center; text-align: center; }
-  .about-text, .about-intro h1, .about-text .sub-heading { padding-left: 0; text-align: left; }
-  .about-text p { hyphens: auto; word-spacing: normal; letter-spacing: normal; text-justify: inter-word; }
+  /* General hero text adjustment */
+  .hero-text h1 {
+    font-size: 2.5rem;      /* Override other hero titles if needed */
+  }
+
+  /* Navigation adjustments */
+  nav {
+    display: none;
+    position: static;
+    transform: none;
+    margin-top: 10px;
+  }
+
+  nav.show, nav.active {
+    display: flex;
+  }
+
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav a {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* About page stacking */
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text,
+  .about-intro h1,
+  .about-text .sub-heading {
+    padding-left: 0;
+    text-align: left;
+  }
+
+  .about-text p {
+    hyphens: auto;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-justify: inter-word;
+  }
 
   /* Forms */
-  form { width: 90%; }
-  form input, form textarea { font-size: 14px; }
-  form button { padding: 10px; }
+  form {
+    width: 90%;
+  }
 
-  /* Portfolio gap */
-  nav ul { gap: 15px; }
+  form input,
+  form textarea {
+    font-size: 14px;
+  }
+
+  form button {
+    padding: 10px;
+  }
 }
 
+/* Smaller screens - project images */
 @media (max-width: 600px) {
-  .project-images { max-width: 100%; padding: 0 10px; }
+  .project-images {
+    max-width: 100%;
+    padding: 0 10px;
+  }
 }
