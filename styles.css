@@ -469,4 +469,10 @@ nav a {
   }
 }
 
+/* ABOUT PAGE: Hero title font size */
+.about-hero .hero-text h1 {
+  font-size: 9rem;  /* Change this to any size you want */
+  color: black;     /* Optional: make sure it's visible over the video */
+}
+
 
