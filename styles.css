@@ -327,12 +327,14 @@ form button:hover {
     text-align: justify;
   }
 
-  @media (max-width: 768px) {
+ @media (max-width: 768px) {
   .about-intro h1,          /* Experience */
   .about-text .sub-heading  /* Who Am I */ {
     padding-left: 0;
     text-align: left;
   }
+}
+
 
     /* Styles for screens smaller than 768 pixels (like phones and small tablets) */
 @media (max-width: 768px) {
