@@ -48,14 +48,11 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  position: static;
+  position: fixed;
   width: 100%;
   z-index: 10;
   background-color: white;
   border-bottom: 1px solid #eee;
-}
-.hero, .about-hero, .contact-intro {
-  margin-top: 100px; /* same height as your header */
 }
 
 
