@@ -372,3 +372,58 @@ footer {
 
   .project-images { max-width: 100%; padding: 0 10px; }
 }
+
+/* ========================================================== */
+/* ====================== SPACE FIX & MINIMAL HERO ========= */
+/* ========================================================== */
+
+.home-page .hero {
+  height: 70vh; /* shorter so name is higher */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-page .hero-text {
+  top: auto;
+  transform: none;
+}
+
+.home-page .hero-text h1 {
+  font-size: 10rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: black;
+}
+
+.home-page .hero-text h2 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
+.home-page .hero-text h1,
+.home-page .hero-text h2 {
+  animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile tweak for space fix */
+@media (max-width: 768px) {
+  .home-page .hero {
+    height: 60vh;
+  }
+
+  .home-page .hero-text h1 {
+    font-size: 4rem;
+    letter-spacing: 2px;
+  }
+
+  .home-page .hero-text h2 {
+    font-size: 1.1rem;
+  }
+}
