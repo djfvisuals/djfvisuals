@@ -115,11 +115,44 @@ nav a {
   animation: fadeIn 2s ease-in;
 }
 
-.hero-text h1 {
-  font-size: 10rem; /* DAVID FRANCO TEXT SIZE*/
-  margin: 0;
-  letter-spacing: 4px;       /* Adjust kerning: try 1px, 2px, -1px, etc. */
-  COLOR: black;
+/* ===== PAGE-SPECIFIC HERO TITLES ===== */
+
+/* Homepage Hero Title */
+.home-page .hero-text h1 {
+  font-size: 10rem;
+  letter-spacing: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold */
+  color: black;
+}
+
+/* Work Page Hero Title */
+.work-page .hero-text h1 {
+  font-size: 14rem;
+  letter-spacing: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold */
+  color: black;
+}
+
+/* About Page Hero Title */
+.about-page .hero-text h1 {
+  font-size: 9rem;
+  letter-spacing: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold */
+  color: black;
+}
+
+/* Contact Page Hero Title */
+.contact-page .hero-text h1 {
+  font-size: 9rem;
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold */
+  color: black;
+}
+
 
 }
 
