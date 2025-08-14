@@ -84,42 +84,39 @@ nav a {
 /* ====================== HERO ============================= */
 /* ========================================================== */
 
+/* ========================================================== */
+/* ====================== HERO ============================= */
+/* ========================================================== */
+
 .hero {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-image {
-  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  padding: 120px 20px 60px;
+  text-align: center;
+  background-color: white;
 }
 
 .hero-text {
   position: relative;
   z-index: 2;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
   animation: fadeIn 2s ease-in;
 }
 
+.hero-text h1 {
+  font-size: 10rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
 .hero-text h2 {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: normal;
-  margin-top: -30px;
+  margin-top: 20px;
   margin-bottom: 0;
+}
+
 }
 
 /* ========================================================== */
