@@ -34,11 +34,16 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: white;
   color: black;
-  padding-top: 100px; /* space for fixed header */
+  padding-top: 0px; /* space for fixed header */
 }
 html {
   scroll-padding-top: 100px; /* Adjust this if your header height changes */
 }
+
+.hero {
+  margin-top: 20px; /* or whatever space you want below the header */
+}
+
 
 
 /* ===== HEADER ===== */
@@ -54,6 +59,7 @@ header {
   background-color: white;
   border-bottom: 1px solid #eee;
 }
+
 
 .logo img {
   height: 50px;
