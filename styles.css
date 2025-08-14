@@ -84,39 +84,44 @@ nav a {
 /* ====================== HERO ============================= */
 /* ========================================================== */
 
-/* ========================================================== */
-/* ====================== HERO ============================= */
-/* ========================================================== */
-
 .hero {
   position: relative;
   padding: 120px 20px 60px;
   text-align: center;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  overflow: hidden;
 }
 
 .hero-text {
   position: relative;
   z-index: 2;
   animation: fadeIn 2s ease-in;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .hero-text h1 {
-  font-size: 10rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   color: black;
   margin: 0;
   padding: 0;
+  letter-spacing: 4px;
+  font-size: 8rem;
 }
 
 .hero-text h2 {
-  font-size: 1.6rem;
-  font-weight: normal;
-  margin-top: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+  margin-top: 10px;
   margin-bottom: 0;
-}
-
+  font-size: 1.5rem;
 }
 
 /* ========================================================== */
@@ -125,11 +130,11 @@ nav a {
 
 /* Home Page */
 .home-page .hero-text h1 {
-  font-size: 8rem;
-  letter-spacing: 4px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: black;
+  /* Already styled globally */
+}
+
+.home-page .hero-text h2 {
+  /* Already styled globally */
 }
 
 /* Work Page */
@@ -141,6 +146,13 @@ nav a {
   color: black;
 }
 
+.work-page .hero-text h2 {
+  font-size: 1.6rem;
+  margin-top: 10px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+}
+
 /* About Page */
 .about-page .hero-text h1 {
   font-size: 9rem;
@@ -150,6 +162,13 @@ nav a {
   color: black;
 }
 
+.about-page .hero-text h2 {
+  font-size: 1.6rem;
+  margin-top: 10px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+}
+
 /* Contact Page */
 .contact-page .hero-text h1 {
   font-size: 9rem;
@@ -157,6 +176,13 @@ nav a {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   color: black;
+}
+
+.contact-page .hero-text h2 {
+  font-size: 1.6rem;
+  margin-top: 10px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 /* ========================================================== */
@@ -317,7 +343,7 @@ footer {
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(-50%); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes textReveal {
@@ -330,10 +356,21 @@ footer {
 /* ========================================================== */
 
 @media (max-width: 768px) {
-  .hero-text h1.home-page { font-size: 3rem; }
-  .hero-text h1.work-page { font-size: 5rem; }
-  .hero-text h1.about-page { font-size: 4rem; }
-  .hero-text h1.contact-page { font-size: 4rem; }
+  /* Hero text resizing for all pages */
+  .hero-text h1.home-page,
+  .hero-text h1.work-page,
+  .hero-text h1.about-page,
+  .hero-text h1.contact-page {
+    font-size: 4rem !important;
+    letter-spacing: 2px !important;
+  }
+
+  .hero-text h2.home-page,
+  .hero-text h2.work-page,
+  .hero-text h2.about-page,
+  .hero-text h2.contact-page {
+    font-size: 1.1rem !important;
+  }
 
   nav {
     display: none;
@@ -368,59 +405,4 @@ footer {
   form button { padding: 10px; }
 
   .project-images { max-width: 100%; padding: 0 10px; }
-}
-
-/* ========================================================== */
-/* ====================== SPACE FIX & MINIMAL HERO ========= */
-/* ========================================================== */
-
-.home-page .hero {
-  height: 70vh; /* shorter so name is higher */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.home-page .hero-text {
-  top: auto;
-  transform: none;
-}
-
-.home-page .hero-text h1 {
-  font-size: 10rem;
-  font-weight: 700;
-  letter-spacing: 4px;
-  color: black;
-}
-
-.home-page .hero-text h2 {
-  font-size: 1.5rem;
-  margin-top: 10px;
-  opacity: 0.7;
-}
-
-.home-page .hero-text h1,
-.home-page .hero-text h2 {
-  animation: fadeUp 1.2s ease forwards;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Mobile tweak for space fix */
-@media (max-width: 768px) {
-  .home-page .hero {
-    height: 60vh;
-  }
-
-  .home-page .hero-text h1 {
-    font-size: 4rem;
-    letter-spacing: 2px;
-  }
-
-  .home-page .hero-text h2 {
-    font-size: 1.1rem;
-  }
 }
