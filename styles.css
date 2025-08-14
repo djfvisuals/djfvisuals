@@ -271,24 +271,23 @@ form button:hover {
   padding: 0 20px;
 }
 
-/* "EXPERIENCE" section */
-.about-intro h1 {
-  font-size: 1.3rem;      /* size of the text */
-  letter-spacing: 1px;    /* space between letters */
-  font-weight: 500;       /* medium weight font */
-  padding-left: 52px;     /* indent from the left */
-  margin-top: 0;          /* no extra space on top */
-  margin-bottom: 30px;    /* add space below to match "Who am I" */
+/* Make sure the containers have the same left padding */
+.about-intro,
+.about-text {
+  padding-left: 25px;  /* same padding on left for both containers */
+  max-width: 700px;    /* same max width so they don’t stretch differently */
+  margin-left: 0;      /* remove any default left margin */
 }
 
-/* "Who am I" section */
+/* Style for the "Experience" heading and "Who I Am" heading */
+.about-intro h1,
 .about-text .sub-heading {
-  font-size: 1.3rem;      /* size of the text */
-  letter-spacing: 1px;    /* space between letters */
-  font-weight: 500;       /* medium weight font */
-  padding-left: 52px;     /* indent from the left */
-  margin-top: 0;          /* no extra space on top */
-  margin-bottom: 30px;    /* add space below  */
+  font-size: 1.3rem;      /* same font size */
+  letter-spacing: 1px;    /* same letter spacing */
+  font-weight: 500;       /* same font weight */
+  padding-left: 27px;     /* same left indent */
+  margin-top: 0;          /* no extra space above */
+  margin-bottom: 30px;    /* same space below */
 }
 
 
