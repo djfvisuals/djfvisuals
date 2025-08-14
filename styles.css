@@ -111,7 +111,7 @@ nav a {
   font-size: 8rem;
   text-align: center; /* ensure centered */
   /* Move the h1 up by 40px */
-  transform: translateY(-80px);
+  transform: translateY(-90px);
 }
 
 .hero-text h2 {
@@ -123,7 +123,7 @@ nav a {
   font-size: 1.5rem;
   text-align: center; /* ensure centered */
   /* Move the h2 up by 20px */
-  transform: translateY(-50px);
+  transform: translateY(-70px);
 }
 
 /* Adjust sizes per page using body classes */
