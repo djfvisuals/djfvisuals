@@ -271,31 +271,32 @@ form button:hover {
   padding: 0 20px;
 }
 
-/*"EXPERIENCE*/
+/* "EXPERIENCE" section */
 .about-intro {
-  text-align: left; /* Left-justify text */
-
-  margin: 60px auto 30px auto;
-  padding: 0 25px;
+  text-align: left; /* make sure text is left-aligned */
+  margin: 60px auto 30px auto; /* space above and below */
+  padding: 0 25px; /* left and right padding */
 }
 
 .about-intro h1 {
-  font-size: 1.3rem;
-  letter-spacing: 1px;
-  font-weight: 500;
-  padding-left: 52px;  /* nudges text 10px to the right */
+  font-size: 1.3rem;      /* size of the text */
+  letter-spacing: 1px;    /* space between letters */
+  font-weight: 500;       /* medium weight font */
+  padding-left: 52px;     /* indent from the left */
+  margin-top: 0;          /* no extra space on top */
 }
 
-
-/*"Who am I"*/
+/* "Who am I" section */
 .about-text .sub-heading {
-  font-size: 1.3rem;
-  letter-spacing: 1px;
-  font-weight: 500;
-  padding-left: 52px; /* align with your other headings */
-  margin-top: 60px;    /* add some space from previous paragraph */
-  text-align: left;
+  font-size: 1.3rem;      /* same text size */
+  letter-spacing: 1px;    /* same letter spacing */
+  font-weight: 500;       /* same font weight */
+  padding-left: 52px;     /* same indent as Experience */
+  margin-top: 60px;       /* space above to separate from previous paragraph */
+  margin-bottom: 30px;    /* space below for consistent spacing */
+  text-align: left;       /* left align text */
 }
+
 
 
 
