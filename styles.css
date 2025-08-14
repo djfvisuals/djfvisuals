@@ -271,24 +271,27 @@ form button:hover {
   padding: 0 20px;
 }
 
-/* Make sure the containers have the same left padding */
-.about-intro,
-.about-text {
-  padding-left: 25px;  /* same padding on left for both containers */
-  max-width: 700px;    /* same max width so they don’t stretch differently */
-  margin-left: 0;      /* remove any default left margin */
+/* "Experience" and "Who AM I" Ensures both headings and paragraphs are aligned */
+.about-text h1,
+.about-text .sub-heading {
+  font-size: 1.3rem;        /* Make both headings the same size */
+  letter-spacing: 1px;      /* Space between letters */
+  font-weight: 500;         /* Medium-bold font */
+  padding-left: 52px;       /* Align left consistently */
+  margin-top: 0;
+  margin-bottom: 30px;
 }
 
-/* Style for the "Experience" heading and "Who I Am" heading */
-.about-intro h1,
-.about-text .sub-heading {
-  font-size: 1.3rem;      /* same font size */
-  letter-spacing: 1px;    /* same letter spacing */
-  font-weight: 500;       /* same font weight */
-  padding-left: 27px;     /* same left indent */
-  margin-top: 0;          /* no extra space above */
-  margin-bottom: 30px;    /* same space below */
+/* Align both paragraphs under the headings */
+.about-text p {
+  font-weight: 300;
+  line-height: 1.8;
+  font-size: 18px;
+  padding-left: 52px;       /* Same left indent as headings */
+  max-width: 700px;
+  margin: 0 auto;
 }
+
 
 
 
