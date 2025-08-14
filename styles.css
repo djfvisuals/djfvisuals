@@ -288,7 +288,7 @@ form button:hover {
   line-height: 1.8;
   font-size: 18px;
   padding-left: 52px;       /* Same left indent as headings */
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
