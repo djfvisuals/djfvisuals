@@ -17,19 +17,27 @@ html, body {
   nav {
     position: static;
     transform: none;
-    margin-top: 10px;
+    width: 100%;
+    margin-top: 20px;
   }
 
   nav ul {
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    justify-content: center;
+    padding: 0 10px;
+    gap: 15px;
+  }
 
-  
   nav ul li {
     flex: 1 1 auto;
     text-align: center;
   }
+
+  nav a {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
 
   nav a {
     font-size: 14px;
