@@ -414,4 +414,59 @@ nav a {
   animation-delay: 0.14s;  /* delay to time it nicely */
   opacity: 0;             /* start invisible */
 }
+/* ===== MOBILE NAVIGATION ===== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    cursor: pointer;
+    z-index: 20;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid #eee;
+    z-index: 10;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav a {
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+  }
+}
+
 
