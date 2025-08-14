@@ -4,18 +4,18 @@
 
 /* Prevent horizontal scroll on all pages */
 html, body {
-  overflow-x: hidden;                 /* Prevents sideways scrolling */
-  scroll-padding-top: 100px;          /* Makes anchor links appear below fixed header */
-  margin: 0;                           /* Removes default margin */
-  font-family: 'Montserrat', sans-serif; /* Default font */
-  background-color: white;            /* Page background */
-  color: black;                       /* Default text color */
-  padding-top: 100px;                 /* Space for fixed header */
+  overflow-x: hidden;
+  scroll-padding-top: 100px;  /* Anchor links offset for fixed header */
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  color: black;
+  padding-top: 100px;         /* Space for fixed header */
 }
 
 /* Wrapper to contain all content */
 .site-wrapper {
-  overflow-x: hidden;                 /* Ensures no horizontal scroll */
+  overflow-x: hidden;
   position: relative;
   width: 100%;
 }
@@ -25,60 +25,59 @@ html, body {
 /* ========================================================== */
 
 header {
-  display: flex;                      
-  justify-content: space-between;     /* Space between logo and nav */
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;                 
-  position: fixed;                     /* Stays at top while scrolling */
+  padding: 20px 50px;
+  position: fixed;
   top: 0;
   width: 100%;
-  z-index: 100;                        /* Above other content */
+  z-index: 10;
   background-color: white;
-  border-bottom: 1px solid #eee;      /* Light bottom border */
+  border-bottom: 1px solid #eee;
 }
 
-/* Logo styling */
 .logo img {
   height: 50px;
-  transform: translateX(-40px);       /* Nudges logo to the left */
+  transform: translateX(-40px);
 }
 
-/* Navigation styling */
+/* Center navigation */
 nav {
   position: absolute;
-  left: 46%;                          
+  left: 46%;
   transform: translateX(-50%);
 }
 
 nav ul {
-  list-style: none;                   
+  list-style: none;
   display: flex;
-  gap: 30px;                          
+  gap: 30px;
   margin: 0;
   padding: 0;
 }
 
 nav a {
-  font-family: 'Montserrat', sans-serif; 
-  font-weight: 500;                   
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
   color: black;
-  text-decoration: none;              
 }
 
-/* Hamburger menu (hidden by default on desktop) */
+/* Hamburger menu (mobile) */
 .hamburger {
-  display: none;                      /* Hidden on desktop */
-  flex-direction: column;             /* Stack the three bars vertically */
+  display: none;
+  flex-direction: column;
   cursor: pointer;
-  gap: 5px;                           /* Space between bars */
+  gap: 5px;
 }
 
 .hamburger span {
   display: block;
-  width: 25px;                        /* Width of each bar */
-  height: 3px;                         /* Height of each bar */
-  background-color: black;             /* Bar color */
-  border-radius: 2px;                  /* Slightly rounded edges */
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  border-radius: 2px;
 }
 
 /* ========================================================== */
@@ -87,7 +86,7 @@ nav a {
 
 .hero {
   position: relative;
-  height: 100vh;                      
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -97,7 +96,7 @@ nav a {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;                  
+  object-fit: cover;
 }
 
 .hero-image {
@@ -109,18 +108,63 @@ nav a {
 
 .hero-text {
   position: relative;
-  z-index: 2;                         
+  z-index: 2;
   text-align: center;
-  top: 50%;                            
+  top: 50%;
   transform: translateY(-50%);
-  animation: fadeIn 2s ease-in;        
+  animation: fadeIn 2s ease-in;
 }
 
-.hero-text h1 { font-size: 8rem; letter-spacing: 4px; font-weight: 700; color: black; } /* Desktop hero title */
-.hero-text h2 { font-size: 1.3rem; font-weight: 300; margin-top: -70px; margin-bottom: 0; }
+.hero-text h2 {
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin-top: -30px;
+  margin-bottom: 0;
+}
 
 /* ========================================================== */
-/* =================== PORTFOLIO / WORK =================== */
+/* ====================== PAGE-SPECIFIC HERO TITLES ======== */
+/* ========================================================== */
+
+/* Home Page */
+.home-page .hero-text h1 {
+  font-size: 8rem;
+  letter-spacing: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: black;
+}
+
+/* Work Page */
+.work-page .hero-text h1 {
+  font-size: 14rem;
+  letter-spacing: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: black;
+}
+
+/* About Page */
+.about-page .hero-text h1 {
+  font-size: 9rem;
+  letter-spacing: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: black;
+}
+
+/* Contact Page */
+.contact-page .hero-text h1 {
+  font-size: 9rem;
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: black;
+}
+
+/* ========================================================== */
+/* ====================== WORK / PORTFOLIO ================= */
+/* ========================================================== */
 
 .work-intro {
   text-align: center;
@@ -132,10 +176,10 @@ nav a {
   font-size: 1.9rem;
   letter-spacing: 1px;
   font-weight: 500;
-  text-align: center;
-  animation: textReveal 5s ease forwards;  /* Text reveal animation */
+  padding-left: 0;
+  animation: textReveal 5s ease forwards;
   animation-delay: 0.14s;
-  opacity: 0;                               /* Starts invisible */
+  opacity: 0;
 }
 
 .portfolio-items {
@@ -153,11 +197,12 @@ nav a {
 }
 
 .portfolio-item img:hover {
-  transform: scale(1.05);                 /* Slight zoom on hover */
+  transform: scale(1.05);
 }
 
 /* ========================================================== */
-/* =================== ABOUT PAGE =================== */
+/* ====================== ABOUT ============================ */
+/* ========================================================== */
 
 .about-hero {
   position: relative;
@@ -168,7 +213,7 @@ nav a {
 
 .about-content {
   display: flex;
-  flex-direction: row;                    /* Image left, text right */
+  flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
@@ -196,7 +241,7 @@ nav a {
   font-weight: 500;
   padding-left: 52px;
   margin-top: 40px;
-  margin-bottom: 0px;
+  margin-bottom: 30px;
 }
 
 .about-text p {
@@ -209,7 +254,8 @@ nav a {
 }
 
 /* ========================================================== */
-/* =================== CONTACT PAGE =================== */
+/* ====================== CONTACT ========================== */
+/* ========================================================== */
 
 .contact-intro {
   text-align: center;
@@ -254,27 +300,8 @@ form button:hover {
 }
 
 /* ========================================================== */
-/* =================== PROJECT IMAGES =================== */
-
-.project-images {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.project-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  display: block;
-}
-
+/* ====================== FOOTER =========================== */
 /* ========================================================== */
-/* =================== FOOTER =================== */
 
 footer {
   text-align: center;
@@ -284,11 +311,12 @@ footer {
   width: 100%;
   background: white;
   margin-top: 100px;
-  transform: translateX(-15px);          
+  transform: translateX(-15px);
 }
 
 /* ========================================================== */
-/* =================== ANIMATIONS =================== */
+/* ====================== ANIMATIONS ======================= */
+/* ========================================================== */
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
@@ -301,96 +329,46 @@ footer {
 }
 
 /* ========================================================== */
-/* =================== RESPONSIVE / MOBILE =================== */
+/* ====================== RESPONSIVE ======================= */
+/* ========================================================== */
 
 @media (max-width: 768px) {
+  .hero-text h1.home-page { font-size: 3rem; }
+  .hero-text h1.work-page { font-size: 5rem; }
+  .hero-text h1.about-page { font-size: 4rem; }
+  .hero-text h1.contact-page { font-size: 4rem; }
 
-  /* ===== MOBILE HERO TITLE ===== */
-  .home-page .hero-text h1 {
-    font-size: 3rem;       /* Smaller font for mobile */
-    letter-spacing: 2px;   /* Reduce spacing */
-  }
-
-  /* Show hamburger menu on mobile */
-  .hamburger {
-    display: flex;
-  }
-
-  /* Hide nav links initially on mobile */
   nav {
     display: none;
+    flex-direction: column;
     position: absolute;
-    top: 70px;                /* Below header */
-    right: 20px;              /* Right corner */
-    background-color: white;  /* White menu background */
-    border: 1px solid #eee;   /* Light border */
-    border-radius: 8px;       /* Rounded edges */
-    padding: 10px 20px;       /* Space inside menu */
-    flex-direction: column;   /* Vertical links */
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
   }
 
-  /* Show nav when hamburger clicked */
-  nav.show {
-    display: flex;
-  }
+  nav.show { display: flex; }
 
   nav ul {
-    flex-direction: column;   /* Stack links vertically */
-    gap: 15px;                /* Space between links */
-    align-items: center;
-    padding: 10px 0;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  nav a {
-    font-size: 16px;
-    padding: 10px 0;
-  }
-
-  /* Stack about page content */
-  .about-content {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    gap: 15px;
+    padding: 20px 0;
   }
 
-  .about-text,
-  .about-intro h1,
-  .about-text .sub-heading {
-    padding-left: 0;
-    text-align: left;
-  }
+  nav ul li { width: 100%; text-align: center; }
 
-  .about-text p {
-    hyphens: auto;
-    word-spacing: normal;
-    letter-spacing: normal;
-    text-justify: inter-word;
-  }
+  nav a { font-size: 16px; padding: 10px 0; display: block; width: 100%; }
 
-  /* Forms on mobile */
-  form {
-    width: 90%;
-  }
+  .hamburger { display: flex; }
+  .about-content { flex-direction: column; align-items: center; text-align: center; }
+  .about-text p { hyphens: auto; word-spacing: normal; letter-spacing: normal; text-justify: inter-word; }
 
-  form input,
-  form textarea {
-    font-size: 14px;
-  }
+  form { width: 90%; }
+  form input, form textarea { font-size: 14px; }
+  form button { padding: 10px; }
 
-  form button {
-    padding: 10px;
-  }
-}
-
-/* Extra small screens */
-@media (max-width: 600px) {
-  .project-images {
-    max-width: 100%;
-    padding: 0 10px;
-  }
+  .project-images { max-width: 100%; padding: 0 10px; }
 }
