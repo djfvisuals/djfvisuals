@@ -332,6 +332,20 @@ form button:hover {
     padding-left: 0;
     text-align: left;
   }
+
+    /* Styles for screens smaller than 768 pixels (like phones and small tablets) */
+@media (max-width: 768px) {
+  
+  /* Target all paragraphs inside the "about-text" section */
+  .about-text p {
+    
+    hyphens: auto;           /* Allows words to break with hyphens if needed */
+    word-spacing: normal;    /* Use normal spacing between words */
+    letter-spacing: normal;  /* Use normal spacing between letters */
+    text-justify: inter-word; /* Justify text by adjusting space between words */
+  }
+}
+
 }
 
 
