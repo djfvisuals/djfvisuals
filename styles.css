@@ -49,12 +49,12 @@ header {
   align-items: center;
   padding: 20px 50px;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 10;
   background-color: white;
   border-bottom: 1px solid #eee;
 }
-
 
 
 .logo img {
@@ -258,7 +258,7 @@ form button:hover {
   position: relative;
   height: 60vh; /* 👈 Change this to make hero taller/shorter */
   background: url('images/hero-placeholder.jpg') center/cover no-repeat;
- 
+  margin-top: 100px; /* 👈 Creates space under fixed header */
 }
 
 /* Content layout under hero (image left, text right) */
@@ -309,9 +309,9 @@ form button:hover {
   font-size: 18px;
   line-height: 1.8;
   letter-spacing: 0.4px;     /* Adds subtle kerning */
-  word-spacing: 0.8px;         /* Optional: Adds spacing between words */
+  word-spacing: 1px;         /* Optional: Adds spacing between words */
   font-weight: 300;          /* Lighter feel */
-  max-width: 900px;          /* Keeps line width comfortable */
+  max-width: 700px;          /* Keeps line width comfortable */
   margin: 0 auto;            /* Center it if alone in the row */
 }
 
@@ -414,5 +414,4 @@ nav a {
   animation-delay: 0.14s;  /* delay to time it nicely */
   opacity: 0;             /* start invisible */
 }
-
 
