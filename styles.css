@@ -2,18 +2,15 @@
 /* ====================== GLOBAL =========================== */
 /* ========================================================== */
 
-/* Prevent horizontal scroll on all pages */
 html, body {
   overflow-x: hidden;
-  scroll-padding-top: 100px;  /* Anchor links offset for fixed header */
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: white;
   color: black;
-  padding-top: 100px;         /* Space for fixed header */
+  padding-top: 100px; /* space for fixed header */
 }
 
-/* Wrapper to contain all content */
 .site-wrapper {
   overflow-x: hidden;
   position: relative;
@@ -45,7 +42,7 @@ header {
 /* Center navigation */
 nav {
   position: absolute;
-  left: 46%;
+  left: 50%;
   transform: translateX(-50%);
 }
 
@@ -59,12 +56,11 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: black;
 }
 
-/* Hamburger menu (mobile) */
+/* Hamburger menu for mobile */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -87,23 +83,23 @@ nav a {
 .hero {
   position: relative;
   padding: 120px 20px 60px;
-  text-align: center;
   background-color: white;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: center; /* CENTER the hero-text */
   align-items: center;
   height: 70vh;
+  text-align: center; /* CENTER text inside hero-text */
   overflow: hidden;
 }
 
 .hero-text {
-  position: relative;
-  z-index: 2;
-  animation: fadeIn 2s ease-in;
   max-width: 90%;
+  animation: fadeIn 2s ease-in;
+  /* Force center alignment */
   margin: 0 auto;
 }
+
+/* HERO TEXT HEADINGS FOR ALL PAGES CENTERED AND BIG */
 
 .hero-text h1 {
   font-family: 'Montserrat', sans-serif;
@@ -113,6 +109,7 @@ nav a {
   padding: 0;
   letter-spacing: 4px;
   font-size: 8rem;
+  text-align: center; /* ensure centered */
 }
 
 .hero-text h2 {
@@ -122,67 +119,29 @@ nav a {
   margin-top: 10px;
   margin-bottom: 0;
   font-size: 1.5rem;
+  text-align: center; /* ensure centered */
 }
 
-/* ========================================================== */
-/* ====================== PAGE-SPECIFIC HERO TITLES ======== */
-/* ========================================================== */
-
-/* Home Page */
-.home-page .hero-text h1 {
-  /* Already styled globally */
+/* Adjust sizes per page using body classes */
+body.home-page .hero-text h1 {
+  font-size: 8rem;
 }
 
-.home-page .hero-text h2 {
-  /* Already styled globally */
-}
-
-/* Work Page */
-.work-page .hero-text h1 {
+body.work-page .hero-text h1 {
   font-size: 14rem;
   letter-spacing: 3px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: black;
 }
 
-.work-page .hero-text h2 {
-  font-size: 1.6rem;
-  margin-top: 10px;
-  font-weight: 300;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-/* About Page */
-.about-page .hero-text h1 {
+body.about-page .hero-text h1,
+body.contact-page .hero-text h1 {
   font-size: 9rem;
   letter-spacing: 3px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: black;
 }
 
-.about-page .hero-text h2 {
+body.work-page .hero-text h2,
+body.about-page .hero-text h2,
+body.contact-page .hero-text h2 {
   font-size: 1.6rem;
-  margin-top: 10px;
-  font-weight: 300;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-/* Contact Page */
-.contact-page .hero-text h1 {
-  font-size: 9rem;
-  letter-spacing: 2px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: black;
-}
-
-.contact-page .hero-text h2 {
-  font-size: 1.6rem;
-  margin-top: 10px;
-  font-weight: 300;
-  color: rgba(0, 0, 0, 0.7);
 }
 
 /* ========================================================== */
@@ -356,19 +315,12 @@ footer {
 /* ========================================================== */
 
 @media (max-width: 768px) {
-  /* Hero text resizing for all pages */
-  .hero-text h1.home-page,
-  .hero-text h1.work-page,
-  .hero-text h1.about-page,
-  .hero-text h1.contact-page {
+  .hero-text h1 {
     font-size: 4rem !important;
     letter-spacing: 2px !important;
   }
 
-  .hero-text h2.home-page,
-  .hero-text h2.work-page,
-  .hero-text h2.about-page,
-  .hero-text h2.contact-page {
+  .hero-text h2 {
     font-size: 1.1rem !important;
   }
 
@@ -392,17 +344,44 @@ footer {
     padding: 20px 0;
   }
 
-  nav ul li { width: 100%; text-align: center; }
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
 
-  nav a { font-size: 16px; padding: 10px 0; display: block; width: 100%; }
+  nav a {
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+  }
 
-  .hamburger { display: flex; }
-  .about-content { flex-direction: column; align-items: center; text-align: center; }
-  .about-text p { hyphens: auto; word-spacing: normal; letter-spacing: normal; text-justify: inter-word; }
+  .hamburger {
+    display: flex;
+  }
 
-  form { width: 90%; }
-  form input, form textarea { font-size: 14px; }
-  form button { padding: 10px; }
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-  .project-images { max-width: 100%; padding: 0 10px; }
+  .about-text p {
+    hyphens: auto;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-justify: inter-word;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  form input, form textarea {
+    font-size: 14px;
+  }
+
+  form button {
+    padding: 10px;
+  }
 }
