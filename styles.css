@@ -105,7 +105,7 @@ nav a {
   animation: fadeIn 2s ease-in;        /* Fade-in effect */
 }
 
-.hero-text h2 {
+.hero-text h2 { /* Designer • Brand Strategist • Creative Director • Project Manager */
   font-size: 1.3rem;
   font-weight: normal;
   margin-top: -50px;                   /* Moves subtitle up slightly */
