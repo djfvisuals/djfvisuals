@@ -329,6 +329,15 @@ form button:hover {
     text-align: justify;
   }
 
+  @media (max-width: 768px) {
+  .about-intro h1,          /* Experience */
+  .about-text .sub-heading  /* Who Am I */ {
+    padding-left: 0;
+    text-align: left;
+  }
+}
+
+
   
   }
 }
