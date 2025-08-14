@@ -272,18 +272,13 @@ form button:hover {
 }
 
 /* "EXPERIENCE" section */
-.about-intro {
-  text-align: left; /* make sure text is left-aligned */
-  margin: 60px auto 30px auto; /* space above and below */
-  padding: 0 25px; /* left and right padding */
-}
-
 .about-intro h1 {
   font-size: 1.3rem;      /* size of the text */
   letter-spacing: 1px;    /* space between letters */
   font-weight: 500;       /* medium weight font */
   padding-left: 52px;     /* indent from the left */
   margin-top: 0;          /* no extra space on top */
+  margin-bottom: 30px;    /* add space below to match "Who am I" */
 }
 
 /* "Who am I" section */
@@ -296,6 +291,7 @@ form button:hover {
   margin-bottom: 30px;    /* space below for consistent spacing */
   text-align: left;       /* left align text */
 }
+
 
 
 
