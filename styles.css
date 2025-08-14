@@ -283,13 +283,12 @@ form button:hover {
 
 /* "Who am I" section */
 .about-text .sub-heading {
-  font-size: 1.3rem;      /* same text size */
-  letter-spacing: 1px;    /* same letter spacing */
-  font-weight: 500;       /* same font weight */
-  padding-left: 52px;     /* same indent as Experience */
-  margin-top: 60px;       /* space above to separate from previous paragraph */
-  margin-bottom: 30px;    /* space below for consistent spacing */
-  text-align: left;       /* left align text */
+  font-size: 1.3rem;      /* size of the text */
+  letter-spacing: 1px;    /* space between letters */
+  font-weight: 500;       /* medium weight font */
+  padding-left: 52px;     /* indent from the left */
+  margin-top: 0;          /* no extra space on top */
+  margin-bottom: 30px;    /* add space below  */
 }
 
 
