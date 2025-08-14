@@ -8,7 +8,7 @@ html, body {
   font-family: 'Montserrat', sans-serif;
   background-color: white;
   color: black;
-  padding-top: 100px; /* space for fixed header */
+
 }
 
 .site-wrapper {
@@ -26,8 +26,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  position: fixed;
-  top: 0;
+  position: relative;
+  top: auto;
   width: 100%;
   z-index: 10;
   background-color: white;
