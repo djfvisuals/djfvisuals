@@ -110,6 +110,8 @@ nav a {
   letter-spacing: 4px;
   font-size: 8rem;
   text-align: center; /* ensure centered */
+  /* Move the h1 up by 40px */
+  transform: translateY(-40px);
 }
 
 .hero-text h2 {
@@ -120,6 +122,8 @@ nav a {
   margin-bottom: 0;
   font-size: 1.5rem;
   text-align: center; /* ensure centered */
+  /* Move the h2 up by 20px */
+  transform: translateY(-20px);
 }
 
 /* Adjust sizes per page using body classes */
@@ -374,14 +378,4 @@ footer {
   }
 
   form {
-    width: 90%;
-  }
-
-  form input, form textarea {
-    font-size: 14px;
-  }
-
-  form button {
-    padding: 10px;
-  }
-}
+    width
