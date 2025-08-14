@@ -15,7 +15,7 @@ html, body {
 /* ✅ Optional: Fix navigation on small screens */
 @media (max-width: 768px) {
   nav {
-    position: static;
+    position: relative;
     transform: none;
     margin-top: 10px;
   }
