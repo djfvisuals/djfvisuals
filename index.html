@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <body class="home-page">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DJF Visuals</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet" />
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
-  
-<body>
-  <!-- ✅ Start wrapper to prevent horizontal scroll -->
+
+<body class="home-page">
+
+  <!-- Start wrapper to prevent horizontal scroll -->
   <div class="site-wrapper">
 
     <!-- ===== HEADER / NAVIGATION ===== -->
@@ -24,13 +22,13 @@
       <a href="index.html" class="logo">
         <img src="images/DJF_VISUALS_LOGO_FINAL_GB.png" alt="DJF Visuals Logo" />
       </a>
-      <div class="hamburger" onclick="toggleMenu()">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
 
-      
+      <!-- Hamburger icon (3 lines) -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
       <nav>
         <ul>
@@ -40,8 +38,6 @@
           <li><a href="contact-me.html">Contact Me</a></li>
         </ul>
       </nav>
-     
-
     </header>
 
     <!-- ===== HERO SECTION ===== -->
@@ -56,12 +52,11 @@
       </div>
     </section>
 
+    <!-- Portfolio Section -->
     <section class="work-intro">
-  <h1>EXPLORE SOME OF MY WORK</h1>
-</section>
+      <h1>EXPLORE SOME OF MY WORK</h1>
+    </section>
 
-
-    <!-- ===== MAIN PORTFOLIO GRID ===== -->
     <main>
       <section>
         <div class="portfolio-items">
@@ -70,19 +65,16 @@
               <img src="images/VT_LOGO.png" alt="Valuetainment Logo" />
             </a>
           </div>
-
           <div class="portfolio-item">
             <a href="miamialkalinewater.html">
               <img src="images/miami_alkaline_logo2.png" alt="Miami Alkaline Water Logo" />
             </a>
           </div>
-
           <div class="portfolio-item">
             <a href="print.html">
               <img src="images/print.png" alt="Aframe Design" />
             </a>
           </div>
-
           <div class="portfolio-item">
             <a href="photography.html">
               <img src="images/photography2.png" alt="Photography 2" />
@@ -97,19 +89,15 @@
       <p>All content copyright David J. Franco "DJF Visuals" © 2025.</p>
     </footer>
 
-  </div> <!-- ✅ End wrapper -->
-  <script>
-  function toggleMenu() {
-    document.querySelector('nav').classList.toggle('show');
-  }
-</script>
-  <script>
-function toggleMenu() {
-  const nav = document.querySelector('nav');      // selects the nav
-  nav.classList.toggle('show');                   // toggles the "show" class
-}
-</script>
+  </div> <!-- End wrapper -->
 
+  <!-- Hamburger toggle script -->
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('show'); // Add/remove "show" to show/hide menu
+    }
+  </script>
 
 </body>
 </html>
