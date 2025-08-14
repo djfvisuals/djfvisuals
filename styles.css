@@ -168,6 +168,15 @@ body.contact-page .hero-text h2 {
   opacity: 0;
 }
 
+.project-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 60px 10%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 .portfolio-items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
