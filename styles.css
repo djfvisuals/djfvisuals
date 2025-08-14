@@ -308,7 +308,7 @@ footer {
 
   /* General hero text adjustment */
   .hero-text h1 {
-    font-size: 1.3rem;      /* Override other hero titles if needed */
+    font-size: 0.7rem;      /* Override other hero titles if needed */
   }
 
   /* Navigation adjustments */
