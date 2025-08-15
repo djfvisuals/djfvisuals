@@ -8,7 +8,6 @@ html, body {
   font-family: 'Montserrat', sans-serif;
   background-color: white;
   color: black;
-
 }
 
 .site-wrapper {
@@ -22,16 +21,16 @@ html, body {
 /* ========================================================== */
 
 header {
+  position: relative;
+  z-index: 10;
+  background-color: white;
+  padding: 20px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
-  position: relative;
-  top: auto;
-  width: 100%;
-  z-index: 10;
-  background-color: white;
   border-bottom: 1px solid #eee;
+  width: 100%;
+  top: auto;
 }
 
 .logo img {
@@ -117,19 +116,29 @@ nav a {
   }
 }
 
-}
-
-
-
 /* ========================================================== */
 /* /* =============================== */
 /* HEADER STYLES PER PAGE (FINAL) */
 /* =============================== */
 
+/* Hero base */
+.hero {
+  margin-top: 80px; /* pushed hero down so header/nav not overlapped */
+  padding: 120px 20px 60px;
+  text-align: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  overflow: hidden;
+}
+
 .hero-text {
   max-width: 90%;
   margin: 0 auto;
-  animation: fadeIn 4s ease-in;
+  animation: fadeIn 3s ease-in; /* slower animation */
 }
 
 /* ---------- HOME PAGE ---------- */
@@ -141,7 +150,7 @@ body.home-page .hero-text h1 {
   text-align: center;
   font-weight: 700;
   color: black;
-  animation: fadeIn 2s ease-in;
+  animation: fadeIn 3s ease-in;
 }
 
 body.home-page .hero-text h2 {
@@ -152,7 +161,7 @@ body.home-page .hero-text h2 {
   text-align: center;
   font-weight: 300;
   color: rgba(0, 0, 0, 0.7);
-  animation: fadeIn 2s ease-in;
+  animation: fadeIn 3s ease-in;
 }
 
 /* ---------- WORK PAGE ---------- */
@@ -164,7 +173,7 @@ body.work-page .hero-text h1 {
   text-align: center;
   font-weight: 700;
   color: black;
-  animation: fadeIn 2s ease-in;
+  animation: fadeIn 3s ease-in;
 }
 
 /* --------- ABOUT ME PAGE --------- */
@@ -176,7 +185,7 @@ body.about-page .hero-text h1 {
   text-align: center;
   font-weight: 700;
   color: black;
-  animation: fadeIn 2s ease-in;
+  animation: fadeIn 3s ease-in;
 }
 
 /* --------- CONTACT PAGE ---------- */
@@ -188,7 +197,7 @@ body.contact-page .hero-text h1 {
   text-align: center;
   font-weight: 700;
   color: black;
-  animation: fadeIn 2s ease-in;
+  animation: fadeIn 3s ease-in;
 }
 
 /* ========= MOBILE STYLES ========= */
@@ -207,7 +216,6 @@ body.contact-page .hero-text h1 {
     transform: translateY(0) !important;
   }
 }
-
 
 /* ========================================================== */
 /* ====================== WORK / PORTFOLIO ================= */
@@ -235,7 +243,7 @@ body.contact-page .hero-text h1 {
   padding: 60px 10%;
   max-width: 100%;
   margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* auto adjusts */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 @media (max-width: 768px) {
@@ -244,8 +252,6 @@ body.contact-page .hero-text h1 {
     padding: 40px 5%;
   }
 }
-
-
 
 /* ========================================================== */
 /* ====================== ABOUT ============================ */
@@ -366,13 +372,29 @@ footer {
 /* ========================================================== */
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes textReveal {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ========================================================== */
@@ -400,7 +422,9 @@ footer {
     z-index: 10;
   }
 
-  nav.show { display: flex; }
+  nav.show {
+    display: flex;
+  }
 
   nav ul {
     flex-direction: column;
@@ -431,44 +455,4 @@ footer {
     text-align: center;
   }
 
-  .about-text p {
-    hyphens: auto;
-    word-spacing: normal;
-    letter-spacing: normal;
-    text-justify: inter-word;
-  }
-
  
-  form {
-    width: 100%;
-  }
-
-}
-
-/* ===== MAIN PORTFOLIO PAGE IMAGES ===== */
-.portfolio-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.portfolio-item img {
-  max-width: 250px;
-  height: auto;
-  display: block;
-}
-
-/* ===== PROJECT DETAIL PAGE IMAGES ===== */
-.project-images {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  justify-items: center;
-}
-
-.project-image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
