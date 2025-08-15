@@ -22,7 +22,7 @@ header {
   width: 100%;
   background-color: white;
   border-bottom: 1px solid #eee;
-  position: relative; /* keep it static on scroll */
+  position: relative;
   z-index: 10;
 }
 
@@ -117,7 +117,7 @@ nav a {
 body.home-page .hero-text h1 {
   font-size: 8rem;
   letter-spacing: 4px;
-  margin-top: -40px; /* moved up */
+  margin-top: -10px; /* pulled closer to nav */
   margin-bottom: 0;
   text-align: center;
   font-weight: 700;
@@ -129,7 +129,7 @@ body.home-page .hero-text h1 {
 body.home-page .hero-text h2 {
   font-size: 1.5rem;
   letter-spacing: normal;
-  margin-top: 40px;
+  margin-top: 20px; /* slightly tighter */
   text-align: center;
   font-weight: 300;
   color: rgba(0, 0, 0, 0.7);
@@ -141,7 +141,7 @@ body.home-page .hero-text h2 {
 body.work-page .hero-text h1 {
   font-size: 14rem;
   letter-spacing: 3px;
-  margin-top: 40px; /* moved up less than original 90px */
+  margin-top: 15px; /* pulled closer */
   margin-bottom: 0;
   text-align: center;
   font-weight: 700;
@@ -154,7 +154,7 @@ body.work-page .hero-text h1 {
 body.about-page .hero-text h1 {
   font-size: 9rem;
   letter-spacing: 3px;
-  margin-top: 40px; /* moved up */
+  margin-top: 20px; /* pulled closer */
   margin-bottom: 0;
   text-align: center;
   font-weight: 700;
@@ -167,7 +167,7 @@ body.about-page .hero-text h1 {
 body.contact-page .hero-text h1 {
   font-size: 9rem;
   letter-spacing: 3px;
-  margin-top: 70px; /* moved up less than original 90px */
+  margin-top: 35px; /* pulled closer */
   margin-bottom: 0;
   text-align: center;
   font-weight: 700;
@@ -184,10 +184,12 @@ body.contact-page .hero-text h1 {
   body.contact-page .hero-text h1 {
     font-size: 4rem !important;
     letter-spacing: 2px !important;
+    margin-top: 10px !important; /* tighter on mobile */
   }
 
   body.home-page .hero-text h2 {
     font-size: 1.1rem !important;
+    margin-top: 15px !important;
   }
 }
 
