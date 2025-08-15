@@ -122,76 +122,92 @@ nav a {
 
 
 /* ========================================================== */
-/* ====================== HERO ============================= */
-/* ========================================================== */
-
-.hero {
-  position: relative;
-  padding: 120px 20px 60px;
-  background-color: white;
-  display: flex;
-  justify-content: center; /* CENTER the hero-text */
-  align-items: center;
-  height: 70vh;
-  text-align: center; /* CENTER text inside hero-text */
-  overflow: hidden;
-}
+/* /* =============================== */
+/* HEADER STYLES PER PAGE (FINAL) */
+/* =============================== */
 
 .hero-text {
   max-width: 90%;
-  animation: fadeIn 2s ease-in;
-  /* Force center alignment */
   margin: 0 auto;
+  animation: fadeIn 2s ease-in;
 }
 
-/* HERO TEXT HEADINGS FOR ALL PAGES CENTERED AND BIG */
-
-.hero-text h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: black;
-  margin: 0;
-  padding: 0;
-  letter-spacing: 4px;
-  font-size: 8rem;
-  text-align: center; /* ensure centered */
-  /* Move the h1 up by 40px */
-  transform: translateY(-90px);
-}
-
-.hero-text h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  color: rgba(0, 0, 0, 0.7);
-  margin-top: 10px;
-  margin-bottom: 0;
-  font-size: 1.5rem;
-  text-align: center; /* ensure centered */
-  /* Move the h2 up by 20px */
-  transform: translateY(-70px);
-}
-
-/* Adjust sizes per page using body classes */
+/* ---------- HOME PAGE ---------- */
 body.home-page .hero-text h1 {
   font-size: 8rem;
+  letter-spacing: 4px;
+  transform: translateY(-90px);
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  color: black;
+  animation: fadeIn 2s ease-in;
 }
 
+body.home-page .hero-text h2 {
+  font-size: 1.5rem;
+  letter-spacing: normal;
+  transform: translateY(-70px);
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+  animation: fadeIn 2s ease-in;
+}
+
+/* ---------- WORK PAGE ---------- */
 body.work-page .hero-text h1 {
   font-size: 14rem;
   letter-spacing: 3px;
+  transform: translateY(-90px);
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  color: black;
+  animation: fadeIn 2s ease-in;
 }
 
-body.about-page .hero-text h1,
+/* --------- ABOUT ME PAGE --------- */
+body.about-page .hero-text h1 {
+  font-size: 9rem;
+  letter-spacing: 3px;
+  transform: translateY(-90px);
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  color: black;
+  animation: fadeIn 2s ease-in;
+}
+
+/* --------- CONTACT PAGE ---------- */
 body.contact-page .hero-text h1 {
   font-size: 9rem;
   letter-spacing: 3px;
+  transform: translateY(-90px);
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  color: black;
+  animation: fadeIn 2s ease-in;
 }
 
-body.work-page .hero-text h2,
-body.about-page .hero-text h2,
-body.contact-page .hero-text h2 {
-  font-size: 1.6rem;
+/* ========= MOBILE STYLES ========= */
+@media (max-width: 768px) {
+  body.home-page .hero-text h1,
+  body.work-page .hero-text h1,
+  body.about-page .hero-text h1,
+  body.contact-page .hero-text h1 {
+    font-size: 4rem !important;
+    letter-spacing: 2px !important;
+    transform: translateY(0) !important;
+  }
+
+  body.home-page .hero-text h2 {
+    font-size: 1.1rem !important;
+    transform: translateY(0) !important;
+  }
 }
+
 
 /* ========================================================== */
 /* ====================== WORK / PORTFOLIO ================= */
