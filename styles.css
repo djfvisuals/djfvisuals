@@ -181,12 +181,12 @@ body.contact-page .hero-text h1 {
   body.contact-page .hero-text h1 {
     font-size: 4rem !important;
     letter-spacing: 2px !important;
-    transform: translateY(0) !important;
+    
   }
 
   body.home-page .hero-text h2 {
     font-size: 1.1rem !important;
-    transform: translateY(0) !important;
+    
   }
 }
 
