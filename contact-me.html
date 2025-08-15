@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <body class="contact-page">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Me - DJF Visuals</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet" />
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <section class="about-hero">
-  <video autoplay muted loop class="hero-video">
-    <source src="video-placeholder.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-  <div class="hero-image-fallback"></div>
+<body class="contact-page">
 
-  <div class="hero-text">
-    <h1>CONTACT ME</h1>
-  </div>
-</section>
+  <section class="about-hero">
+    <video autoplay muted loop class="hero-video">
+      <source src="video-placeholder.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-image-fallback"></div>
+
+    <div class="hero-text">
+      <h1>CONTACT ME</h1>
+    </div>
+  </section>
 
   <header>
-
-      <a href="index.html" class="logo">
+    <div class="logo">
+      <a href="index.html">
         <img src="images/DJF_VISUALS_LOGO_FINAL_GB.png" alt="DJF Visuals Logo" />
       </a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="work.html">Work</a></li>
-          <li><a href="aboutme.html">About Me</a></li>
-          <li><a href="contact-me.html">Contact Me</a></li>
-        </ul>
-      </nav>
-      <div class="hamburger">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="contact-me.html">Contact Me</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </header>
 
   <main>
@@ -64,19 +64,20 @@
     </section>
   </main>
 
+  <footer>
+    <p>All content copyright David J. Franco "DJF Visuals" © 2025.</p>
+  </footer>
+
   <script>
     document.querySelector('form').addEventListener('submit', function (e) {
       e.preventDefault();
       setTimeout(() => {
         document.querySelector('.contact-intro').style.display = 'none';
-        document.querySelector('#response-message').textContent = 
+        document.querySelector('#response-message').textContent =
           'Thank you for your message! I will get back to you shortly.';
       }, 1000);
     });
   </script>
 
-  <footer>
-    <p>All content copyright David J. Franco "DJF Visuals" © 2025.</p>
-  </footer>
 </body>
 </html>
