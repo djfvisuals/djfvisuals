@@ -167,7 +167,7 @@ body.about-page .hero-text h1 {
 body.contact-page .hero-text h1 {
   font-size: 9rem;
   letter-spacing: 3px;
-  margin-top: 40px; /* moved up less than original 90px */
+  margin-top: 70px; /* moved up less than original 90px */
   margin-bottom: 0;
   text-align: center;
   font-weight: 700;
