@@ -111,66 +111,69 @@ nav a {
   max-width: 90%;
   margin: 0 auto;
   animation: fadeIn 2s cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 
 /* Home page */
 body.home-page .hero-text h1 {
   font-size: 8rem;
   letter-spacing: 4px;
-  
-  margin: 0;
+  margin-top: -40px; /* move it up */
+  margin-bottom: 0;
   text-align: center;
   font-weight: 700;
   color: black;
-  animation: fadeIn 2s ease-in;
+  animation: fadeInOpacity 2s ease-in;
+  transform: none !important; /* keep it stationary */
 }
 
 body.home-page .hero-text h2 {
   font-size: 1.5rem;
   letter-spacing: normal;
-  
   margin-top: 10px;
   text-align: center;
   font-weight: 300;
   color: rgba(0, 0, 0, 0.7);
-  animation: fadeIn 2s ease-in;
+  animation: fadeInOpacity 2s ease-in;
+  transform: none !important;
 }
 
 /* Work page */
 body.work-page .hero-text h1 {
   font-size: 14rem;
   letter-spacing: 3px;
-  
-  margin: 0;
+  margin-top: 40px; /* moved up less because of original margin-top:90px */
+  margin-bottom: 0;
   text-align: center;
   font-weight: 700;
   color: black;
-  animation: fadeIn 2s ease-in;
+  animation: fadeInOpacity 2s ease-in;
+  transform: none !important;
 }
 
 /* About page */
 body.about-page .hero-text h1 {
   font-size: 9rem;
   letter-spacing: 3px;
-  
-  margin: 0;
+  margin-top: -30px; /* moved up */
+  margin-bottom: 0;
   text-align: center;
   font-weight: 700;
   color: black;
-  animation: fadeIn 2s ease-in;
+  animation: fadeInOpacity 2s ease-in;
+  transform: none !important;
 }
 
 /* Contact page */
 body.contact-page .hero-text h1 {
   font-size: 9rem;
   letter-spacing: 3px;
-  
-  margin: 0;
+  margin-top: 40px; /* moved up less than original 90px */
+  margin-bottom: 0;
   text-align: center;
   font-weight: 700;
   color: black;
-  animation: fadeIn 2s ease-in;
+  animation: fadeInOpacity 2s ease-in;
+  transform: none !important;
 }
 
 /* ===== RESPONSIVE HERO TEXT ===== */
@@ -181,12 +184,10 @@ body.contact-page .hero-text h1 {
   body.contact-page .hero-text h1 {
     font-size: 4rem !important;
     letter-spacing: 2px !important;
-    
   }
 
   body.home-page .hero-text h2 {
     font-size: 1.1rem !important;
-    
   }
 }
 
@@ -199,6 +200,7 @@ body.contact-page .hero-text h1 {
 
 .work-intro h1 {
   font-size: 1.9rem;
+  margin-top: 10px;
   letter-spacing: 1px;
   font-weight: 500;
   animation: textReveal 5s ease forwards;
@@ -328,9 +330,9 @@ footer {
 }
 
 /* ===== ANIMATIONS ===== */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeInOpacity {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes textReveal {
@@ -398,37 +400,3 @@ footer {
     word-spacing: normal;
     letter-spacing: normal;
     text-justify: inter-word;
-  }
-
-  form {
-    width: 100%;
-  }
-}
-
-/* ===== PORTFOLIO PAGE IMAGES ===== */
-.portfolio-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.portfolio-item img {
-  max-width: 250px;
-  height: auto;
-  display: block;
-}
-
-/* ===== PROJECT DETAIL PAGE IMAGES ===== */
-.project-images {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  justify-items: center;
-}
-
-.project-image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
