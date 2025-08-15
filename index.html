@@ -424,3 +424,33 @@ footer {
 
   form {
     width
+
+/* ===== MAIN PORTFOLIO PAGE IMAGES ===== */
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap; /* allows wrap to next line on small screens */
+  justify-content: center;
+  gap: 20px;
+}
+
+.portfolio-item img {
+  max-width: 250px; /* adjust to your preference */
+  height: auto; /* keeps natural aspect ratio */
+  display: block;
+}
+
+/* ===== PROJECT DETAIL PAGE IMAGES ===== */
+.project-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+  gap: 20px;
+  justify-items: center;
+}
+
+.project-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
