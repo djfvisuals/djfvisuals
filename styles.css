@@ -129,7 +129,7 @@ nav a {
 .hero-text {
   max-width: 90%;
   margin: 0 auto;
-  animation: fadeIn 2s ease-in;
+  animation: fadeIn 4s ease-in;
 }
 
 /* ---------- HOME PAGE ---------- */
