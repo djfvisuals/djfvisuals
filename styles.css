@@ -1,36 +1,29 @@
-/* ========================================================== */
-/* ====================== GLOBAL =========================== */
-/* ========================================================== */
-
+/* ===== GLOBAL STYLES ===== */
 html, body {
-  overflow-x: hidden;
   margin: 0;
+  padding: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: white;
   color: black;
+  overflow-x: hidden;
 }
 
 .site-wrapper {
-  overflow-x: hidden;
-  position: relative;
   width: 100%;
+  position: relative;
 }
 
-/* ========================================================== */
-/* ====================== HEADER =========================== */
-/* ========================================================== */
-
+/* ===== HEADER ===== */
 header {
-  position: relative;
-  z-index: 10;
-  background-color: white;
-  padding: 20px 50px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #eee;
+  justify-content: space-between;
+  padding: 20px 50px;
   width: 100%;
-  top: auto;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  position: relative; /* keep it static on scroll */
+  z-index: 10;
 }
 
 .logo img {
@@ -38,7 +31,6 @@ header {
   transform: translateX(-40px);
 }
 
-/* Center navigation */
 nav {
   position: absolute;
   left: 50%;
@@ -59,32 +51,30 @@ nav a {
   color: black;
 }
 
-/* Hamburger menu for mobile */
-/* HAMBURGER MENU STYLES */
+/* ===== HAMBURGER MENU FOR MOBILE ===== */
 .hamburger {
   display: none;
   flex-direction: column;
-  cursor: pointer;
   gap: 5px;
+  cursor: pointer;
   position: absolute;
   top: 25px;
   right: 20px;
   z-index: 20;
 }
 
-.hamburger span {
+.hamburger div {
   width: 25px;
   height: 3px;
   background-color: black;
   border-radius: 2px;
 }
 
-/* Show hamburger only on mobile */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
   }
-  
+
   nav {
     display: none;
     flex-direction: column;
@@ -93,8 +83,8 @@ nav a {
     left: 0;
     width: 100%;
     background-color: white;
-    z-index: 10;
     border-top: 1px solid #ccc;
+    z-index: 10;
   }
 
   nav.show {
@@ -116,32 +106,14 @@ nav a {
   }
 }
 
-/* ========================================================== */
-/* /* =============================== */
-/* HEADER STYLES PER PAGE (FINAL) */
-/* =============================== */
-
-/* Hero base */
-.hero {
-  margin-top: 80px; /* pushed hero down so header/nav not overlapped */
-  padding: 120px 20px 60px;
-  text-align: center;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
-  overflow: hidden;
-}
-
+/* ===== HERO TEXT HEADERS PER PAGE ===== */
 .hero-text {
   max-width: 90%;
   margin: 0 auto;
-  animation: fadeIn 3s ease-in; /* slower animation */
+  animation: fadeIn 2s ease-in;
 }
 
-/* ---------- HOME PAGE ---------- */
+/* Home page */
 body.home-page .hero-text h1 {
   font-size: 8rem;
   letter-spacing: 4px;
@@ -150,7 +122,7 @@ body.home-page .hero-text h1 {
   text-align: center;
   font-weight: 700;
   color: black;
-  animation: fadeIn 3s ease-in;
+  animation: fadeIn 2s ease-in;
 }
 
 body.home-page .hero-text h2 {
@@ -161,10 +133,10 @@ body.home-page .hero-text h2 {
   text-align: center;
   font-weight: 300;
   color: rgba(0, 0, 0, 0.7);
-  animation: fadeIn 3s ease-in;
+  animation: fadeIn 2s ease-in;
 }
 
-/* ---------- WORK PAGE ---------- */
+/* Work page */
 body.work-page .hero-text h1 {
   font-size: 14rem;
   letter-spacing: 3px;
@@ -173,10 +145,10 @@ body.work-page .hero-text h1 {
   text-align: center;
   font-weight: 700;
   color: black;
-  animation: fadeIn 3s ease-in;
+  animation: fadeIn 2s ease-in;
 }
 
-/* --------- ABOUT ME PAGE --------- */
+/* About page */
 body.about-page .hero-text h1 {
   font-size: 9rem;
   letter-spacing: 3px;
@@ -185,10 +157,10 @@ body.about-page .hero-text h1 {
   text-align: center;
   font-weight: 700;
   color: black;
-  animation: fadeIn 3s ease-in;
+  animation: fadeIn 2s ease-in;
 }
 
-/* --------- CONTACT PAGE ---------- */
+/* Contact page */
 body.contact-page .hero-text h1 {
   font-size: 9rem;
   letter-spacing: 3px;
@@ -197,10 +169,10 @@ body.contact-page .hero-text h1 {
   text-align: center;
   font-weight: 700;
   color: black;
-  animation: fadeIn 3s ease-in;
+  animation: fadeIn 2s ease-in;
 }
 
-/* ========= MOBILE STYLES ========= */
+/* ===== RESPONSIVE HERO TEXT ===== */
 @media (max-width: 768px) {
   body.home-page .hero-text h1,
   body.work-page .hero-text h1,
@@ -217,10 +189,7 @@ body.contact-page .hero-text h1 {
   }
 }
 
-/* ========================================================== */
-/* ====================== WORK / PORTFOLIO ================= */
-/* ========================================================== */
-
+/* ===== WORK / PORTFOLIO ===== */
 .work-intro {
   text-align: center;
   margin: 60px auto 30px auto;
@@ -231,7 +200,6 @@ body.contact-page .hero-text h1 {
   font-size: 1.9rem;
   letter-spacing: 1px;
   font-weight: 500;
-  padding-left: 0;
   animation: textReveal 5s ease forwards;
   animation-delay: 0.14s;
   opacity: 0;
@@ -253,10 +221,7 @@ body.contact-page .hero-text h1 {
   }
 }
 
-/* ========================================================== */
-/* ====================== ABOUT ============================ */
-/* ========================================================== */
-
+/* ===== ABOUT PAGE ===== */
 .about-hero {
   position: relative;
   height: 60vh;
@@ -306,10 +271,7 @@ body.contact-page .hero-text h1 {
   margin: 0 auto;
 }
 
-/* ========================================================== */
-/* ====================== CONTACT ========================== */
-/* ========================================================== */
-
+/* ===== CONTACT PAGE ===== */
 .contact-intro {
   text-align: center;
   margin: 60px auto 30px auto;
@@ -352,55 +314,30 @@ form button:hover {
   color: black;
 }
 
-/* ========================================================== */
-/* ====================== FOOTER =========================== */
-/* ========================================================== */
-
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 20px;
   font-size: 0.6rem;
-  position: relative;
   width: 100%;
   background: white;
   margin-top: 100px;
+  position: relative;
   transform: translateX(-15px);
 }
 
-/* ========================================================== */
-/* ====================== ANIMATIONS ======================= */
-/* ========================================================== */
-
+/* ===== ANIMATIONS ===== */
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  80% {
-    opacity: 1;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes textReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ========================================================== */
-/* ====================== RESPONSIVE ======================= */
-/* ========================================================== */
-
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .hero-text h1 {
     font-size: 4rem !important;
@@ -455,4 +392,42 @@ footer {
     text-align: center;
   }
 
- 
+  .about-text p {
+    hyphens: auto;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-justify: inter-word;
+  }
+
+  form {
+    width: 100%;
+  }
+}
+
+/* ===== PORTFOLIO PAGE IMAGES ===== */
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.portfolio-item img {
+  max-width: 250px;
+  height: auto;
+  display: block;
+}
+
+/* ===== PROJECT DETAIL PAGE IMAGES ===== */
+.project-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.project-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
