@@ -118,7 +118,7 @@ nav a {
 body.home-page .hero-text h1 {
   font-size: 8rem;
   letter-spacing: 4px;
-  transform: translateY(-90px);
+  
   margin: 0;
   text-align: center;
   font-weight: 700;
@@ -129,7 +129,7 @@ body.home-page .hero-text h1 {
 body.home-page .hero-text h2 {
   font-size: 1.5rem;
   letter-spacing: normal;
-  transform: translateY(-70px);
+  
   margin-top: 10px;
   text-align: center;
   font-weight: 300;
@@ -141,7 +141,7 @@ body.home-page .hero-text h2 {
 body.work-page .hero-text h1 {
   font-size: 14rem;
   letter-spacing: 3px;
-  transform: translateY(-90px);
+  
   margin: 0;
   text-align: center;
   font-weight: 700;
@@ -153,7 +153,7 @@ body.work-page .hero-text h1 {
 body.about-page .hero-text h1 {
   font-size: 9rem;
   letter-spacing: 3px;
-  transform: translateY(-90px);
+  
   margin: 0;
   text-align: center;
   font-weight: 700;
@@ -165,7 +165,7 @@ body.about-page .hero-text h1 {
 body.contact-page .hero-text h1 {
   font-size: 9rem;
   letter-spacing: 3px;
-  transform: translateY(-90px);
+  
   margin: 0;
   text-align: center;
   font-weight: 700;
