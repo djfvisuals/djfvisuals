@@ -1,268 +1,215 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DJF Visuals</title>
+/* ===== GLOBAL STYLES ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  color: black;
+  overflow-x: hidden;
+}
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet" />
+.site-wrapper {
+  width: 100%;
+  position: relative;
+}
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="styles.css" />
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  z-index: 10;
+}
 
-  <style>
-    /* ===== HERO BASE STYLES ===== */
-    .hero {
-      position: relative;
-      padding: 120px 20px 60px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 70vh;
-      background-color: white;
-      overflow: hidden;
-    }
+.logo img {
+  height: 50px;
+}
 
-    .hero-text {
-      position: relative;
-      z-index: 2;
-      animation: fadeIn 2s ease-in;
-      max-width: 90%;
-      margin: 0 auto;
-    }
+/* ===== NAVIGATION ===== */
+nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(calc(-50% - 20px)); /* Nudge left */
+  display: flex;
+  z-index: 15;
+}
 
-    .hero-text h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      color: black;
-      margin: 0;
-      padding: 0;
-      letter-spacing: 4px;
-      font-size: 8rem;
-      margin-top: -90px;
-    }
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px; /* Updated spacing */
+  margin: 0;
+  padding: 0;
+}
 
-    .hero-text h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
-      color: rgba(0, 0, 0, 0.7);
-      margin-top: 10px;
-      margin-bottom: 0;
-      font-size: 1.5rem;
-    }
+nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: black;
+}
 
-    /* ===== HEADER ===== */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 40px;
-      width: 100%;
-      background-color: white;
-      border-bottom: 1px solid #eee;
-      position: relative;
-      z-index: 10;
-    }
+/* ===== HAMBURGER MENU ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  z-index: 1000;
+}
 
-    .logo img {
-      height: 50px;
-    }
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 4px 0;
+  border-radius: 2px;
+}
 
-    /* Unified nav styling */
-    nav {
-      position: absolute;
-      left: 50%;
-      transform: translateX(calc(-50% - 20px));
-      display: flex;
-      z-index: 15;
-    }
+/* ===== HERO SECTION ===== */
+.hero {
+  position: relative;
+  padding: 120px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background-color: white;
+  overflow: hidden;
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 40px; /* 40px spacing */
-      margin: 0;
-      padding: 0;
-    }
+.hero-text {
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 2s ease-in;
+  max-width: 90%;
+  margin: 0 auto;
+}
 
-    nav a {
-      text-decoration: none;
-      font-weight: 500;
-      color: black;
-    }
+.hero-text h1 {
+  font-size: 8rem;
+  font-weight: 700;
+  color: black;
+  letter-spacing: 4px;
+  margin: 0;
+  margin-top: -90px;
+}
 
-    /* ===== HAMBURGER MENU ===== */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      position: absolute;
-      top: 25px;
-      right: 20px;
-      z-index: 1000;
-    }
+.hero-text h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 10px 0 0;
+}
 
-    .hamburger span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      background-color: black;
-      margin: 4px 0;
-      border-radius: 2px;
-    }
+/* ===== WORK INTRO SECTION ===== */
+.work-intro {
+  text-align: center;
+  margin: 60px auto 30px auto;
+  padding: 0 20px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
 
-    /* ===== MEDIA QUERY FOR MOBILE ===== */
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex !important;
-      }
+.work-intro h1 {
+  font-size: 1.9rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin: 0;
+}
 
-      nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: white;
-        border-top: 1px solid #ccc;
-        transform: none !important;
-      }
+/* ===== PORTFOLIO GRID ===== */
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+}
 
-      nav.show {
-        display: flex;
-      }
+.portfolio-item img {
+  max-width: 250px;
+  height: auto;
+  display: block;
+}
 
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding: 20px 0;
-      }
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.6rem;
+  background-color: white;
+  margin-top: 100px;
+  border-top: 1px solid #000;
+}
 
-      nav ul li {
-        width: 100%;
-        text-align: center;
-      }
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-      nav a {
-        font-size: 16px;
-        padding: 10px 0;
-        width: 100%;
-        display: block;
-      }
+/* ===== RESPONSIVE STYLES (MOBILE) ===== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
 
-      .hero {
-        padding: 120px 20px 60px !important;
-        height: 70vh !important;
-      }
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    transform: none;
+  }
 
-      .hero-text h1 {
-        font-size: 8rem !important;
-        letter-spacing: 4px !important;
-        margin-top: -90px !important;
-      }
+  nav.show {
+    display: flex;
+  }
 
-      .hero-text h2 {
-        font-size: 1.5rem !important;
-      }
-    }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.6rem;
-      background-color: white;
-      margin-top: 100px;
-    }
-  </style>
-</head>
+  nav a {
+    font-size: 16px;
+    padding: 10px 0;
+    width: 100%;
+    display: block;
+  }
 
-<body class="home-page">
-  <div class="site-wrapper">
-    <!-- ===== HEADER / NAV ===== -->
-    <header>
-      <a href="index.html" class="logo">
-        <img src="images/DJF_VISUALS_LOGO_FINAL_GB.png" alt="DJF Visuals Logo" />
-      </a>
+  .hero {
+    padding: 120px 20px 60px !important;
+    height: 70vh !important;
+  }
 
-      <!-- Hamburger icon -->
-      <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+  .hero-text h1 {
+    font-size: 8rem !important;
+    letter-spacing: 4px !important;
+    margin-top: -90px !important;
+  }
 
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="work.html">Work</a></li>
-          <li><a href="aboutme.html">About</a></li>
-          <li><a href="contact-me.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero">
-      <div class="hero-text">
-        <h1>DAVID J. FRANCO</h1>
-        <h2>Designer • Brand Strategist • Creative Director • Project Manager</h2>
-      </div>
-    </section>
-
-    <!-- ===== WORK INTRO ===== -->
-    <section class="work-intro">
-      <h1>EXPLORE SOME OF MY WORK</h1>
-    </section>
-
-    <!-- ===== PORTFOLIO ITEMS ===== -->
-    <main>
-      <section>
-        <div class="portfolio-items">
-          <div class="portfolio-item">
-            <a href="valuetainment.html">
-              <img src="images/VT_LOGO.png" alt="Valuetainment Logo" />
-            </a>
-          </div>
-          <div class="portfolio-item">
-            <a href="miamialkalinewater.html">
-              <img src="images/miami_alkaline_logo2.png" alt="Miami Alkaline Water Logo" />
-            </a>
-          </div>
-          <div class="portfolio-item">
-            <a href="print.html">
-              <img src="images/print.png" alt="Aframe Design" />
-            </a>
-          </div>
-          <div class="portfolio-item">
-            <a href="photography.html">
-              <img src="images/photography2.png" alt="Photography 2" />
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- ===== FOOTER ===== -->
-    <footer>
-      <p>All content copyright David J. Franco "DJF Visuals" © 2025.</p>
-    </footer>
-  </div>
-
-  <!-- Hamburger toggle script -->
-  <script>
-    function toggleMenu() {
-      document.querySelector('nav').classList.toggle('show');
-    }
-  </script>
-</body>
-</html>
+  .hero-text h2 {
+    font-size: 1.5rem !important;
+  }
+}
