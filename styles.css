@@ -159,7 +159,7 @@ nav a {
 body.home-page .hero-text h1 {
   font-size: 8rem;
   letter-spacing: 4px;
-  margin-top: -10px; /* pulled closer to nav */
+  margin-top: -40px; /* pulled closer to nav */
   margin-bottom: 0;
   text-align: center;
   font-weight: 700;
