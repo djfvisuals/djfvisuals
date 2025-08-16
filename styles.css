@@ -28,19 +28,19 @@ header {
 
 .logo img {
   height: 50px;
-  transform: translateX(-40px);
+  transform: translateX(-45px); /* nudged left slightly more */
 }
 
 nav {
   position: absolute;
   left: 50%;
-  transform: translateX(-60%);
+  transform: translateX(-65%); /* nudged left slightly more */
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 40px;  /* changed from 30px to 40px */
   margin: 0;
   padding: 0;
 }
@@ -227,90 +227,89 @@ body.contact-page .hero-text h1 {
     font-size: 4rem !important;
     letter-spacing: 2px !important;
     margin-top: 10px !important; /* tighter on mobile */
-  position: absolute !important;
-  left: 50% !important;
-  transform: translateX(-60%) !important;
-}  
-  }
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-60%) !important;
+  }  
+}
 
-  body.home-page .hero-text h2 {
-    font-size: 1.1rem !important;
-    margin-top: 15px !important;
-  }
-  
-  /* Added to fix header stretching on mobile */
-  .hero-text h1,
-  .hero-text h2 {
-    max-width: 90vw;       /* Limit width to 90% of viewport width */
-    padding: 0 10px;       /* Add horizontal padding to avoid touching edges */
-    box-sizing: border-box; /* Include padding in width calculation */
-    word-wrap: break-word;  /* Allow long words to break */
-    white-space: normal;    /* Allow wrapping */
-  }
-  
-  .hero-text h1 {
-    font-size: 3.5rem !important;
-    letter-spacing: 1.5px !important;
-  }
-  
-  .hero-text h2 {
-    font-size: 1rem !important;
-  }
+body.home-page .hero-text h2 {
+  font-size: 1.1rem !important;
+  margin-top: 15px !important;
+}
 
-  nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    z-index: 10;
-  }
+/* Added to fix header stretching on mobile */
+.hero-text h1,
+.hero-text h2 {
+  max-width: 90vw;       /* Limit width to 90% of viewport width */
+  padding: 0 10px;       /* Add horizontal padding to avoid touching edges */
+  box-sizing: border-box; /* Include padding in width calculation */
+  word-wrap: break-word;  /* Allow long words to break */
+  white-space: normal;    /* Allow wrapping */
+}
 
-  nav.show {
-    display: flex;
-  }
+.hero-text h1 {
+  font-size: 3.5rem !important;
+  letter-spacing: 1.5px !important;
+}
 
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 20px 0;
-  }
+.hero-text h2 {
+  font-size: 1rem !important;
+}
 
-  nav ul li {
-    width: 100%;
-    text-align: center;
-  }
+nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+}
 
-  nav a {
-    font-size: 16px;
-    padding: 10px 0;
-    display: block;
-    width: 100%;
-  }
+nav.show {
+  display: flex;
+}
 
-  .hamburger {
-    display: flex;
-  }
+nav ul {
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 0;
+}
 
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+nav ul li {
+  width: 100%;
+  text-align: center;
+}
 
-  .about-text p {
-    hyphens: auto;
-    word-spacing: normal;
-    letter-spacing: normal;
-    text-justify: inter-word;
-  }
+nav a {
+  font-size: 16px;
+  padding: 10px 0;
+  display: block;
+  width: 100%;
+}
 
-  form {
-    width: 100%;
-  }
+.hamburger {
+  display: flex;
+}
+
+.about-content {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-text p {
+  hyphens: auto;
+  word-spacing: normal;
+  letter-spacing: normal;
+  text-justify: inter-word;
+}
+
+form {
+  width: 100%;
 }
 
 /* ===== WORK / PORTFOLIO ===== */
@@ -555,8 +554,9 @@ footer {
   max-width: 100%;
   height: auto;
   display: block;
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
   .hamburger {
     display: flex !important;
     position: absolute;
@@ -569,4 +569,3 @@ footer {
     z-index: 1000;
   }
 }
-
