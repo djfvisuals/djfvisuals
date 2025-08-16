@@ -31,7 +31,7 @@ header {
 }
 
 .logo img {
-  height: 50px; /* keep original position */
+  height: 50px; /* keep original placement */
 }
 
 nav {
@@ -85,9 +85,9 @@ nav a.current:after {
   gap: 5px;
   cursor: pointer;
   position: absolute;
-  top: 20px;
-  right: 15px;
-  z-index: 1000;
+  top: 20px; /* move up/down manually 🌟 */
+  right: 15px; /* move left/right manually 🌟 */
+  z-index: 1000; /* above nav */
 }
 
 .hamburger span {
@@ -163,7 +163,7 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  margin-top: 60px;
+  margin-top: 60px; /* Desktop nudge */
 }
 
 .portfolio-item img {
@@ -194,7 +194,7 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
 .about-content {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: flex-start; /* left aligned body on desktop */
   align-items: flex-start;
   gap: 40px;
   max-width: 1200px;
@@ -204,7 +204,7 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
 
 .about-text {
   flex: 1;
-  text-align: justify; /* keep justified on desktop & mobile */
+  text-align: left; /* keep left aligned */
   font-size: 18px;
   line-height: 1.8;
   letter-spacing: 0.4px;
@@ -219,9 +219,21 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
   font-size: 1.3rem;
   letter-spacing: 1px;
   font-weight: 500;
-  padding-left: 52px; /* horizontal line preserved */
+  padding-left: 52px;
   margin-top: 40px;
   margin-bottom: 30px;
+  position: relative;
+}
+
+.about-text h1::before,
+.about-text .sub-heading::before {
+  content: "";
+  display: inline-block;
+  width: 50px;  /* line length */
+  height: 2px;
+  background-color: black;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
 .about-text p {
@@ -240,7 +252,7 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
   text-align: center;
   margin: 60px auto 30px auto;
   padding: 0 20px;
-  margin-top: 60px;
+  margin-top: 60px; /* Desktop nudge */
 }
 
 form {
@@ -262,7 +274,7 @@ form textarea {
 
 form button {
   padding: 10px 15px;
-  background-color: #000000;
+  background-color: #000000; /* Blackest black */
   color: white;
   border: none;
   border-radius: 4px;
@@ -314,11 +326,12 @@ footer {
 ============================ */
 @media (max-width: 768px) {
 
+  /* Hamburger menu */
   .hamburger {
     display: flex !important;
     top: 20px;
     right: 15px;
-    z-index: 1000;
+    z-index: 10000;
   }
 
   nav {
@@ -354,23 +367,38 @@ footer {
     font-size: 16px;
   }
 
-  /* Keep homepage hero placement exactly as original */
-  body.home-page .hero-text h1 {
-    margin-top: -40px;
-    text-align: center;
+  /* Hero text smaller and centered */
+  body.home-page .hero-text h1,
+  body.work-page .hero-text h1,
+  body.about-page .hero-text h1,
+  body.contact-page .hero-text h1 {
+    font-size: 3.5rem !important;
+    text-align: center !important;
+    margin-top: 20px !important;
   }
 
+  body.home-page .hero-text h2,
+  body.work-page .hero-text h2,
+  body.about-page .hero-text h2,
+  body.contact-page .hero-text h2 {
+    font-size: 1rem !important;
+    text-align: center !important;
+    margin-top: 10px !important;
+  }
+
+  /* About Me section left-aligned on mobile */
   body.about-page .about-content {
-    margin-top: 70px;
     flex-direction: column;
     align-items: flex-start;
+    text-align: left !important;
     padding: 0 15px;
+    margin-top: 70px;
   }
 
   body.about-page .about-text {
-    text-align: justify;
-    padding-left: 0;
-    margin: 20px 0;
+    text-align: left !important;
+    padding-left: 0 !important;
+    margin: 0 auto;
   }
 
   .project-images {
@@ -380,9 +408,19 @@ footer {
 }
 
 /* ============================
-   DESKTOP HERO FONT SIZES
+   DESKTOP HERO PLACEMENT ADJUSTMENT
 ============================ */
 @media (min-width: 769px) {
+
+  body.work-page .hero {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
+  body.about-page .hero {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
 
   body.work-page .hero-text h1 {
     font-size: 15rem;
