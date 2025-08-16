@@ -546,6 +546,29 @@ footer {
     position: absolute;
     top: 20px;
     right: 20px;
-    z-index: 1000;
+    z-index: @media (min-width: 769px) {  /* desktop only */
+  nav a {
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+    position: relative;
+  }
+
+  nav a:after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: gold;
+    width: 0;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+  }
+
+  nav a:active:after,
+  nav a:focus:after {
+    width: 100%;
   }
 }
+
