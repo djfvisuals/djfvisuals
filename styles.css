@@ -31,19 +31,18 @@ header {
   transform: translateX(-40px);
 }
 
-/* Updated nav positioning and gap */
 nav {
   position: absolute;
   left: 50%;
-  transform: translateX(calc(-50% - 20px)); /* nudged left by 20px */
-  display: flex; /* ensure nav is visible */
+  transform: translateX(calc(-50% - 20px));
+  display: flex;
   z-index: 15;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 40px; /* updated gap to 40px */
+  gap: 40px; /* desktop nav spacing */
   margin: 0;
   padding: 0;
 }
@@ -52,9 +51,10 @@ nav a {
   text-decoration: none;
   font-weight: 500;
   color: black;
+  position: relative;
 }
 
-/* ===== HAMBURGER MENU FOR MOBILE ===== */
+/* ===== HAMBURGER MENU ===== */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -66,68 +66,12 @@ nav a {
   z-index: 20;
 }
 
-.hamburger div {
+.hamburger span {
+  display: block;
   width: 25px;
   height: 3px;
   background-color: black;
   border-radius: 2px;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    border-top: 1px solid #ccc;
-    z-index: 10;
-    transform: none; /* reset transform on mobile */
-  }
-
-  nav.show {
-    display: flex;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 20px 0;
-  }
-
-  nav a {
-    font-size: 16px;
-    padding: 10px 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Hamburger menu container */
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 25px;
-    height: 20px;
-    cursor: pointer;
-    z-index: 1001;
-  }
-
-  /* The three lines */
-  .hamburger span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: black;
-    border-radius: 2px;
-  }
 }
 
 /* ===== HERO TEXT HEADERS PER PAGE ===== */
@@ -141,7 +85,7 @@ nav a {
 body.home-page .hero-text h1 {
   font-size: 8rem;
   letter-spacing: 4px;
-  margin-top: -40px; /* pulled closer to nav */
+  margin-top: -40px;
   margin-bottom: 0;
   text-align: center;
   font-weight: 700;
@@ -153,7 +97,7 @@ body.home-page .hero-text h1 {
 body.home-page .hero-text h2 {
   font-size: 1.5rem;
   letter-spacing: normal;
-  margin-top: 20px; /* slightly tighter */
+  margin-top: 20px;
   text-align: center;
   font-weight: 300;
   color: rgba(0, 0, 0, 0.7);
@@ -165,7 +109,7 @@ body.home-page .hero-text h2 {
 body.work-page .hero-text h1 {
   font-size: 14rem;
   letter-spacing: 3px;
-  margin-top: 15px; /* pulled closer */
+  margin-top: 15px;
   margin-bottom: 0;
   text-align: center;
   font-weight: 700;
@@ -178,7 +122,7 @@ body.work-page .hero-text h1 {
 body.about-page .hero-text h1 {
   font-size: 9rem;
   letter-spacing: 3px;
-  margin-top: 20px; /* pulled closer */
+  margin-top: 20px;
   margin-bottom: 0;
   text-align: center;
   font-weight: 700;
@@ -191,108 +135,13 @@ body.about-page .hero-text h1 {
 body.contact-page .hero-text h1 {
   font-size: 9rem;
   letter-spacing: 3px;
-  margin-top: 35px; /* pulled closer */
+  margin-top: 35px;
   margin-bottom: 0;
   text-align: center;
   font-weight: 700;
   color: black;
   animation: fadeInOpacity 2s ease-in;
   transform: none !important;
-}
-
-/* ===== RESPONSIVE HERO TEXT ===== */
-@media (max-width: 768px) {
-  body.home-page .hero-text h1,
-  body.work-page .hero-text h1,
-  body.about-page .hero-text h1,
-  body.contact-page .hero-text h1 {
-    font-size: 4rem !important;
-    letter-spacing: 2px !important;
-    margin-top: 10px !important; /* tighter on mobile */
-    position: absolute !important;
-    left: 50% !important;
-    transform: translateX(-60%) !important;
-  }  
-
-  body.home-page .hero-text h2 {
-    font-size: 1.1rem !important;
-    margin-top: 15px !important;
-  }
-
-  /* Added to fix header stretching on mobile */
-  .hero-text h1,
-  .hero-text h2 {
-    max-width: 90vw;       /* Limit width to 90% of viewport width */
-    padding: 0 10px;       /* Add horizontal padding to avoid touching edges */
-    box-sizing: border-box; /* Include padding in width calculation */
-    word-wrap: break-word;  /* Allow long words to break */
-    white-space: normal;    /* Allow wrapping */
-  }
-
-  .hero-text h1 {
-    font-size: 3.5rem !important;
-    letter-spacing: 1.5px !important;
-  }
-
-  .hero-text h2 {
-    font-size: 1rem !important;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    z-index: 10;
-    transform: none;
-  }
-
-  nav.show {
-    display: flex;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 20px 0;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  nav a {
-    font-size: 16px;
-    padding: 10px 0;
-    display: block;
-    width: 100%;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-text p {
-    hyphens: auto;
-    word-spacing: normal;
-    letter-spacing: normal;
-    text-justify: inter-word;
-  }
-
-  form {
-    width: 100%;
-  }
 }
 
 /* ===== WORK / PORTFOLIO ===== */
@@ -321,11 +170,17 @@ body.contact-page .hero-text h1 {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-@media (max-width: 768px) {
-  .project-images {
-    grid-template-columns: 1fr;
-    padding: 40px 5%;
-  }
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.portfolio-item img {
+  max-width: 250px;
+  height: auto;
+  display: block;
 }
 
 /* ===== ABOUT PAGE ===== */
@@ -444,15 +299,41 @@ footer {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 4rem !important;
-    letter-spacing: 2px !important;
+/* ===== DESKTOP GOLD UNDERLINE NAV ===== */
+@media (min-width: 769px) {
+  nav a {
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+    position: relative;
   }
 
-  .hero-text h2 {
-    font-size: 1.1rem !important;
+  nav a:after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: gold;
+    width: 0;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+  }
+
+  nav a:active:after,
+  nav a:focus:after {
+    width: 100%;
+  }
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
   }
 
   nav {
@@ -490,8 +371,41 @@ footer {
     width: 100%;
   }
 
-  .hamburger {
+  body.home-page .hero {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 80px 20px 40px;
+    text-align: center;
+  }
+
+  body.home-page .hero-text h1,
+  body.home-page .hero-text h2 {
+    position: static !important;
+    transform: none !important;
+    text-align: center;
+    margin: 10px 0 0 0;
+  }
+
+  body.home-page .hero-text h1 {
+    font-size: 3.5rem !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  body.home-page .hero-text h2 {
+    font-size: 1rem !important;
+    margin-top: 10px !important;
+  }
+
+  .work-intro,
+  .portfolio-items,
+  .about-content,
+  .contact-intro,
+  form {
+    margin-top: 30px;
+    padding: 0 20px;
   }
 
   .about-content {
@@ -510,65 +424,9 @@ footer {
   form {
     width: 100%;
   }
-}
 
-/* ===== PORTFOLIO PAGE IMAGES ===== */
-.portfolio-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.portfolio-item img {
-  max-width: 250px;
-  height: auto;
-  display: block;
-}
-
-/* ===== PROJECT DETAIL PAGE IMAGES ===== */
-.project-images {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  justify-items: center;
-}
-
-.project-image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex !important;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: @media (min-width: 769px) {  /* desktop only */
-  nav a {
-    text-decoration: none;
-    font-weight: 500;
-    color: black;
-    position: relative;
-  }
-
-  nav a:after {
-    content: "";
-    display: block;
-    height: 2px;
-    background: gold;
-    width: 0;
-    transition: width 0.3s;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-  }
-
-  nav a:active:after,
-  nav a:focus:after {
-    width: 100%;
+  .project-images {
+    grid-template-columns: 1fr;
+    padding: 40px 5%;
   }
 }
-
