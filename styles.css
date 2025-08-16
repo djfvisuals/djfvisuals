@@ -32,7 +32,6 @@ header {
 
 .logo img {
   height: 50px;
-  transform: translateX(-40px);
 }
 
 nav {
@@ -86,8 +85,8 @@ nav a.current:after {
   gap: 5px;
   cursor: pointer;
   position: absolute;
-  top: 25px; /* move up/down manually 🌟 */
-  right: 20px; /* move left/right manually 🌟 */
+  top: 20px; /* move up/down manually 🌟 */
+  right: 15px; /* move left/right manually 🌟 */
   z-index: 1000; /* above nav */
 }
 
@@ -104,7 +103,7 @@ nav a.current:after {
 ============================ */
 .hero {
   position: relative;
-  padding: 120px 20px 60px;
+  padding: 120px 20px 60px; /* desktop padding */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -120,7 +119,6 @@ nav a.current:after {
   animation: fadeIn 2s ease-in;
 }
 
-/* 🌟 Beginner note: If you want to move the homepage hero up/down on mobile, change margin-top here */
 .hero-text h1 {
   font-weight: 700;
   color: black;
@@ -196,18 +194,17 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
 .about-content {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start; /* left aligned body on desktop */
   align-items: flex-start;
   gap: 40px;
   max-width: 1200px;
   margin: 50px auto 80px auto;
   padding: 0 20px;
-  margin-top: 60px; /* Desktop nudge */
 }
 
 .about-text {
   flex: 1;
-  text-align: justify;
+  text-align: left; /* keep left aligned */
   font-size: 18px;
   line-height: 1.8;
   letter-spacing: 0.4px;
@@ -318,21 +315,21 @@ footer {
 @media (max-width: 768px) {
   /* Hamburger menu */
   .hamburger {
-    display: flex !important; /* 🌟 Ensure hamburger is visible */
+    display: flex !important;
     top: 20px;   /* move up/down manually 🌟 */
     right: 15px; /* move left/right manually 🌟 */
-    z-index: 10000; /* Extra high to stay on top 🌟 */
+    z-index: 1000;
   }
 
   nav {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 70px;
     left: 0;
     width: 100%;
     background-color: white;
-    z-index: 9999; /* Above everything 🌟 */
+    border-top: 1px solid #ccc;
   }
 
   nav.show {
@@ -342,8 +339,8 @@ footer {
   nav ul {
     flex-direction: column;
     align-items: center;
-    gap: 15px;
     padding: 20px 0;
+    gap: 15px;
   }
 
   nav ul li {
@@ -352,97 +349,103 @@ footer {
   }
 
   nav a {
-    font-size: 16px;
-    padding: 10px 0;
     display: block;
-    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
   }
 
-  /* 🌟 MOBILE HERO FIXES */
-  body.home-page .hero-text h1,
-  body.work-page .hero-text h1,
-  body.about-page .hero-text h1,
-  body.contact-page .hero-text h1 {
-    font-size: 3.5rem !important; /* Fit screen 🌟 */
-    margin-top: 20px; /* Adjust Y-axis 🌟 */
-    text-align: center;
+  /* Mobile hero nudges */
+  body.home-page .hero-text h1 {
+    margin-top: -40px; /* keep homepage hero up as original 🌟 */
   }
 
-  body.home-page .hero-text h2,
-  body.work-page .hero-text h2,
-  body.about-page .hero-text h2,
-  body.contact-page .hero-text h2 {
-    font-size: 1rem !important; /* Fit screen 🌟 */
-    text-align: center;
-    margin-top: 10px !important;
-  }
-
-  /* ============================
-     MOBILE WORK / PORTFOLIO
-  ============================ */
   body.home-page .portfolio-items {
     margin-top: 50px;
-    justify-content: center; /* Center horizontally 🌟 */
-    padding: 0 10px; /* Fit inside screen 🌟 */
+    justify-content: center; 
+    padding: 0 10px; 
   }
 
-  /* ============================
-     MOBILE ABOUT PAGE
-  ============================ */
   body.about-page .about-content {
-    margin-top: 70px; /* Nudge down body section 🌟 */
+    margin-top: 70px; 
     flex-direction: column;
-    align-items: center; /* Center horizontally 🌟 */
-    text-align: center; /* Center text 🌟 */
-    padding: 0 15px; /* Fit inside screen 🌟 */
+    align-items: flex-start; /* move everything to left matching hero 🌟 */
+    padding: 0 15px; 
   }
 
   body.about-page .about-text {
-    margin: 20px auto; /* Center block 🌟 */
-    padding-left: 0; /* Remove left padding 🌟 */
-    text-align: center; /* Center text 🌟 */
+    margin: 20px 0; /* left aligned block 🌟 */
+    padding-left: 0; 
+    text-align: left; 
   }
 
-  /* ============================
-     MOBILE CONTACT PAGE
-  ============================ */
   body.contact-page .contact-intro {
-    margin-top: 70px; /* Nudge down title 🌟 */
-    padding: 0 15px; /* Fit inside screen 🌟 */
-    text-align: center; /* Center title 🌟 */
+    margin-top: 70px; 
+    padding: 0 15px; 
+    text-align: center; 
   }
 
   body.contact-page form {
-    max-width: 90%; /* Shrink form to fit mobile 🌟 */
-    margin: 30px auto; /* Center vertically 🌟 */
-    padding: 0 15px; /* Fit inside screen 🌟 */
+    max-width: 90%; 
+    margin: 30px auto; 
+    padding: 0 15px; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center form elements horizontally 🌟 */
+    align-items: center; 
   }
 
   form input,
   form textarea {
-    width: 100%; /* Make inputs fill container 🌟 */
+    width: 100%; 
     font-size: 15px;
     padding: 8px;
   }
 
   form button {
-    background-color: #000000; /* Blackest black 🌟 */
+    background-color: #000000; 
     font-size: 16px;
-    width: 100%; /* Full width to match form 🌟 */
+    width: 100%; 
   }
 
   #response-message {
-    text-align: center; /* Center success/error messages 🌟 */
+    text-align: center; 
   }
 
-  /* ============================
-     MOBILE PROJECT IMAGES
-  ============================ */
   .project-images {
     grid-template-columns: 1fr;
     padding: 40px 5%;
+  }
+}
+
+/* ============================
+   DESKTOP HERO PLACEMENT ADJUSTMENT
+============================ */
+@media (min-width: 769px) {
+
+  /* Work page hero: match Contact hero placement */
+  body.work-page .hero {
+    padding-top: 120px;   
+    padding-bottom: 60px; 
+  }
+
+  /* About page hero: match Contact hero placement */
+  body.about-page .hero {
+    padding-top: 120px;   
+    padding-bottom: 60px; 
+  }
+
+  /* Keep each page's hero font size intact */
+  body.work-page .hero-text h1 {
+    font-size: 14rem;     
+    letter-spacing: 3px;
+  }
+
+  body.about-page .hero-text h1 {
+    font-size: 9rem;      
+    letter-spacing: 3px;
+  }
+
+  body.contact-page .hero-text h1 {
+    font-size: 9rem;      
+    letter-spacing: 3px;
   }
 }
