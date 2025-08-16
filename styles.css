@@ -86,8 +86,8 @@ nav a.current:after {
   gap: 5px;
   cursor: pointer;
   position: absolute;
-  top: 25px; /* adjust manually to move up/down */
-  right: 20px; /* adjust manually to move left/right */
+  top: 25px; /* move up/down manually 🌟 */
+  right: 20px; /* move left/right manually 🌟 */
   z-index: 1000; /* above nav */
 }
 
@@ -102,7 +102,6 @@ nav a.current:after {
 /* ============================
    HERO SECTION
 ============================ */
-/* No changes to hero text or size, untouched */
 .hero {
   position: relative;
   padding: 120px 20px 60px;
@@ -121,7 +120,6 @@ nav a.current:after {
   animation: fadeIn 2s ease-in;
 }
 
-/* 🌟 Beginner note: If you want to move the homepage hero up/down on mobile, change margin-top here */
 .hero-text h1 {
   font-weight: 700;
   color: black;
@@ -166,7 +164,7 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  margin-top: 60px; /* Desktop nudge */
+  margin-top: 60px;
 }
 
 .portfolio-item img {
@@ -203,7 +201,6 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
   max-width: 1200px;
   margin: 50px auto 80px auto;
   padding: 0 20px;
-  margin-top: 60px; /* Desktop nudge */
 }
 
 .about-text {
@@ -244,7 +241,6 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
   text-align: center;
   margin: 60px auto 30px auto;
   padding: 0 20px;
-  margin-top: 60px; /* Desktop nudge */
 }
 
 form {
@@ -320,8 +316,8 @@ footer {
   /* Hamburger menu */
   .hamburger {
     display: flex !important;
-    top: 20px;   /* move up/down manually if needed */
-    right: 15px; /* move left/right manually if needed */
+    top: 20px;   /* move up/down manually 🌟 */
+    right: 15px; /* move left/right manually 🌟 */
     z-index: 1000;
   }
 
@@ -359,43 +355,75 @@ footer {
     width: 100%;
   }
 
-  /* Section nudges for mobile */
-  body.about-page .about-content {
-    margin-top: 50px; /* Adjust About section on mobile */
+  /* 🌟 MOBILE HERO NUDGE 🌟 */
+  body.home-page .hero {
+    padding-top: 60px; /* Move homepage hero up/down on mobile */
   }
 
-  body.contact-page .contact-intro,
-  body.contact-page form {
-    margin-top: 50px; /* Adjust Contact section on mobile */
-  }
-
+  /* ============================
+     MOBILE WORK / PORTFOLIO
+  ============================ */
   body.home-page .portfolio-items {
     margin-top: 50px; /* Adjust Portfolio section on mobile */
+    justify-content: center; /* Center horizontally 🌟 */
+    padding: 0 10px; /* Fit inside screen 🌟 */
   }
 
-  /* 🌟 Beginner note: To move homepage hero up/down on mobile, change margin-top below */
-  body.home-page .hero-text h1 {
-    margin-top: -30px; /* nudge homepage hero Y-axis on mobile */
+  /* ============================
+     MOBILE ABOUT PAGE
+  ============================ */
+  body.about-page .about-content {
+    margin-top: 70px; /* Nudge down the body section 🌟 */
+    flex-direction: column;
+    align-items: center; /* Center horizontally 🌟 */
+    text-align: center; /* Center text inside 🌟 */
+    padding: 0 15px; /* Fit inside screen 🌟 */
   }
 
-  /* MOBILE CONTACT FORM FIX */
-  form {
-    max-width: 90%; /* Shrinks form to fit mobile */
-    margin: 30px auto; /* Center it vertically */
-    padding: 0 10px;
+  body.about-page .about-text {
+    margin: 20px auto; /* Center block and nudge down slightly 🌟 */
+    padding-left: 0; /* Remove left padding 🌟 */
+    text-align: center; /* Center text 🌟 */
+  }
+
+  /* ============================
+     MOBILE CONTACT PAGE
+  ============================ */
+  body.contact-page .contact-intro {
+    margin-top: 70px; /* Nudge down title 🌟 */
+    padding: 0 15px; /* Fit inside screen 🌟 */
+    text-align: center; /* Center title 🌟 */
+  }
+
+  body.contact-page form {
+    max-width: 90%; /* Shrink form to fit mobile 🌟 */
+    margin: 30px auto; /* Center vertically 🌟 */
+    padding: 0 15px; /* Fit inside screen 🌟 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements horizontally 🌟 */
   }
 
   form input,
   form textarea {
+    width: 100%; /* Make inputs fill container 🌟 */
     font-size: 15px;
     padding: 8px;
   }
 
   form button {
-    background-color: #000000; /* Blackest black */
+    background-color: #000000; /* Blackest black 🌟 */
     font-size: 16px;
+    width: 100%; /* Full width to match form 🌟 */
   }
 
+  #response-message {
+    text-align: center; /* Center success/error messages 🌟 */
+  }
+
+  /* ============================
+     MOBILE PROJECT IMAGES
+  ============================ */
   .project-images {
     grid-template-columns: 1fr;
     padding: 40px 5%;
