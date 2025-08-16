@@ -31,19 +31,20 @@ header {
   transform: translateX(-40px);
 }
 
-/* Updated nav positioning and gap */
+/* Universal nav styling for all pages */
 nav {
   position: absolute;
   left: 50%;
-  transform: translateX(calc(-50% - 20px)); /* nudged left by 20px */
-  display: flex; /* ensure nav is visible */
+  /* translateX(-50%) centers it exactly; subtracting 20px nudges left */
+  transform: translateX(calc(-50% - 20px));
+  display: flex;
   z-index: 15;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 40px; /* updated gap to 40px */
+  gap: 40px;  /* Changed to 40px as requested */
   margin: 0;
   padding: 0;
 }
@@ -73,6 +74,7 @@ nav a {
   border-radius: 2px;
 }
 
+/* ===== MEDIA QUERIES ===== */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -88,7 +90,7 @@ nav a {
     background-color: white;
     border-top: 1px solid #ccc;
     z-index: 10;
-    transform: none; /* reset transform on mobile */
+    transform: none; /* Remove transform on mobile for full width */
   }
 
   nav.show {
@@ -102,31 +104,17 @@ nav a {
     padding: 20px 0;
   }
 
-  nav a {
-    font-size: 16px;
-    padding: 10px 0;
+  nav ul li {
     width: 100%;
     text-align: center;
   }
 
-  /* Hamburger menu container */
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 25px;
-    height: 20px;
-    cursor: pointer;
-    z-index: 1001;
-  }
-
-  /* The three lines */
-  .hamburger span {
-    display: block;
+  nav a {
+    font-size: 16px;
+    padding: 10px 0;
     width: 100%;
-    height: 3px;
-    background-color: black;
-    border-radius: 2px;
+    display: block;
+    text-align: center;
   }
 }
 
@@ -212,32 +200,32 @@ body.contact-page .hero-text h1 {
     position: absolute !important;
     left: 50% !important;
     transform: translateX(-60%) !important;
-  }  
-
+  }
+  
   body.home-page .hero-text h2 {
     font-size: 1.1rem !important;
     margin-top: 15px !important;
   }
-
-  /* Added to fix header stretching on mobile */
+  
+  /* Fix header stretching on mobile */
   .hero-text h1,
   .hero-text h2 {
-    max-width: 90vw;       /* Limit width to 90% of viewport width */
-    padding: 0 10px;       /* Add horizontal padding to avoid touching edges */
-    box-sizing: border-box; /* Include padding in width calculation */
-    word-wrap: break-word;  /* Allow long words to break */
+    max-width: 90vw;       /* Limit width to 90% of viewport */
+    padding: 0 10px;       /* Padding to avoid edges */
+    box-sizing: border-box; /* Include padding in width */
+    word-wrap: break-word;  /* Break long words */
     white-space: normal;    /* Allow wrapping */
   }
-
+  
   .hero-text h1 {
     font-size: 3.5rem !important;
     letter-spacing: 1.5px !important;
   }
-
+  
   .hero-text h2 {
     font-size: 1rem !important;
   }
-
+  
   nav {
     display: none;
     flex-direction: column;
@@ -247,178 +235,53 @@ body.contact-page .hero-text h1 {
     width: 100%;
     background-color: white;
     z-index: 10;
-    transform: none;
+    transform: none !important;
   }
-
+  
   nav.show {
     display: flex;
   }
-
+  
   nav ul {
     flex-direction: column;
     align-items: center;
     gap: 15px;
     padding: 20px 0;
   }
-
+  
   nav ul li {
     width: 100%;
     text-align: center;
   }
-
+  
   nav a {
     font-size: 16px;
     padding: 10px 0;
     display: block;
     width: 100%;
+    text-align: center;
   }
-
+  
   .hamburger {
     display: flex;
   }
-
+  
   .about-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-
+  
   .about-text p {
     hyphens: auto;
     word-spacing: normal;
     letter-spacing: normal;
     text-justify: inter-word;
   }
-
+  
   form {
     width: 100%;
   }
-}
-
-/* ===== WORK / PORTFOLIO ===== */
-.work-intro {
-  text-align: center;
-  margin: 60px auto 30px auto;
-  padding: 0 20px;
-}
-
-.work-intro h1 {
-  font-size: 1.9rem;
-  margin-top: 10px;
-  letter-spacing: 1px;
-  font-weight: 500;
-  animation: textReveal 5s ease forwards;
-  animation-delay: 0.14s;
-  opacity: 0;
-}
-
-.project-images {
-  display: grid;
-  gap: 30px;
-  padding: 60px 10%;
-  max-width: 100%;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-@media (max-width: 768px) {
-  .project-images {
-    grid-template-columns: 1fr;
-    padding: 40px 5%;
-  }
-}
-
-/* ===== ABOUT PAGE ===== */
-.about-hero {
-  position: relative;
-  height: 60vh;
-  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
-  margin-top: 100px;
-}
-
-.about-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 50px auto 80px auto;
-  padding: 0 20px;
-}
-
-.about-text {
-  flex: 1;
-  text-align: justify;
-  font-size: 18px;
-  line-height: 1.8;
-  letter-spacing: 0.4px;
-  word-spacing: 1px;
-  font-weight: 300;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.about-text h1,
-.about-text .sub-heading {
-  font-size: 1.3rem;
-  letter-spacing: 1px;
-  font-weight: 500;
-  padding-left: 52px;
-  margin-top: 40px;
-  margin-bottom: 30px;
-}
-
-.about-text p {
-  font-weight: 300;
-  line-height: 1.8;
-  font-size: 18px;
-  padding-left: 52px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* ===== CONTACT PAGE ===== */
-.contact-intro {
-  text-align: center;
-  margin: 60px auto 30px auto;
-  padding: 0 20px;
-}
-
-form {
-  max-width: 600px;
-  margin: 50px auto;
-  display: flex;
-  flex-direction: column;
-  padding: 0 20px;
-}
-
-form input,
-form textarea {
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form button {
-  padding: 10px 15px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #555;
-}
-
-#response-message {
-  margin-top: 20px;
-  font-size: 1.2em;
-  color: black;
 }
 
 /* ===== FOOTER ===== */
@@ -442,110 +305,4 @@ footer {
 @keyframes textReveal {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 4rem !important;
-    letter-spacing: 2px !important;
-  }
-
-  .hero-text h2 {
-    font-size: 1.1rem !important;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    z-index: 10;
-    transform: none;
-  }
-
-  nav.show {
-    display: flex;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 20px 0;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  nav a {
-    font-size: 16px;
-    padding: 10px 0;
-    display: block;
-    width: 100%;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-text p {
-    hyphens: auto;
-    word-spacing: normal;
-    letter-spacing: normal;
-    text-justify: inter-word;
-  }
-
-  form {
-    width: 100%;
-  }
-}
-
-/* ===== PORTFOLIO PAGE IMAGES ===== */
-.portfolio-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.portfolio-item img {
-  max-width: 250px;
-  height: auto;
-  display: block;
-}
-
-/* ===== PROJECT DETAIL PAGE IMAGES ===== */
-.project-images {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  justify-items: center;
-}
-
-.project-image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex !important;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-  }
 }
