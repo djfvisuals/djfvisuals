@@ -11,19 +11,190 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
 
+  <style>
+    /* ===== HERO BASE STYLES ===== */
+    .hero {
+      position: relative;
+      padding: 120px 20px 60px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 70vh;
+      background-color: white;
+      overflow: hidden;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 2s ease-in;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    .hero-text h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: black;
+      margin: 0;
+      padding: 0;
+      letter-spacing: 4px;
+      font-size: 8rem;
+      margin-top: -90px;
+    }
+
+    .hero-text h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      color: rgba(0, 0, 0, 0.7);
+      margin-top: 10px;
+      margin-bottom: 0;
+      font-size: 1.5rem;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      width: 100%;
+      background-color: white;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    /* Unified nav styling */
+    nav {
+      position: absolute;
+      left: 50%;
+      transform: translateX(calc(-50% - 20px));
+      display: flex;
+      z-index: 15;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px; /* 40px spacing */
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 500;
+      color: black;
+    }
+
+    /* ===== HAMBURGER MENU ===== */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      top: 25px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: black;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    /* ===== MEDIA QUERY FOR MOBILE ===== */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex !important;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        border-top: 1px solid #ccc;
+        transform: none !important;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 0;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+
+      nav a {
+        font-size: 16px;
+        padding: 10px 0;
+        width: 100%;
+        display: block;
+      }
+
+      .hero {
+        padding: 120px 20px 60px !important;
+        height: 70vh !important;
+      }
+
+      .hero-text h1 {
+        font-size: 8rem !important;
+        letter-spacing: 4px !important;
+        margin-top: -90px !important;
+      }
+
+      .hero-text h2 {
+        font-size: 1.5rem !important;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.6rem;
+      background-color: white;
+      margin-top: 100px;
+    }
+  </style>
 </head>
 
 <body class="home-page">
-
   <div class="site-wrapper">
-
-    <!-- ===== HEADER / NAVIGATION ===== -->
+    <!-- ===== HEADER / NAV ===== -->
     <header>
       <a href="index.html" class="logo">
         <img src="images/DJF_VISUALS_LOGO_FINAL_GB.png" alt="DJF Visuals Logo" />
       </a>
 
-      <!-- Hamburger icon (3 lines) -->
+      <!-- Hamburger icon -->
       <div class="hamburger" onclick="toggleMenu()">
         <span></span>
         <span></span>
@@ -53,6 +224,7 @@
       <h1>EXPLORE SOME OF MY WORK</h1>
     </section>
 
+    <!-- ===== PORTFOLIO ITEMS ===== -->
     <main>
       <section>
         <div class="portfolio-items">
@@ -84,28 +256,13 @@
     <footer>
       <p>All content copyright David J. Franco "DJF Visuals" © 2025.</p>
     </footer>
-
   </div>
 
   <!-- Hamburger toggle script -->
   <script>
     function toggleMenu() {
-      const nav = document.querySelector('nav');
-      nav.classList.toggle('show');
+      document.querySelector('nav').classList.toggle('show');
     }
   </script>
-
 </body>
 </html>
-.hamburger {
-  display: flex !important;
-  position: fixed !important;
-  top: 10px !important;
-  right: 10px !important;
-  z-index: 9999 !important;
-  background: red; /* makes it visible for testing */
-}
-.hamburger span {
-  background: white !important;
-}
-
