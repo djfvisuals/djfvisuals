@@ -435,7 +435,7 @@ footer {
 
   /* Keep each page's hero font size intact */
   body.work-page .hero-text h1 {
-    font-size: 18rem;     
+    font-size: 15rem;     
     letter-spacing: 3px;
   }
 
