@@ -227,6 +227,10 @@ body.contact-page .hero-text h1 {
     font-size: 4rem !important;
     letter-spacing: 2px !important;
     margin-top: 10px !important; /* tighter on mobile */
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-60%) !important;
+}  
   }
 
   body.home-page .hero-text h2 {
