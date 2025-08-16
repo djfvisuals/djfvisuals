@@ -551,4 +551,18 @@ footer {
   max-width: 100%;
   height: auto;
   display: block;
+
+  @media (max-width: 768px) {
+  .hamburger {
+    display: flex !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  /* Optional: increase z-index if needed */
+  .hamburger {
+    z-index: 1000;
+  }
 }
+
