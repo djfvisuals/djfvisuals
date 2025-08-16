@@ -120,6 +120,7 @@ nav a.current:after {
   animation: fadeIn 2s ease-in;
 }
 
+/* 🌟 Beginner note: If you want to move the homepage hero up/down on mobile, change margin-top here */
 .hero-text h1 {
   font-weight: 700;
   color: black;
@@ -164,7 +165,7 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  margin-top: 60px;
+  margin-top: 60px; /* Desktop nudge */
 }
 
 .portfolio-item img {
@@ -201,6 +202,7 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
   max-width: 1200px;
   margin: 50px auto 80px auto;
   padding: 0 20px;
+  margin-top: 60px; /* Desktop nudge */
 }
 
 .about-text {
@@ -241,6 +243,7 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
   text-align: center;
   margin: 60px auto 30px auto;
   padding: 0 20px;
+  margin-top: 60px; /* Desktop nudge */
 }
 
 form {
@@ -315,10 +318,10 @@ footer {
 @media (max-width: 768px) {
   /* Hamburger menu */
   .hamburger {
-    display: flex !important;
+    display: flex !important; /* 🌟 Ensure hamburger is visible */
     top: 20px;   /* move up/down manually 🌟 */
     right: 15px; /* move left/right manually 🌟 */
-    z-index: 1000;
+    z-index: 10000; /* Extra high to stay on top 🌟 */
   }
 
   nav {
@@ -329,7 +332,7 @@ footer {
     left: 0;
     width: 100%;
     background-color: white;
-    z-index: 10;
+    z-index: 9999; /* Above everything 🌟 */
   }
 
   nav.show {
@@ -355,16 +358,30 @@ footer {
     width: 100%;
   }
 
-  /* 🌟 MOBILE HERO NUDGE 🌟 */
-  body.home-page .hero {
-    padding-top: 60px; /* Move homepage hero up/down on mobile */
+  /* 🌟 MOBILE HERO FIXES */
+  body.home-page .hero-text h1,
+  body.work-page .hero-text h1,
+  body.about-page .hero-text h1,
+  body.contact-page .hero-text h1 {
+    font-size: 3.5rem !important; /* Fit screen 🌟 */
+    margin-top: 20px; /* Adjust Y-axis 🌟 */
+    text-align: center;
+  }
+
+  body.home-page .hero-text h2,
+  body.work-page .hero-text h2,
+  body.about-page .hero-text h2,
+  body.contact-page .hero-text h2 {
+    font-size: 1rem !important; /* Fit screen 🌟 */
+    text-align: center;
+    margin-top: 10px !important;
   }
 
   /* ============================
      MOBILE WORK / PORTFOLIO
   ============================ */
   body.home-page .portfolio-items {
-    margin-top: 50px; /* Adjust Portfolio section on mobile */
+    margin-top: 50px;
     justify-content: center; /* Center horizontally 🌟 */
     padding: 0 10px; /* Fit inside screen 🌟 */
   }
@@ -373,15 +390,15 @@ footer {
      MOBILE ABOUT PAGE
   ============================ */
   body.about-page .about-content {
-    margin-top: 70px; /* Nudge down the body section 🌟 */
+    margin-top: 70px; /* Nudge down body section 🌟 */
     flex-direction: column;
     align-items: center; /* Center horizontally 🌟 */
-    text-align: center; /* Center text inside 🌟 */
+    text-align: center; /* Center text 🌟 */
     padding: 0 15px; /* Fit inside screen 🌟 */
   }
 
   body.about-page .about-text {
-    margin: 20px auto; /* Center block and nudge down slightly 🌟 */
+    margin: 20px auto; /* Center block 🌟 */
     padding-left: 0; /* Remove left padding 🌟 */
     text-align: center; /* Center text 🌟 */
   }
