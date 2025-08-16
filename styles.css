@@ -1,4 +1,4 @@
-b/* ============================
+/* ============================
    GLOBAL STYLES
 ============================ */
 html, body {
@@ -222,6 +222,9 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
   padding-left: 52px;
   margin-top: 40px;
   margin-bottom: 30px;
+  border-left: 4px solid black; /* added black line 🌟 */
+  padding-left: 12px; /* text padding after line */
+  padding-right: 0; 
 }
 
 .about-text p {
@@ -316,8 +319,8 @@ footer {
   /* Hamburger menu */
   .hamburger {
     display: flex !important;
-    top: 20px;   /* move up/down manually 🌟 */
-    right: 15px; /* move left/right manually 🌟 */
+    top: 20px;   
+    right: 15px; 
     z-index: 1000;
   }
 
@@ -354,98 +357,49 @@ footer {
     font-size: 16px;
   }
 
-  /* Mobile hero nudges */
-  body.home-page .hero-text h1 {
-    margin-top: -40px; /* keep homepage hero up as original 🌟 */
+  /* 🌟 MOBILE HERO FIXES 🌟 */
+  body.work-page .hero-text h1 {
+    font-size: 4rem !important; 
+    letter-spacing: 2px !important;
+    margin-top: -20px !important;
   }
+  body.work-page .hero-text h2 { font-size: 1.2rem !important; }
 
-  body.home-page .portfolio-items {
-    margin-top: 50px;
-    justify-content: center; 
-    padding: 0 10px; 
+  body.about-page .hero-text h1 {
+    font-size: 3.8rem !important; 
+    letter-spacing: 2px !important;
+    margin-top: -20px !important;
   }
+  body.about-page .hero-text h2 { font-size: 1.2rem !important; }
 
-  body.about-page .about-content {
-    margin-top: 70px; 
-    flex-direction: column;
-    align-items: flex-start; /* move everything to left matching hero 🌟 */
-    padding: 0 15px; 
+  body.contact-page .hero-text h1 {
+    font-size: 3.8rem !important; 
+    letter-spacing: 2px !important;
+    margin-top: -20px !important;
   }
+  body.contact-page .hero-text h2 { font-size: 1.2rem !important; }
 
-  body.about-page .about-text {
-    margin: 20px 0; /* left aligned block 🌟 */
-    padding-left: 0; 
-    text-align: left; 
-  }
-
-  body.contact-page .contact-intro {
-    margin-top: 70px; 
-    padding: 0 15px; 
-    text-align: center; 
-  }
-
-  body.contact-page form {
-    max-width: 90%; 
-    margin: 30px auto; 
-    padding: 0 15px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-  }
-
-  form input,
-  form textarea {
-    width: 100%; 
-    font-size: 15px;
-    padding: 8px;
-  }
-
-  form button {
-    background-color: #000000; 
-    font-size: 16px;
-    width: 100%; 
-  }
-
-  #response-message {
-    text-align: center; 
-  }
-
-  .project-images {
-    grid-template-columns: 1fr;
-    padding: 40px 5%;
-  }
+  /* Other mobile tweaks */
+  body.home-page .hero-text h1 { margin-top: -40px; }
+  body.home-page .portfolio-items { margin-top: 50px; justify-content: center; padding: 0 10px; }
+  body.about-page .about-content { margin-top: 70px; flex-direction: column; align-items: flex-start; padding: 0 15px; }
+  body.about-page .about-text { margin: 20px 0; padding-left: 0; text-align: left; }
+  body.contact-page .contact-intro { margin-top: 70px; padding: 0 15px; text-align: center; }
+  body.contact-page form { max-width: 90%; margin: 30px auto; padding: 0 15px; display: flex; flex-direction: column; align-items: center; }
+  form input, form textarea { width: 100%; font-size: 15px; padding: 8px; }
+  form button { background-color: #000000; font-size: 16px; width: 100%; }
+  #response-message { text-align: center; }
+  .project-images { grid-template-columns: 1fr; padding: 40px 5%; }
 }
 
 /* ============================
    DESKTOP HERO PLACEMENT ADJUSTMENT
 ============================ */
 @media (min-width: 769px) {
+  body.work-page .hero { padding-top: 120px; padding-bottom: 60px; }
+  body.about-page .hero { padding-top: 120px; padding-bottom: 60px; }
 
-  /* Work page hero: match Contact hero placement */
-  body.work-page .hero {
-    padding-top: 120px;   
-    padding-bottom: 60px; 
-  }
-
-  /* About page hero: match Contact hero placement */
-  body.about-page .hero {
-    padding-top: 120px;   
-    padding-bottom: 60px; 
-  }
-
-  /* Keep each page's hero font size intact */
-  body.work-page .hero-text h1 {
-    font-size: 15rem;     
-    letter-spacing: 3px;
-  }
-
-  body.about-page .hero-text h1 {
-    font-size: 6rem;      
-    letter-spacing: 3px;
-  }
-
-  body.contact-page .hero-text h1 {
-    font-size: 9rem;      
-    letter-spacing: 3px;
-  }
+  body.work-page .hero-text h1 { font-size: 15rem; letter-spacing: 3px; }
+  body.about-page .hero-text h1 { font-size: 6rem; letter-spacing: 3px; }
+  body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
 }
