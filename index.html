@@ -2,164 +2,158 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DJF Visuals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fixed Hamburger Navigation</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet" />
-
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="styles.css" />
   <style>
-    /* ===== HERO BASE STYLES FOR ALL PAGES ===== */
-    .hero {
-      position: relative;
-      padding: 120px 20px 60px;
-      text-align: center;
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 70vh;
-      overflow: hidden;
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 2;
-      animation: fadeIn 2s ease-in;
-      max-width: 90%;
-      margin: 0 auto;
-    }
-
-    /* Hero main header */
-    .hero-text h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      color: black;
+    /* ===== GLOBAL STYLES ===== */
+    html, body {
       margin: 0;
       padding: 0;
-      letter-spacing: 4px;
-      font-size: 8rem;
-    }
-
-    /* Hero subheader */
-    .hero-text h2 {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
-      color: rgba(0, 0, 0, 0.7);
-      margin-top: 10px;
-      margin-bottom: 0;
-      font-size: 1.5rem;
+      background-color: white;
+      color: black;
+      overflow-x: hidden;
     }
 
-    /* ===== MOBILE RESPONSIVE ===== */
+    .site-wrapper {
+      width: 100%;
+      position: relative;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 50px;
+      width: 100%;
+      background-color: white;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo img {
+      height: 50px;
+      transform: translateX(-40px);
+    }
+
+    nav {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 500;
+      color: black;
+    }
+
+    /* ===== HAMBURGER MENU ===== */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      position: absolute;
+      top: 25px;
+      right: 20px;
+      z-index: 20;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: black;
+      border-radius: 2px;
+    }
+
+    /* ===== MOBILE STYLES ===== */
     @media (max-width: 768px) {
-      .hero {
-        height: 60vh;
-        padding: 80px 20px 40px;
+      .hamburger {
+        display: flex;
       }
 
-      .hero-text h1 {
-        font-size: 4rem !important;
-        letter-spacing: 2px !important;
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        border-top: 1px solid #ccc;
+        z-index: 10;
+        transform: none; /* Remove desktop transform */
       }
 
-      .hero-text h2 {
-        font-size: 1.1rem !important;
+      nav.show {
+        display: flex;
       }
-    }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 0;
+        margin: 0;
+        list-style: none;
+        align-items: center;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+
+      nav a {
+        display: block;
+        padding: 10px 0;
+        font-size: 16px;
+        color: black;
+      }
     }
   </style>
 </head>
 
-<body class="home-page">
+<body>
+  <header>
+    <div class="logo">
+      <img src="your-logo.png" alt="Logo" />
+    </div>
 
-  <!-- Start wrapper to prevent horizontal scroll -->
-  <div class="site-wrapper">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/work">Work</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
 
-    <!-- ===== HEADER / NAVIGATION ===== -->
-    <header>
-      <a href="index.html" class="logo">
-        <img src="images/DJF_VISUALS_LOGO_FINAL_GB.png" alt="DJF Visuals Logo" />
-      </a>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
 
-      <!-- Hamburger icon (3 lines) -->
-      <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="work.html">Work</a></li>
-          <li><a href="aboutme.html">About Me</a></li>
-          <li><a href="contact-me.html">Contact Me</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero">
-      <div class="hero-text">
-        <h1>DAVID J. FRANCO</h1>
-        <h2>Designer • Brand Strategist • Creative Director • Project Manager</h2>
-      </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="work-intro">
-      <h1>EXPLORE SOME OF MY WORK</h1>
-    </section>
-
-    <main>
-      <section>
-        <div class="portfolio-items">
-          <div class="portfolio-item">
-            <a href="valuetainment.html">
-              <img src="images/VT_LOGO.png" alt="Valuetainment Logo" />
-            </a>
-          </div>
-          <div class="portfolio-item">
-            <a href="miamialkalinewater.html">
-              <img src="images/miami_alkaline_logo2.png" alt="Miami Alkaline Water Logo" />
-            </a>
-          </div>
-          <div class="portfolio-item">
-            <a href="print.html">
-              <img src="images/print.png" alt="Aframe Design" />
-            </a>
-          </div>
-          <div class="portfolio-item">
-            <a href="photography.html">
-              <img src="images/photography2.png" alt="Photography 2" />
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- ===== FOOTER ===== -->
-    <footer>
-      <p>All content copyright David J. Franco "DJF Visuals" © 2025.</p>
-    </footer>
-
-  </div> <!-- End wrapper -->
-
-  <!-- Hamburger toggle script -->
   <script>
-    function toggleMenu() {
-      const nav = document.querySelector('nav');
-      nav.classList.toggle('show'); // Add/remove "show" to show/hide menu
-    }
-  </script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.querySelector('nav');
 
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
