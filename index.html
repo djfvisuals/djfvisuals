@@ -3,157 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DJF Visuals</title>
+  <title>DJF Visuals - Work</title>
 
-  <style>
-    /* ===== GLOBAL STYLES ===== */
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: white;
-      color: black;
-      overflow-x: hidden;
-    }
+  <!-- Google Fonts: Bold Sans Serif -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet" />
 
-    .site-wrapper {
-      width: 100%;
-      position: relative;
-    }
-
-    /* ===== HEADER ===== */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 50px;
-      width: 100%;
-      background-color: white;
-      border-bottom: 1px solid #eee;
-      position: relative;
-      z-index: 10;
-    }
-
-    .logo img {
-      height: 50px;
-      transform: translateX(-40px);
-    }
-
-    nav {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      font-weight: 500;
-      color: black;
-    }
-
-    /* ===== HAMBURGER MENU ===== */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      position: absolute;
-      top: 25px;
-      right: 20px;
-      z-index: 20;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: black;
-      border-radius: 2px;
-    }
-
-    /* ===== MOBILE STYLES ===== */
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
-
-      nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: white;
-        border-top: 1px solid #ccc;
-        z-index: 10;
-        transform: none; /* Remove desktop transform */
-      }
-
-      nav.show {
-        display: flex;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px 0;
-        margin: 0;
-        list-style: none;
-        align-items: center;
-      }
-
-      nav ul li {
-        width: 100%;
-        text-align: center;
-      }
-
-      nav a {
-        display: block;
-        padding: 10px 0;
-        font-size: 16px;
-        color: black;
-      }
-    }
-  </style>
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
+<body class="work-page">
 
-<body>
+  <!-- HEADER BEFORE HERO -->
   <header>
     <div class="logo">
-      <img src="DJF_VISUALS_LOGO_FINAL_GB.png" alt="Logo" />
+      <a href="index.html">
+        <img src="images/DJF_VISUALS_LOGO_FINAL_GB.png" alt="DJF Visuals Logo" />
+      </a>
     </div>
-
     <nav>
       <ul>
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/work.html">Work</a></li>
-        <li><a href="/aboutme.html">About</a></li>
-        <li><a href="/contact-me.html">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="aboutme.html">About</a></li>
+        <li><a href="contact-me.html">Contact</a></li>
       </ul>
     </nav>
-
-    <div class="hamburger" id="hamburger">
+    <div class="hamburger">
       <div></div>
       <div></div>
       <div></div>
     </div>
   </header>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const nav = document.querySelector('nav');
+  <section>
+    <div class="hero-image-fallback"></div>
 
-    hamburger.addEventListener('click', () => {
-      nav.classList.toggle('show');
-    });
-  </script>
+    <div class="hero-text">
+      <h1>WORK</h1>
+    </div>
+  </section>
+
+  <main>
+    <section>
+      <div class="portfolio-items">
+        <div class="portfolio-item">
+          <a href="valuetainment.html">
+            <img src="images/VT_LOGO.png" alt="Valuetainment Logo" />
+          </a>
+        </div>
+
+        <div class="portfolio-item">
+          <a href="miamialkalinewater.html">
+            <img src="images/miami_alkaline_logo2.png" alt="Miami Alkaline Water Logo" />
+          </a>
+        </div>
+
+        <div class="portfolio-item">
+          <a href="print.html">
+            <img src="images/print.png" alt="Aframe Design" />
+          </a>
+        </div>
+
+        <div class="portfolio-item">
+          <a href="photography.html">
+            <img src="images/photography2.png" alt="Photography 2" />
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>All content copyright David J. Franco "DJF Visuals" © 2025.</p>
+  </footer>
+
 </body>
 </html>
