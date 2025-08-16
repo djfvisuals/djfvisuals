@@ -30,10 +30,8 @@ header {
   z-index: 10;
 }
 
-/* Logo: Reverted to default position */
 .logo img {
-  height: 50px;
-  /* Original position, no transform */
+  height: 50px; /* keep original position */
 }
 
 nav {
@@ -87,9 +85,9 @@ nav a.current:after {
   gap: 5px;
   cursor: pointer;
   position: absolute;
-  top: 25px; /* move up/down manually */
-  right: 20px; /* move left/right manually */
-  z-index: 1000; /* above nav */
+  top: 20px;
+  right: 15px;
+  z-index: 1000;
 }
 
 .hamburger span {
@@ -105,7 +103,7 @@ nav a.current:after {
 ============================ */
 .hero {
   position: relative;
-  padding: 120px 20px 60px;
+  padding: 120px 20px 60px; /* desktop padding */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -133,7 +131,7 @@ nav a.current:after {
   margin-top: 10px;
 }
 
-/* Desktop hero sizes per page */
+/* Hero sizes per page */
 body.home-page .hero-text h1 { font-size: 8rem; letter-spacing: 4px; margin-top: -40px; text-align: center; }
 body.home-page .hero-text h2 { font-size: 1.5rem; }
 
@@ -196,7 +194,7 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
 .about-content {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 40px;
   max-width: 1200px;
@@ -206,7 +204,7 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
 
 .about-text {
   flex: 1;
-  text-align: justify; /* Paragraph justified on mobile & desktop */
+  text-align: justify; /* keep justified on desktop & mobile */
   font-size: 18px;
   line-height: 1.8;
   letter-spacing: 0.4px;
@@ -221,7 +219,7 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
   font-size: 1.3rem;
   letter-spacing: 1px;
   font-weight: 500;
-  padding-left: 52px;
+  padding-left: 52px; /* horizontal line preserved */
   margin-top: 40px;
   margin-bottom: 30px;
 }
@@ -315,23 +313,23 @@ footer {
    MOBILE RESPONSIVE
 ============================ */
 @media (max-width: 768px) {
-  /* Hamburger menu */
+
   .hamburger {
     display: flex !important;
     top: 20px;
     right: 15px;
-    z-index: 10000;
+    z-index: 1000;
   }
 
   nav {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 70px;
     left: 0;
     width: 100%;
     background-color: white;
-    z-index: 9999;
+    border-top: 1px solid #ccc;
   }
 
   nav.show {
@@ -341,8 +339,8 @@ footer {
   nav ul {
     flex-direction: column;
     align-items: center;
-    gap: 15px;
     padding: 20px 0;
+    gap: 15px;
   }
 
   nav ul li {
@@ -351,79 +349,53 @@ footer {
   }
 
   nav a {
-    font-size: 16px;
-    padding: 10px 0;
     display: block;
-    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
   }
 
-  /* MOBILE HERO FIXES */
-  body.home-page .hero-text h1,
-  body.work-page .hero-text h1,
-  body.about-page .hero-text h1,
-  body.contact-page .hero-text h1 {
-    font-size: 3.5rem !important;
-    margin-top: 20px;
+  /* Keep homepage hero placement exactly as original */
+  body.home-page .hero-text h1 {
+    margin-top: -40px;
     text-align: center;
-  }
-
-  body.home-page .hero-text h2,
-  body.work-page .hero-text h2,
-  body.about-page .hero-text h2,
-  body.contact-page .hero-text h2 {
-    font-size: 1rem !important;
-    text-align: center;
-    margin-top: 10px !important;
   }
 
   body.about-page .about-content {
     margin-top: 70px;
     flex-direction: column;
-    align-items: center;
-    text-align: justify; /* Paragraph justified on mobile */
+    align-items: flex-start;
     padding: 0 15px;
   }
 
   body.about-page .about-text {
-    margin: 20px auto;
+    text-align: justify;
     padding-left: 0;
-    text-align: justify; /* Mobile justified text */
-  }
-
-  body.contact-page .contact-intro {
-    margin-top: 70px;
-    padding: 0 15px;
-    text-align: center;
-  }
-
-  body.contact-page form {
-    max-width: 90%;
-    margin: 30px auto;
-    padding: 0 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  form input,
-  form textarea {
-    width: 100%;
-    font-size: 15px;
-    padding: 8px;
-  }
-
-  form button {
-    background-color: #000000;
-    font-size: 16px;
-    width: 100%;
-  }
-
-  #response-message {
-    text-align: center;
+    margin: 20px 0;
   }
 
   .project-images {
     grid-template-columns: 1fr;
     padding: 40px 5%;
+  }
+}
+
+/* ============================
+   DESKTOP HERO FONT SIZES
+============================ */
+@media (min-width: 769px) {
+
+  body.work-page .hero-text h1 {
+    font-size: 15rem;
+    letter-spacing: 3px;
+  }
+
+  body.about-page .hero-text h1 {
+    font-size: 6rem;
+    letter-spacing: 3px;
+  }
+
+  body.contact-page .hero-text h1 {
+    font-size: 9rem;
+    letter-spacing: 3px;
   }
 }
