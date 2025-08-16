@@ -1,4 +1,4 @@
-/* ============================
+b/* ============================
    GLOBAL STYLES
 ============================ */
 html, body {
@@ -435,7 +435,7 @@ footer {
 
   /* Keep each page's hero font size intact */
   body.work-page .hero-text h1 {
-    font-size: 14rem;     
+    font-size: 18rem;     
     letter-spacing: 3px;
   }
 
