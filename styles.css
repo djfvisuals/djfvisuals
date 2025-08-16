@@ -34,7 +34,7 @@ header {
 nav {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-40%);
 }
 
 nav ul {
