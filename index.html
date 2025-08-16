@@ -71,7 +71,6 @@
       height: 50px;
     }
 
-    /* Unified nav styling */
     nav {
       position: absolute;
       left: 50%;
@@ -83,7 +82,7 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 40px; /* 40px spacing */
+      gap: 40px;
       margin: 0;
       padding: 0;
     }
@@ -92,6 +91,26 @@
       text-decoration: none;
       font-weight: 500;
       color: black;
+      position: relative;
+    }
+
+    /* GOLD UNDERLINE FOR ACTIVE LINK */
+    nav a:after {
+      content: "";
+      display: block;
+      height: 2px;
+      background: gold;
+      width: 0;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+    }
+
+    nav a:active:after,
+    nav a:focus:after,
+    nav a.current:after {
+      width: 100%;
     }
 
     /* ===== HAMBURGER MENU ===== */
@@ -112,6 +131,36 @@
       background-color: black;
       margin: 4px 0;
       border-radius: 2px;
+    }
+
+    /* ===== PORTFOLIO ITEMS ===== */
+    .portfolio-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 60px;
+    }
+
+    .portfolio-item img {
+      max-width: 250px;
+      height: auto;
+      display: block;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.6rem;
+      background-color: white;
+      margin-top: 100px;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* ===== MEDIA QUERY FOR MOBILE ===== */
@@ -169,19 +218,6 @@
       .hero-text h2 {
         font-size: 1.5rem !important;
       }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.6rem;
-      background-color: white;
-      margin-top: 100px;
     }
   </style>
 </head>
