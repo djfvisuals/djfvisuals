@@ -1,435 +1,269 @@
-/* ============================
-   GLOBAL / BASIC PAGE STYLES
-============================ */
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: white;
-  color: black;
-  overflow-x: hidden;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJF Visuals Portfolio</title>
+  <style>
+    /* ============================
+       BASIC PAGE STYLES
+    ============================ */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  font-family: Arial, sans-serif;
-}
+    /* ============================
+       HEADER / NAVIGATION
+    ============================ */
+    header {
+      position: relative;
+      width: 100%;
+      padding: 20px 50px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* Logo on left */
+      background-color: white;
+      border-bottom: 1px solid #eee;
+      z-index: 10;
+    }
 
-section {
-  padding: 50px;
-}
+    .logo {
+      position: relative;
+      z-index: 20;
+    }
 
-.site-wrapper {
-  width: 100%;
-  position: relative;
-}
+    .logo img {
+      height: 50px;
+      display: block;
+    }
 
-/* ============================
-   HEADER / NAVIGATION
-============================ */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 50px;
-  width: 100%;
-  background-color: white;
-  border-bottom: 1px solid #eee;
-  position: relative;
-  z-index: 10;
-}
+    nav {
+      position: absolute; /* Centers nav */
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      z-index: 15;
+    }
 
-.logo img {
-  height: 50px;
-  transform: translateX(-40px); /* keeps DJF Vu Slaps logo on left */
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+    }
 
-nav {
-  position: absolute;
-  left: 50%;
-  transform: translateX(calc(-50% - 20px));
-  display: flex;
-  z-index: 15;
-}
+    nav a {
+      text-decoration: none;
+      font-weight: 500;
+      color: black;
+      position: relative;
+    }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
-}
+    /* Gold underline effect */
+    nav a:after {
+      content: "";
+      display: block;
+      height: 2px;
+      background: gold;
+      width: 0;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+    }
 
-nav ul li {
-  display: inline;
-}
+    nav a:active:after,
+    nav a:focus:after,
+    nav a.current:after {
+      width: 100%;
+    }
 
-nav a {
-  text-decoration: none;
-  font-weight: 500;
-  color: black;
-  position: relative;
-}
+    /* ============================
+       HERO SECTION
+    ============================ */
+    .hero {
+      height: 400px;
+      background: url("images/hero.jpg") no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2em;
+      text-align: center;
+    }
 
-/* GOLD UNDERLINE FOR ACTIVE LINK */
-nav a:after {
-  content: "";
-  display: block;
-  height: 2px;
-  background: gold;
-  width: 0;
-  transition: width 0.3s;
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-}
+    /* ============================
+       SECTION STYLING
+    ============================ */
+    section {
+      padding: 50px;
+    }
 
-nav a:active:after,
-nav a:focus:after,
-nav a.current:after {
-  width: 100%;
-}
+    /* About Me section lines */
+    .about-section h2 {
+      text-align: center;
+      position: relative;
+      margin-bottom: 40px;
+    }
 
-/* ============================
-   HAMBURGER MENU (MOBILE)
-============================ */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  position: absolute;
-  top: 25px;
-  right: 20px;
-  z-index: 1000;
-}
+    .about-section h2:before,
+    .about-section h2:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 2px;
+      background: black;
+    }
 
-.hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: black;
-  border-radius: 2px;
-}
+    .about-section h2:before {
+      left: 0;
+    }
 
-/* ============================
-   HERO SECTION
-============================ */
-.hero {
-  position: relative;
-  padding: 120px 20px 60px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
-  overflow: hidden;
-  background: url("images/hero.jpg") no-repeat center center/cover;
-  color: white;
-}
+    .about-section h2:after {
+      right: 0;
+    }
 
-.hero-text {
-  max-width: 90%;
-  margin: 0 auto;
-  animation: fadeIn 2s ease-in;
-}
+    /* ============================
+       PORTFOLIO ITEMS
+    ============================ */
+    .portfolio-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
 
-.hero-text h1 {
-  font-weight: 700;
-  color: black;
-  margin: 0;
-}
+    .portfolio-item img {
+      width: 300px;
+      height: auto;
+      object-fit: contain;
+    }
 
-.hero-text h2 {
-  font-weight: 300;
-  color: rgba(0, 0, 0, 0.7);
-  margin-top: 10px;
-}
+    /* ============================
+       PROJECT PAGE IMAGES
+    ============================ */
+    .project-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
 
-/* Hero sizes per page */
-body.home-page .hero-text h1 { font-size: 8rem; letter-spacing: 4px; margin-top: -40px; text-align: center; }
-body.home-page .hero-text h2 { font-size: 1.5rem; }
+    .project-image img {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
 
-body.work-page .hero-text h1 { font-size: 14rem; letter-spacing: 3px; }
-body.about-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
-body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
+    /* ============================
+       CONTACT FORM
+    ============================ */
+    .contact-form {
+      max-width: 600px;
+      margin: auto;
+    }
 
-/* ============================
-   WORK / PORTFOLIO
-============================ */
-.work-intro {
-  text-align: center;
-  margin: 60px auto 30px auto;
-  padding: 0 20px;
-}
+    .contact-form label {
+      display: block;
+      margin-bottom: 5px;
+    }
 
-.work-intro h1 {
-  font-size: 1.9rem;
-  margin-top: 10px;
-  letter-spacing: 1px;
-  font-weight: 500;
-  opacity: 0;
-  animation: textReveal 5s ease forwards;
-  animation-delay: 0.14s;
-}
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+    }
 
-.portfolio-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 60px;
-}
+    .contact-form button {
+      background-color: #000;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
 
-.portfolio-item img {
-  width: 300px;
-  height: auto;
-  object-fit: contain;
-}
+    .contact-form button:hover {
+      background-color: #444;
+    }
 
-/* ============================
-   PROJECT PAGE IMAGES
-============================ */
-.project-images {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
+    /* ============================
+       FOOTER
+    ============================ */
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="images/djf_logo.png" alt="DJF Visuals Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="current">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-.project-image img {
-  max-width: 500px;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Welcome to DJF Visuals</h1>
+  </section>
 
-/* ============================
-   ABOUT PAGE
-============================ */
-.about-hero {
-  position: relative;
-  height: 60vh;
-  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
-  margin-top: 100px;
-}
+  <!-- ABOUT -->
+  <section class="about-section">
+    <h2>Who Am I</h2>
+    <p style="text-align:center; max-width:600px; margin:auto;">
+      I am a multidisciplinary creative specializing in graphic design, photography, creative direction, and UX design.
+    </p>
+  </section>
 
-.about-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 50px auto 80px auto;
-  padding: 0 20px;
-}
+  <!-- PORTFOLIO -->
+  <section>
+    <h2 style="text-align:center;">Portfolio</h2>
+    <div class="portfolio-items">
+      <div class="portfolio-item"><img src="images/sample1.png" alt="Project 1"></div>
+      <div class="portfolio-item"><img src="images/sample2.png" alt="Project 2"></div>
+      <div class="portfolio-item"><img src="images/sample3.png" alt="Project 3"></div>
+    </div>
+  </section>
 
-.about-text {
-  flex: 1;
-  text-align: justify;
-  font-size: 18px;
-  line-height: 1.8;
-  letter-spacing: 0.4px;
-  word-spacing: 1px;
-  font-weight: 300;
-  max-width: 700px;
-  margin: 0 auto;
-}
+  <!-- CONTACT -->
+  <section>
+    <h2 style="text-align:center;">Contact Me</h2>
+    <form class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
 
-.about-text h1,
-.about-text .sub-heading {
-  font-size: 1.3rem;
-  letter-spacing: 1px;
-  font-weight: 500;
-  padding-left: 52px;
-  margin-top: 40px;
-  margin-bottom: 30px;
-  position: relative;
-}
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
 
-.about-text h1::before,
-.about-text .sub-heading::before {
-  content: "";
-  display: inline-block;
-  width: 50px;
-  height: 2px;
-  background-color: black;
-  margin-right: 10px;
-  vertical-align: middle;
-}
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
 
-.about-text p {
-  font-weight: 300;
-  line-height: 1.8;
-  font-size: 18px;
-  padding-left: 52px;
-  max-width: 800px;
-  margin: 0 auto;
-}
+      <button type="submit">Send</button>
+    </form>
+  </section>
 
-/* ============================
-   CONTACT PAGE
-============================ */
-.contact-intro {
-  text-align: center;
-  margin: 60px auto 30px auto;
-  padding: 0 20px;
-}
-
-form {
-  max-width: 600px;
-  margin: 50px auto;
-  display: flex;
-  flex-direction: column;
-  padding: 0 20px;
-}
-
-form input,
-form textarea {
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form button {
-  padding: 10px 15px;
-  background-color: #000000;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #222222;
-}
-
-#response-message {
-  margin-top: 20px;
-  font-size: 1.2em;
-  color: black;
-  text-align: center;
-}
-
-/* ============================
-   FOOTER
-============================ */
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.6rem;
-  width: 100%;
-  background: white;
-  margin-top: 100px;
-}
-
-/* ============================
-   ANIMATIONS
-============================ */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes textReveal {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* ============================
-   MOBILE RESPONSIVE
-============================ */
-@media (max-width: 768px) {
-
-  /* Hamburger menu */
-  .hamburger {
-    display: flex !important;
-    top: 20px;
-    right: 15px;
-    z-index: 1000;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    z-index: 10;
-  }
-
-  nav.show {
-    display: flex;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 20px 0;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  nav a {
-    font-size: 16px;
-    padding: 10px 0;
-    display: block;
-    width: 100%;
-  }
-
-  /* MOBILE HERO ADJUSTMENTS */
-  body.home-page .hero,
-  body.work-page .hero,
-  body.about-page .hero,
-  body.contact-page .hero {
-    padding-top: 60px;
-    padding-bottom: 40px;
-  }
-
-  body.home-page .hero-text h1,
-  body.work-page .hero-text h1,
-  body.about-page .hero-text h1,
-  body.contact-page .hero-text h1 {
-    font-size: 3.5rem !important;
-    text-align: center !important;
-    margin-top: 20px !important;
-  }
-
-  body.home-page .hero-text h2,
-  body.work-page .hero-text h2,
-  body.about-page .hero-text h2,
-  body.contact-page .hero-text h2 {
-    font-size: 1rem !important;
-    text-align: center !important;
-    margin-top: 10px !important;
-  }
-
-  /* MOBILE ABOUT PAGE */
-  body.about-page .about-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0 15px;
-    margin-top: 70px;
-  }
-
-  body.about-page .about-text {
-    text-align: center !important;
-    padding-left: 0 !important;
-    margin: 20px auto;
-  }
-
-  .project-images {
-    flex-direction: column;
-    padding: 40px 5%;
-  }
-}
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 DJF Visuals. All rights reserved.</p>
+  </footer>
+</body>
+</html>
