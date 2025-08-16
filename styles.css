@@ -102,10 +102,9 @@ nav a.current:after {
 /* ============================
    HERO SECTION
 ============================ */
-/* No changes to hero text or size, untouched */
 .hero {
   position: relative;
-  padding: 120px 20px 60px;
+  padding: 120px 20px 60px; /* desktop padding */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -165,8 +164,7 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  /* Desktop nudge adjustment (can adjust margin-top for desktop) */
-  margin-top: 60px;
+  margin-top: 60px; /* Desktop nudge for portfolio section */
 }
 
 .portfolio-item img {
@@ -203,8 +201,7 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
   max-width: 1200px;
   margin: 50px auto 80px auto;
   padding: 0 20px;
-  /* Desktop nudge adjustment */
-  margin-top: 60px;
+  margin-top: 60px; /* Desktop nudge */
 }
 
 .about-text {
@@ -245,8 +242,7 @@ body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
   text-align: center;
   margin: 60px auto 30px auto;
   padding: 0 20px;
-  /* Desktop nudge */
-  margin-top: 60px;
+  margin-top: 60px; /* Desktop nudge */
 }
 
 form {
@@ -322,8 +318,8 @@ footer {
   /* Hamburger menu */
   .hamburger {
     display: flex !important;
-    top: 20px;   /* move up/down manually if needed */
-    right: 15px; /* move left/right manually if needed */
+    top: 20px;   
+    right: 15px; 
     z-index: 1000;
   }
 
@@ -361,24 +357,29 @@ footer {
     width: 100%;
   }
 
+  /* 🚀 Move homepage hero up on mobile */
+  body.home-page .hero {
+    padding-top: 40px; /* smaller = moves hero up */
+  }
+
   /* Section nudges for mobile */
   body.about-page .about-content {
-    margin-top: 50px; /* Adjust About section on mobile */
+    margin-top: 50px; /* About section on mobile */
   }
 
   body.contact-page .contact-intro,
   body.contact-page form {
-    margin-top: 50px; /* Adjust Contact section on mobile */
+    margin-top: 50px; /* Contact section on mobile */
   }
 
   body.home-page .portfolio-items {
-    margin-top: 50px; /* Adjust Portfolio section on mobile */
+    margin-top: 50px; /* Portfolio section on mobile */
   }
 
   /* MOBILE CONTACT FORM FIX */
   form {
-    max-width: 90%; /* Shrinks form to fit mobile */
-    margin: 30px auto; /* Center it vertically */
+    max-width: 90%; 
+    margin: 30px auto; 
     padding: 0 10px;
   }
 
@@ -389,7 +390,7 @@ footer {
   }
 
   form button {
-    background-color: #000000; /* Blackest black */
+    background-color: #000000; 
     font-size: 16px;
   }
 
