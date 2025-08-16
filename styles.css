@@ -28,13 +28,14 @@ header {
 
 .logo img {
   height: 50px;
+  transform: none;
 }
 
 /* ===== NAVIGATION ===== */
 nav {
   position: absolute;
   left: 50%;
-  transform: translateX(calc(-50% - 20px)); /* Nudge left */
+  transform: translateX(calc(-50% - 20px)); /* slight left shift */
   display: flex;
   z-index: 15;
 }
@@ -42,7 +43,7 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 40px; /* Updated spacing */
+  gap: 40px; /* 40px between nav items */
   margin: 0;
   padding: 0;
 }
@@ -51,26 +52,6 @@ nav a {
   text-decoration: none;
   font-weight: 500;
   color: black;
-}
-
-/* ===== HAMBURGER MENU ===== */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  position: absolute;
-  top: 25px;
-  right: 20px;
-  z-index: 1000;
-}
-
-.hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: black;
-  margin: 4px 0;
-  border-radius: 2px;
 }
 
 /* ===== HERO SECTION ===== */
@@ -97,7 +78,6 @@ nav a {
 .hero-text h1 {
   font-size: 8rem;
   font-weight: 700;
-  color: black;
   letter-spacing: 4px;
   margin: 0;
   margin-top: -90px;
@@ -110,13 +90,29 @@ nav a {
   margin: 10px 0 0;
 }
 
-/* ===== WORK INTRO SECTION ===== */
+/* ===== ABOUT PAGE HEADERS (Vertical left line) ===== */
+body.about-page .about-text > h1,
+body.about-page .about-text > .sub-heading {
+  position: relative;
+  padding-left: 20px;
+}
+
+body.about-page .about-text > h1::before,
+body.about-page .about-text > .sub-heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: black;
+}
+
+/* ===== WORK INTRO ===== */
 .work-intro {
   text-align: center;
   margin: 60px auto 30px auto;
   padding: 0 20px;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
 }
 
 .work-intro h1 {
@@ -126,7 +122,7 @@ nav a {
   margin: 0;
 }
 
-/* ===== PORTFOLIO GRID ===== */
+/* ===== PORTFOLIO ITEMS ===== */
 .portfolio-items {
   display: flex;
   flex-wrap: wrap;
@@ -139,6 +135,33 @@ nav a {
   max-width: 250px;
   height: auto;
   display: block;
+}
+
+/* ===== CONTACT PAGE FORM ===== */
+form {
+  max-width: 600px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+form input,
+form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 10px 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 /* ===== FOOTER ===== */
@@ -157,10 +180,30 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== RESPONSIVE STYLES (MOBILE) ===== */
+/* ===== HAMBURGER MENU ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+/* ===== MOBILE RESPONSIVE (max-width: 768px) ===== */
 @media (max-width: 768px) {
   .hamburger {
-    display: flex;
+    display: flex !important;
   }
 
   nav {
@@ -172,7 +215,7 @@ footer {
     width: 100%;
     background-color: white;
     border-top: 1px solid #ccc;
-    transform: none;
+    transform: none !important;
   }
 
   nav.show {
@@ -204,12 +247,12 @@ footer {
   }
 
   .hero-text h1 {
-    font-size: 8rem !important;
-    letter-spacing: 4px !important;
-    margin-top: -90px !important;
+    font-size: 3rem !important;
+    letter-spacing: 2px !important;
+    margin-top: -60px !important;
   }
 
   .hero-text h2 {
-    font-size: 1.5rem !important;
+    font-size: 1rem !important;
   }
 }
