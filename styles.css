@@ -1,4 +1,6 @@
-/* ===== GLOBAL STYLES ===== */
+/* ============================
+   GLOBAL STYLES
+============================ */
 html, body {
   margin: 0;
   padding: 0;
@@ -13,7 +15,9 @@ html, body {
   position: relative;
 }
 
-/* ===== HEADER ===== */
+/* ============================
+   HEADER / NAVIGATION
+============================ */
 header {
   display: flex;
   align-items: center;
@@ -31,6 +35,7 @@ header {
   transform: translateX(-40px);
 }
 
+/* NAVIGATION LINKS */
 nav {
   position: absolute;
   left: 50%;
@@ -42,7 +47,7 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 40px; /* desktop nav spacing */
+  gap: 40px; /* desktop spacing */
   margin: 0;
   padding: 0;
 }
@@ -54,7 +59,28 @@ nav a {
   position: relative;
 }
 
-/* ===== HAMBURGER MENU ===== */
+/* GOLD UNDERLINE FOR ACTIVE LINK */
+nav a:after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: gold;
+  width: 0;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+}
+
+nav a:active:after,
+nav a:focus:after,
+nav a.current:after {
+  width: 100%;
+}
+
+/* ============================
+   HAMBURGER MENU (MOBILE)
+============================ */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -74,77 +100,50 @@ nav a {
   border-radius: 2px;
 }
 
-/* ===== HERO TEXT HEADERS PER PAGE ===== */
+/* ============================
+   HERO SECTION
+============================ */
+.hero {
+  position: relative;
+  padding: 120px 20px 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  overflow: hidden;
+}
+
 .hero-text {
   max-width: 90%;
   margin: 0 auto;
-  animation: fadeIn 2s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeIn 2s ease-in;
 }
 
-/* Home page */
-body.home-page .hero-text h1 {
-  font-size: 8rem;
-  letter-spacing: 4px;
-  margin-top: -40px;
-  margin-bottom: 0;
-  text-align: center;
+.hero-text h1 {
   font-weight: 700;
   color: black;
-  animation: fadeInOpacity 2s ease-in;
-  transform: none !important;
+  margin: 0;
 }
 
-body.home-page .hero-text h2 {
-  font-size: 1.5rem;
-  letter-spacing: normal;
-  margin-top: 20px;
-  text-align: center;
+.hero-text h2 {
   font-weight: 300;
   color: rgba(0, 0, 0, 0.7);
-  animation: fadeInOpacity 2s ease-in;
-  transform: none !important;
+  margin-top: 10px;
 }
 
-/* Work page */
-body.work-page .hero-text h1 {
-  font-size: 14rem;
-  letter-spacing: 3px;
-  margin-top: 15px;
-  margin-bottom: 0;
-  text-align: center;
-  font-weight: 700;
-  color: black;
-  animation: fadeInOpacity 2s ease-in;
-  transform: none !important;
-}
+/* Hero sizes per page */
+body.home-page .hero-text h1 { font-size: 8rem; letter-spacing: 4px; margin-top: -40px; text-align: center; }
+body.home-page .hero-text h2 { font-size: 1.5rem; }
 
-/* About page */
-body.about-page .hero-text h1 {
-  font-size: 9rem;
-  letter-spacing: 3px;
-  margin-top: 20px;
-  margin-bottom: 0;
-  text-align: center;
-  font-weight: 700;
-  color: black;
-  animation: fadeInOpacity 2s ease-in;
-  transform: none !important;
-}
+body.work-page .hero-text h1 { font-size: 14rem; letter-spacing: 3px; }
+body.about-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
+body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
 
-/* Contact page */
-body.contact-page .hero-text h1 {
-  font-size: 9rem;
-  letter-spacing: 3px;
-  margin-top: 35px;
-  margin-bottom: 0;
-  text-align: center;
-  font-weight: 700;
-  color: black;
-  animation: fadeInOpacity 2s ease-in;
-  transform: none !important;
-}
-
-/* ===== WORK / PORTFOLIO ===== */
+/* ============================
+   WORK / PORTFOLIO
+============================ */
 .work-intro {
   text-align: center;
   margin: 60px auto 30px auto;
@@ -156,18 +155,9 @@ body.contact-page .hero-text h1 {
   margin-top: 10px;
   letter-spacing: 1px;
   font-weight: 500;
+  opacity: 0;
   animation: textReveal 5s ease forwards;
   animation-delay: 0.14s;
-  opacity: 0;
-}
-
-.project-images {
-  display: grid;
-  gap: 30px;
-  padding: 60px 10%;
-  max-width: 100%;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .portfolio-items {
@@ -183,7 +173,18 @@ body.contact-page .hero-text h1 {
   display: block;
 }
 
-/* ===== ABOUT PAGE ===== */
+.project-images {
+  display: grid;
+  gap: 30px;
+  padding: 60px 10%;
+  max-width: 100%;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* ============================
+   ABOUT PAGE
+============================ */
 .about-hero {
   position: relative;
   height: 60vh;
@@ -233,7 +234,9 @@ body.contact-page .hero-text h1 {
   margin: 0 auto;
 }
 
-/* ===== CONTACT PAGE ===== */
+/* ============================
+   CONTACT PAGE
+============================ */
 .contact-intro {
   text-align: center;
   margin: 60px auto 30px auto;
@@ -259,7 +262,7 @@ form textarea {
 
 form button {
   padding: 10px 15px;
-  background-color: #333;
+  background-color: #000000; /* Blackest black */
   color: white;
   border: none;
   border-radius: 4px;
@@ -267,7 +270,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #555;
+  background-color: #222222;
 }
 
 #response-message {
@@ -276,7 +279,9 @@ form button:hover {
   color: black;
 }
 
-/* ===== FOOTER ===== */
+/* ============================
+   FOOTER
+============================ */
 footer {
   text-align: center;
   padding: 20px;
@@ -284,11 +289,16 @@ footer {
   width: 100%;
   background: white;
   margin-top: 100px;
-  position: relative;
-  transform: translateX(-15px);
 }
 
-/* ===== ANIMATIONS ===== */
+/* ============================
+   ANIMATIONS
+============================ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes fadeInOpacity {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -299,35 +309,11 @@ footer {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== DESKTOP GOLD UNDERLINE NAV ===== */
-@media (min-width: 769px) {
-  nav a {
-    text-decoration: none;
-    font-weight: 500;
-    color: black;
-    position: relative;
-  }
-
-  nav a:after {
-    content: "";
-    display: block;
-    height: 2px;
-    background: gold;
-    width: 0;
-    transition: width 0.3s;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-  }
-
-  nav a:active:after,
-  nav a:focus:after {
-    width: 100%;
-  }
-}
-
-/* ===== MOBILE RESPONSIVE ===== */
+/* ============================
+   MOBILE RESPONSIVE
+============================ */
 @media (max-width: 768px) {
+  /* Hamburger menu */
   .hamburger {
     display: flex !important;
     position: absolute;
@@ -345,7 +331,6 @@ footer {
     width: 100%;
     background-color: white;
     z-index: 10;
-    transform: none;
   }
 
   nav.show {
@@ -371,7 +356,11 @@ footer {
     width: 100%;
   }
 
-  body.home-page .hero {
+  /* HERO - mobile all pages */
+  body.home-page .hero,
+  body.work-page .hero,
+  body.about-page .hero,
+  body.contact-page .hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -382,23 +371,25 @@ footer {
   }
 
   body.home-page .hero-text h1,
-  body.home-page .hero-text h2 {
-    position: static !important;
-    transform: none !important;
-    text-align: center;
-    margin: 10px 0 0 0;
-  }
-
-  body.home-page .hero-text h1 {
+  body.work-page .hero-text h1,
+  body.about-page .hero-text h1,
+  body.contact-page .hero-text h1 {
     font-size: 3.5rem !important;
     letter-spacing: 1.5px !important;
+    text-align: center;
+    margin-top: 20px;
   }
 
-  body.home-page .hero-text h2 {
+  body.home-page .hero-text h2,
+  body.work-page .hero-text h2,
+  body.about-page .hero-text h2,
+  body.contact-page .hero-text h2 {
     font-size: 1rem !important;
+    text-align: center;
     margin-top: 10px !important;
   }
 
+  /* Portfolio / About / Contact spacing */
   .work-intro,
   .portfolio-items,
   .about-content,
@@ -419,12 +410,28 @@ footer {
     word-spacing: normal;
     letter-spacing: normal;
     text-justify: inter-word;
+    padding-left: 0;
   }
 
+  /* MOBILE CONTACT FORM FIX */
   form {
-    width: 100%;
+    max-width: 90%; /* Shrink to fit screen */
+    margin: 30px auto; /* Centered */
+    padding: 0 10px;
   }
 
+  form input,
+  form textarea {
+    font-size: 15px;
+    padding: 8px;
+  }
+
+  form button {
+    background-color: #000000; /* Blackest black */
+    font-size: 16px;
+  }
+
+  /* Project images grid */
   .project-images {
     grid-template-columns: 1fr;
     padding: 40px 5%;
