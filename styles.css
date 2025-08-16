@@ -1,440 +1,261 @@
-/* ============================
-   GLOBAL STYLES
-============================ */
+/* ===== GLOBAL STYLES ===== */
 html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: white;
-  color: black;
-  overflow-x: hidden;
+  margin: 0; /* Remove default browser margin */
+  padding: 0; /* Remove default browser padding */
+  font-family: 'Montserrat', sans-serif; /* Set main font for site */
+  background-color: white; /* Page background */
+  color: black; /* Default text color */
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .site-wrapper {
-  width: 100%;
-  position: relative;
+  width: 100%; /* Full width container */
+  position: relative; /* Allows absolute positioning inside */
 }
 
-/* ============================
-   HEADER / NAVIGATION
-============================ */
+/* ===== HEADER ===== */
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 50px;
-  width: 100%;
-  background-color: white;
-  border-bottom: 1px solid #eee;
-  position: relative;
-  z-index: 10;
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Vertically center content */
+  justify-content: space-between; /* Space between logo and nav */
+  padding: 20px 50px; /* Top/bottom 20px, left/right 50px */
+  width: 100%; /* Full width */
+  background-color: white; /* White header background */
+  border-bottom: 1px solid #eee; /* Light line under header */
+  position: relative; /* Needed for absolute positioning of nav */
+  z-index: 10; /* Keeps header above other content */
 }
 
 .logo img {
-  height: 50px;
-  transform: translateX(-40px);
+  height: 50px; /* Set logo size */
+  transform: translateX(-40px); /* Move logo left a little */
 }
 
-/* NAVIGATION LINKS */
+/* ===== NAVIGATION ===== */
 nav {
-  position: absolute;
-  left: 50%;
-  transform: translateX(calc(-50% - 20px));
-  display: flex;
-  z-index: 15;
+  position: absolute; /* Position relative to header */
+  left: 50%; /* Center horizontally */
+  transform: translateX(calc(-50% - 20px)); /* Perfect horizontal centering */
+  display: flex; /* Horizontal menu */
+  z-index: 15; /* Above other elements */
 }
 
 nav ul {
-  list-style: none;
-  display: flex;
-  gap: 40px; /* desktop spacing */
+  list-style: none; /* Remove bullets */
+  display: flex; /* Arrange links horizontally */
+  gap: 40px; /* Space between links */
   margin: 0;
   padding: 0;
 }
 
 nav a {
-  text-decoration: none;
-  font-weight: 500;
-  color: black;
-  position: relative;
+  text-decoration: none; /* Remove underline */
+  font-weight: 500; /* Medium weight text */
+  color: black; /* Text color */
+  position: relative; /* Needed for underline effect */
 }
 
-/* GOLD UNDERLINE FOR ACTIVE LINK */
-nav a:after {
-  content: "";
-  display: block;
-  height: 2px;
-  background: gold;
-  width: 0;
-  transition: width 0.3s;
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-}
-
-nav a:active:after,
-nav a:focus:after,
-nav a.current:after {
-  width: 100%;
-}
-
-/* ============================
-   HAMBURGER MENU (MOBILE)
-============================ */
+/* ===== HAMBURGER MENU ===== */
 .hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  position: absolute;
-  top: 25px;
-  right: 20px;
-  z-index: 20;
+  display: none; /* Hide by default, show on mobile */
+  flex-direction: column; /* Stacks lines vertically */
+  gap: 5px; /* Space between lines */
+  cursor: pointer; /* Pointer on hover */
+  position: absolute; /* Position inside header */
+  top: 25px; /* Distance from top */
+  right: 20px; /* Distance from right */
+  z-index: 20; /* Above nav and other elements */
 }
 
 .hamburger span {
   display: block;
-  width: 25px;
-  height: 3px;
-  background-color: black;
-  border-radius: 2px;
+  width: 25px; /* Line width */
+  height: 3px; /* Line thickness */
+  background-color: black; /* Line color */
+  border-radius: 2px; /* Rounded edges */
 }
 
-/* ============================
-   HERO SECTION
-============================ */
-.hero {
-  position: relative;
-  padding: 120px 20px 60px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
-  overflow: hidden;
-}
-
+/* ===== HERO TEXT ===== */
 .hero-text {
-  max-width: 90%;
-  margin: 0 auto;
-  animation: fadeIn 2s ease-in;
+  max-width: 90%; /* Keep text inside container */
+  margin: 0 auto; /* Center horizontally */
+  animation: fadeIn 2s cubic-bezier(0.4, 0, 0.2, 1); /* Simple fade-in animation */
 }
 
-.hero-text h1 {
-  font-weight: 700;
-  color: black;
-  margin: 0;
+/* ===== PORTFOLIO / WORK / ABOUT / CONTACT SPACING ===== */
+/* This section allows nudging down sections independently on desktop */
+body.home-page .portfolio-items {
+    margin-top: 80px; /* Nudge portfolio section down on desktop */
 }
 
-.hero-text h2 {
-  font-weight: 300;
-  color: rgba(0, 0, 0, 0.7);
-  margin-top: 10px;
+body.about-page .about-content {
+    margin-top: 80px; /* Nudge About page content down on desktop */
 }
 
-/* Hero sizes per page */
-body.home-page .hero-text h1 { font-size: 8rem; letter-spacing: 4px; margin-top: -40px; text-align: center; }
-body.home-page .hero-text h2 { font-size: 1.5rem; }
-
-body.work-page .hero-text h1 { font-size: 14rem; letter-spacing: 3px; }
-body.about-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
-body.contact-page .hero-text h1 { font-size: 9rem; letter-spacing: 3px; }
-
-/* ============================
-   WORK / PORTFOLIO
-============================ */
-.work-intro {
-  text-align: center;
-  margin: 60px auto 30px auto;
-  padding: 0 20px;
+body.contact-page .contact-intro,
+body.contact-page form {
+    margin-top: 80px; /* Nudge Contact page content down on desktop */
 }
 
-.work-intro h1 {
-  font-size: 1.9rem;
-  margin-top: 10px;
-  letter-spacing: 1px;
-  font-weight: 500;
-  opacity: 0;
-  animation: textReveal 5s ease forwards;
-  animation-delay: 0.14s;
-}
-
+/* ===== PORTFOLIO ITEMS ===== */
 .portfolio-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: flex; /* Arrange items horizontally */
+  flex-wrap: wrap; /* Wrap to next line if needed */
+  justify-content: center; /* Center items */
+  gap: 20px; /* Space between items */
 }
 
 .portfolio-item img {
-  max-width: 250px;
-  height: auto;
-  display: block;
+  max-width: 250px; /* Limit image size */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove inline spacing */
 }
 
-.project-images {
-  display: grid;
-  gap: 30px;
-  padding: 60px 10%;
-  max-width: 100%;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-/* ============================
-   ABOUT PAGE
-============================ */
-.about-hero {
-  position: relative;
-  height: 60vh;
-  background: url('images/hero-placeholder.jpg') center/cover no-repeat;
-  margin-top: 100px;
-}
-
-.about-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 50px auto 80px auto;
-  padding: 0 20px;
-}
-
-.about-text {
-  flex: 1;
-  text-align: justify;
-  font-size: 18px;
-  line-height: 1.8;
-  letter-spacing: 0.4px;
-  word-spacing: 1px;
-  font-weight: 300;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.about-text h1,
-.about-text .sub-heading {
-  font-size: 1.3rem;
-  letter-spacing: 1px;
-  font-weight: 500;
-  padding-left: 52px;
-  margin-top: 40px;
-  margin-bottom: 30px;
-}
-
-.about-text p {
-  font-weight: 300;
-  line-height: 1.8;
-  font-size: 18px;
-  padding-left: 52px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* ============================
-   CONTACT PAGE
-============================ */
-.contact-intro {
-  text-align: center;
-  margin: 60px auto 30px auto;
-  padding: 0 20px;
-}
-
+/* ===== CONTACT FORM ===== */
 form {
-  max-width: 600px;
-  margin: 50px auto;
-  display: flex;
-  flex-direction: column;
-  padding: 0 20px;
+  max-width: 600px; /* Prevent form from being too wide */
+  margin: 50px auto; /* Center form vertically and horizontally */
+  display: flex; /* Flex layout for fields */
+  flex-direction: column; /* Stack fields vertically */
+  padding: 0 20px; /* Side padding */
 }
 
 form input,
 form textarea {
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  margin-bottom: 10px; /* Space between fields */
+  padding: 10px; /* Field padding */
+  font-size: 16px; /* Text size */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
 }
 
 form button {
-  padding: 10px 15px;
+  padding: 10px 15px; /* Button size */
   background-color: #000000; /* Blackest black */
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
 }
 
 form button:hover {
-  background-color: #222222;
+  background-color: #222; /* Slightly lighter on hover */
 }
 
-#response-message {
-  margin-top: 20px;
-  font-size: 1.2em;
-  color: black;
-}
-
-/* ============================
-   FOOTER
-============================ */
+/* ===== FOOTER ===== */
 footer {
-  text-align: center;
+  text-align: center; /* Center text */
   padding: 20px;
-  font-size: 0.6rem;
-  width: 100%;
-  background: white;
-  margin-top: 100px;
+  font-size: 0.6rem; /* Small text */
+  width: 100%; /* Full width */
+  background: white; /* White background */
+  margin-top: 100px; /* Space above footer */
+  position: relative;
 }
 
-/* ============================
-   ANIMATIONS
-============================ */
+/* ===== ANIMATIONS ===== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(20px); } /* Start transparent & lower */
+  to { opacity: 1; transform: translateY(0); } /* End fully visible at original position */
 }
 
-@keyframes fadeInOpacity {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* ===== GOLD UNDERLINE NAV ON DESKTOP ===== */
+@media (min-width: 769px) {
+  nav a:after {
+    content: "";
+    display: block;
+    height: 2px; /* Line thickness */
+    background: gold; /* Gold color */
+    width: 0; /* Start hidden */
+    transition: width 0.3s; /* Smooth animation */
+    position: absolute; /* Position under text */
+    bottom: -3px; /* Slightly below link */
+    left: 0;
+  }
+
+  nav a:active:after,
+  nav a:focus:after {
+    width: 100%; /* Expand underline when clicked/focused */
+  }
 }
 
-@keyframes textReveal {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* ============================
-   MOBILE RESPONSIVE
-============================ */
+/* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
-  /* Hamburger menu */
+  /* Hamburger menu visible on mobile */
   .hamburger {
     display: flex !important;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 20px;   /* Distance from top */
+    right: 15px; /* Move slightly left if needed */
     z-index: 1000;
   }
 
   nav {
-    display: none;
-    flex-direction: column;
+    display: none; /* Hide by default */
+    flex-direction: column; /* Stack links vertically */
     position: absolute;
-    top: 60px;
+    top: 60px; /* Position below header */
     left: 0;
-    width: 100%;
+    width: 100%; /* Full width */
     background-color: white;
-    z-index: 10;
+    z-index: 999;
+    transform: none; /* Reset desktop transform */
   }
 
   nav.show {
-    display: flex;
+    display: flex; /* Show when hamburger clicked */
   }
 
   nav ul {
-    flex-direction: column;
+    flex-direction: column; /* Vertical links */
     align-items: center;
-    gap: 15px;
+    gap: 15px; /* Space between links */
     padding: 20px 0;
   }
 
   nav ul li {
-    width: 100%;
+    width: 100%; /* Full width links */
     text-align: center;
   }
 
   nav a {
-    font-size: 16px;
-    padding: 10px 0;
+    font-size: 16px; /* Adjust text size */
+    padding: 10px 0; /* Space inside links */
     display: block;
     width: 100%;
   }
 
-  /* HERO - mobile all pages */
-  body.home-page .hero,
-  body.work-page .hero,
-  body.about-page .hero,
-  body.contact-page .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    padding: 80px 20px 40px;
-    text-align: center;
-  }
-
-  body.home-page .hero-text h1,
-  body.work-page .hero-text h1,
-  body.about-page .hero-text h1,
-  body.contact-page .hero-text h1 {
-    font-size: 3.5rem !important;
+  /* HERO adjustments for mobile */
+  body.home-page .hero-text h1 {
+    font-size: 3.5rem !important; /* Reduce size */
     letter-spacing: 1.5px !important;
-    text-align: center;
-    margin-top: 20px;
   }
 
-  body.home-page .hero-text h2,
-  body.work-page .hero-text h2,
-  body.about-page .hero-text h2,
-  body.contact-page .hero-text h2 {
+  body.home-page .hero-text h2 {
     font-size: 1rem !important;
-    text-align: center;
     margin-top: 10px !important;
   }
 
-  /* Portfolio / About / Contact spacing */
-  .work-intro,
-  .portfolio-items,
-  .about-content,
-  .contact-intro,
+  /* Section nudges for mobile */
+  body.home-page .portfolio-items {
+    margin-top: 50px; /* Nudge portfolio section down */
+  }
+
+  body.about-page .about-content {
+    margin-top: 50px; /* Nudge About section down */
+  }
+
+  body.contact-page .contact-intro,
+  body.contact-page form {
+    margin-top: 50px; /* Nudge Contact section down */
+  }
+
+  /* Contact form width adjustment */
   form {
-    margin-top: 50px
-     ;
-    padding: 0 20px;
+    width: 90%; /* Shrinks form slightly for mobile */
   }
 
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-text p {
-    hyphens: auto;
-    word-spacing: normal;
-    letter-spacing: normal;
-    text-justify: inter-word;
-    padding-left: 0;
-  }
-
-  /* MOBILE CONTACT FORM FIX */
-  form {
-    max-width: 90%; /* Shrink to fit screen */
-    margin: 30px auto; /* Centered */
-    padding: 0 10px;
-  }
-
-  form input,
-  form textarea {
-    font-size: 15px;
-    padding: 8px;
-  }
-
-  form button {
-    background-color: #000000; /* Blackest black */
-    font-size: 16px;
-  }
-
-  /* Project images grid */
   .project-images {
-    grid-template-columns: 1fr;
-    padding: 40px 5%;
+    grid-template-columns: 1fr; /* Stack project images vertically */
+    padding: 40px 5%; /* Reduce side padding */
   }
 }
